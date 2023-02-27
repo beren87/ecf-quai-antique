@@ -1,0 +1,24 @@
+@use "../utils/main" as utils;
+@use "../utils/fonts" as fonts;
+@use "../utils/sizes" as sizes;
+
+//button navbar :
+.button {
+    @include utils.flex-btn;
+    width: 140px;
+    height: 40px;
+    border-radius: 0;
+    font-weight: bold;
+    font-family: fonts.$font-serif;
+    background-color: #5b441f;; //primary
+    color: #DDB46A; //secondary
+        &:hover {
+            background-color: #5b441f;;
+            color: #edd19f;
+            transition: 0.2s all ease-in-out;
+            transform: scale(1.05);
+        }
+}
+
+
+
