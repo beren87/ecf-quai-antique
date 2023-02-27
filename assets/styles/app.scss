@@ -1,2 +1,21 @@
+@use "scss/base/reset";
+@use "scss/components/header.scss";
+
+//Import color's Bootstrap
+$brown: #5b441f; 
+$orange:#DDB46A;
+$green: #4C8A42;
+$red:#dc3545;
+$blank:#F2F2F2;
+$black:#000;
+
+
+$primary:       $brown;
+$secondary:     $orange;
+$success:       $green;
+$danger:        $red;
+$light:         $blank; 
+$dark:          $black;
+
 // Import all of Bootstrap's CSS
 @import "~bootstrap/scss/bootstrap";

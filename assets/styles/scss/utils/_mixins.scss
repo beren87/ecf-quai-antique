@@ -1,0 +1,18 @@
+//Colors icon
+@mixin icon {
+    color: #DDB46A;
+}
+
+//Display flex for logo:
+@mixin flex($justify: center, $align: center){
+display: flex;
+align-items: $align;
+justify-content: $justify;
+}
+
+//Display flex for menus navbar :
+@mixin flex-btn($justify: center, $align: center){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
