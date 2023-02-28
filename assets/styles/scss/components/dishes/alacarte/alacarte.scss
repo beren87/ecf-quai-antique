@@ -1,0 +1,47 @@
+@use "../../../utils/main" as utils;
+@use "../../../utils/fonts" as fonts;
+@use "../../../utils/sizes" as sizes;
+@use "../../../atoms/buttons" as button;
+
+.dishe-title {
+    font-family: fonts.$font-cursive; 
+    font-size: sizes.$logo;  
+}
+
+.dishe-title_icon {
+    @include utils.icon;
+}
+
+@media (max-width: 576px){
+    .col-title_mq {
+        font-size: sizes.$mini-logo; 
+    }
+}
+
+//637 - 577
+@media (min-width: 577px) and (max-width: 637px) {
+    .col-title_mq {
+        font-size: sizes.$mini-logo; 
+    }
+}
+
+.dishes-fonts {
+    font-family: fonts.$font-serif;
+    // color: colors.$primary;
+}
+
+.dishes-letter_fonts {
+    font-family: fonts.$font-cursive;
+    font-size: sizes.$logo; 
+}
+
+.dishes {
+    font-family: fonts.$font-serif;
+    // color: colors.$primary;
+        &_price {
+            color: #DDB46A; 
+        }
+        &_bread {
+            font-size: sizes.$mq-nav13;
+        } 
+}
