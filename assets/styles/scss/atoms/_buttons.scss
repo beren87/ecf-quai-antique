@@ -20,5 +20,23 @@
         }
 }
 
+//button carte :
+.button-carte {
+    width: 200px; 
+    height: 150px; 
+    border-radius: 0;
+    font-weight: bold;
+    font-family: fonts.$font-cursive;
+    font-size: sizes.$title;
+    background-color: #DDB46A;
+    color: #5b441f;;
+    &:hover {
+        color: #5b441f;;
+        background-color: #edd19f;
+        transition: 0.2s all ease-in-out;
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}
 
 
