@@ -1,0 +1,34 @@
+@use "../../utils/main" as utils;
+@use "../../utils/fonts" as fonts;
+@use "../../utils/sizes" as sizes;
+@use "../../atoms/buttons" as button; 
+
+.container-chef_title {
+    font-size: sizes.$h2;
+    font-family: fonts.$font-serif; 
+}
+
+.col-chef_text {
+    font-family: fonts.$font-serif;
+    font-size: sizes.$paragraphe;
+}
+
+// ============= START media queries chef text =================//
+
+//from 768px to higher ==> text size = $paragraphe
+@media (min-width: 768px) and (max-width: 992px){
+    .col-chef_text {
+        font-size: sizes.$mq-nav13;
+    }
+}
+
+//sm $paragraphe
+@media (max-width: 576px) {
+    .col-chef_text {
+        font-size: sizes.$paragraphe;
+    }
+}
+
+//xs $paragraphe
+
+// ============= END media queries chef text =================//
