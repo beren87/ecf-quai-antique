@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription - Quai Antique{% endblock %}
+
+{% block body %}
+<div class="border-bottom"></div>
+<div class="container"> 
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+        <h1 class="mb-3 text-center form-title_style mt-3 text-primary">Inscription</h1>
+
+            {{ form_start(registrationForm) }}
+
+                {{ form_row(registrationForm.lastname) }}
+                {{ form_row(registrationForm.firstname) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
+                {{ form_row(registrationForm.address) }}
+                {{ form_row(registrationForm.zipcode) }}
+                {{ form_row(registrationForm.city) }}
+ 
+
+                {{ form_row(registrationForm.agreeTerms) }}
+
+                <button type="submit" class="mt-3 w-100 btn-sub_style mb-2 text-secondary">S'INSCRIRE</button>
+            {{ form_end(registrationForm) }}
+        
+        </div>
+        <div class="col"></div>
+    </div>  
+
+    <div class="row mt-3 mb-5">
+        <div class="col"></div>
+        <div class="col text-center form-title_style text-primary">Déjà un compte ? <span class="form-title_color">
+        <a href="{{ path('app_login')}}" class="text-secondary text-decoration-none">
+        Connectez-vous</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right dishe-title_icon" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/></svg>
+        </span></div>
+        <div class="col"></div>
+    </div>
+
+</div>
+{% endblock %}
