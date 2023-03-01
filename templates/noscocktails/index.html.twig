@@ -1,0 +1,371 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos cocktails - Quai Antique{% endblock %}
+
+{% block body %}
+<section>
+    <div class="border-bottom"></div>
+    <div class="border-bottom"></div>
+    <div class="row g-sm-0 g-0">
+        <div class="col-xl col-lg col-md "></div>
+        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 mt-5 py-5 text-back_style text-back_size text-primary">page précédente - <span class="text-back_home text-secondary">Les vins</span></div> 
+        <div class="col py-4">
+            <a href="{{path('app_lesvins')}}" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="94" fill="currentColor" class="bi bi-chevron-left dishe-title_icon" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/></svg>
+            </a>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><div class="text-center mt-5 mb-3 dishe-title pe-xl-5 pe-sm-1 col-title_mq text-primary">Nos cocktails</div></div>
+        <div class="col col-xl col-lg col-md col-sm  py-4">
+        <a href="{{ path('app_cremchamp')}}" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="94" fill="currentColor" class="bi bi-chevron-right dishe-title_icon" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg>
+        </a>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col mt-5 py-5 text-back_style text-back_size text-primary">page suivante - <span class="text-back_home text-secondary">Crémants & champagnes</span></div> 
+        <div class="col-xl col-lg col-md col"></div>
+    </div>
+    <div class="row mb-5">
+        <div class="col"></div>
+        <div class="col-xl-10 border-bottom"></div>
+        <div class="col"></div>
+    </div>
+<!--Avec Alcool-->
+    <div class="row mb-2 text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">A</span>vec <span class="dishes-letter_fonts">A</span>lcool</h3></div>
+                <div class="col-xl-6 col-md-6 "></div>
+            </div>
+    
+    <div class="row mt-5 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 fw-bold">Amaretto Sour</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">14€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Amaretto, citron jaune, blanc d’œuf, caramélisé</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 fw-bold">Cosmopolitan</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">15€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Vodka, triple sec, cranberry, citron vert, zeste de citron vert</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 fw-bold">Espresso Martini</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">17€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Vodka, liqueur de café, espresso</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 fw-bold">Spritz</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">19€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Aperol, prosecco, perrier, rondelle d’orange</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 fw-bold">Old Fashioned</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">21€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Scotch, bitter, sucre roux, trais d’eau gazeuse, zeste d’orange exprimé</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 fw-bold">Saint Raphaël</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">23€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-5 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Saint Raphaël, gentiane, gin, romarin</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+
+    <!-- Sans Alcool-->
+   <div class="row mt-5 mb-2 text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">S</span>ans <span class="dishes-letter_fonts">A</span>lcool</h3></div>
+                <div class="col-xl-6 col-md-6 "></div>
+            </div>
+    
+    <div class="row mt-5 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 fw-bold">Bubble Green Apple</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">11€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Billes pommes verte, thé vert jasmin, sucre de cannes</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 fw-bold">Bubble Blue</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">13€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Billes myrtille, thé vert, lait, curacao, sucre de cannes</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 fw-bold">Bubble Tai</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">14€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-5 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Billes litchi, thé vert jasmin, kiwi, citron vert, sucre de cannes</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <!-- Digestifs -->
+<div class="row mt-5 mb-2 text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">D</span>igestifs</span></h3></div>
+                <div class="col-xl-6 col-md-6 "></div>
+            </div>
+    
+    <div class="row mt-5 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Liqueur de Génépi</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">12€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">La Chartreuse</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">12€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Liqueur de sapin</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">12€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">L' Izzara</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">14€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-5 dishes">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <!-- Eau minérales  -->
+    <div class="row mt-5 mb-2 text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">E</span>aux minérales</span></h3></div>
+                <div class="col-xl-6 col-md-6 "></div>
+            </div>
+    
+    <div class="row mt-5 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Thonon (50cl / 75cl)</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">6€ / 8€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Badoit (50cl / 75cl)</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">6€ / 8€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <!-- Boissons chaudes  -->
+<div class="row mt-5 mb-2 text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">B</span>oissons chaudes</span></h3></div>
+                <div class="col-xl-6 col-md-6 "></div>
+            </div>
+    
+    <div class="row mt-5 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Expresso</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">3,50€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Café long</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">5€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Thé - Infusion</div>
+        <div class="col dishes_price"></div>
+        <div class="col dishes_price">5€</div>
+        <div class="col dishes_price"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+
+    <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-9"></div>
+            <div class="col me-sm-4 me-2">
+                <a href="{{path('app_noscocktails')}}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-double-up dishe-title_icon" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"/>
+                <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>
+                </a>
+            </div>
+        </div>
+</section>
+{% endblock %}
