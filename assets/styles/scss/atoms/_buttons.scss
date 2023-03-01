@@ -39,4 +39,38 @@
     }
 }
 
+//button for login
+.button-log {
+    height: 34px;
+    border-radius: 0;
+    border-color: #5b441f;
+    font-weight: bold;
+    font-family: fonts.$font-serif;
+    background-color: #5b441f;; //primary
+    color: #DDB46A; //secondary
+    &:hover {
+        background-color: #5b441f;;
+        color: #edd19f;
+        transition: 0.2s all ease-in-out;
+        transform: scale(1.03);
+    }
+}
+
+//button for logout
+.button-logout {
+    height: 34px;
+    line-height: normal;
+    border-radius: 0;
+    border-color: #5b441f;
+    font-weight: bold;
+    font-family: fonts.$font-serif;
+    background-color: #5b441f;; //primary
+    color: #DDB46A; //secondary
+    &:hover {
+        background-color: #5b441f;;
+        color: #edd19f;
+        transition: 0.2s all ease-in-out;
+        transform: scale(1.03);
+    }
+}
 

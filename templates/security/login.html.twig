@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+ <div class="container">
+    <div class="row mt-5">
+        <div class="col"></div>
+        <div class="col">
+            <form method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                {% if app.user %} 
+                    <div class="mb-3 text-center text-success form-log_success">
+                        Vous êtes bien connecté(e) en tant que {{ app.user.userIdentifier }} <a href="{{ path('app_logout') }}">
+                        <div class="mt-3 w-100 btn-sub_logout mb-2" >
+                    SE DÉCONNECTER
+                </div>
+                        </a>
+                    </div>
+                {% endif %}
+
+                <h1 class="mb-3 text-center form-title_style text-primary">Connexion au compte</h1>
+                <label for="inputEmail"></label>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Entrez votre adresse e-mail" autocomplete="email" required autofocus>
+                <label for="inputPassword"></label>
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Entrez votre mot de passe" autocomplete="current-password" required>
+
+                <input type="hidden" name="_csrf_token"
+                    value="{{ csrf_token('authenticate') }}">
+
+                {#
+                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                    See https://symfony.com/doc/current/security/remember_me.html
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" name="_remember_me"> Remember me
+                        </label>
+                    </div>
+                #}
+
+                <button class="mt-3 w-100 btn-sub_style mb-2" type="submit">
+                    SE CONNECTER
+                </button>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row mt-3 mb-5">
+        <div class="col"></div>
+        <div class="col text-center form-title_style text-primary">Pas encore de compte ? <span class="form-title_color text-secondary">
+        <a href="">
+        Inscrivez-vous</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right dishe-title_icon" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+        <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/></svg>
+        </span></div>
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}

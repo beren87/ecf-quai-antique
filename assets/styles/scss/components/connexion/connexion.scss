@@ -1,0 +1,25 @@
+@use "../../utils/main" as utils;
+@use "../../utils/fonts" as fonts;
+@use "../../utils/sizes" as sizes;
+@use "../../atoms/buttons" as button; 
+
+.btn-sub_style {
+    @extend .button-log;
+}
+
+.btn-sub_logout {
+    @extend .button-logout;
+    padding-top: 6px;
+}
+
+.form-title_style {
+    font-family: fonts.$font-serif;
+}
+
+.form-title_color {
+    font-family: fonts.$font-serif;
+}
+
+.form-log_success {
+    font-family: fonts.$font-serif;
+}
