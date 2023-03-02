@@ -22,7 +22,19 @@ class ReservationsController extends AbstractController
         $reservationForm = $this->createForm(ReservationsFormType::class, $reservation);
 
         //traite de la requete du formulaire
-        $reservationForm->handleRequest($request);    
+        $reservationForm->handleRequest($request); 
+        
+        if ($reservationForm ->isSubmitted() && $reservationForm->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($reservation);
+            $em->flush();
+
+            $reservationValid = $em->getRepository(Reservations::class)->findAll();
+            return $this->render('home/index.html.twig', [
+                'reservationValid' => $reservationValid,
+            ]);
+        }
+    
 
         return $this->render('reservations/index.html.twig', [
             'reservationForm' => $reservationForm->createView()
