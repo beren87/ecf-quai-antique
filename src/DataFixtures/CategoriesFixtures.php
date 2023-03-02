@@ -20,7 +20,7 @@ class CategoriesFixtures extends Fixture
         $category->setTitle('Matouille de Savoie');
         $category->setDescription('Matouille de Savoie, fondu de poireau, carottes glacées');
         $category->setPrice(24);
-        $manager->persist($category);
+        $manager->persist($category); 
 
         $manager->flush();
     }
