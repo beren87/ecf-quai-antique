@@ -18,7 +18,7 @@ class Reservations
     private ?string $name = null;
 
     #[ORM\Column]
-    private ?int $numberGuests = null;
+    private ?int $numberGuests = null; 
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
