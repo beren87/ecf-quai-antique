@@ -10,32 +10,22 @@ class CategoriesUnitTest extends TestCase
     {
         $categories = new Categories();
 
-        $categories->setTitle('titre');
-        $categories->setDescription('description');
-        $categories->setPrice(23.99);
+        $categories->setName('Entrées');
 
-        $this->assertTrue($categories->getTitle()=== 'titre');
-        $this->assertTrue($categories->getDescription()=== 'description');
-        $this->assertTrue($categories->getPrice()=== 23.99);
+        $this->assertTrue($categories->getName()=== 'Entrées');
     }
     public function testIsFalse()
     {
         $categories = new Categories();
 
-        $categories->setTitle('titre');
-        $categories->setDescription('description');
-        $categories->setPrice(23.99);
+        $categories->setName('Entrées');
 
-        $this->assertFalse($categories->getTitle()=== 'false');
-        $this->assertFalse($categories->getDescription()=== 'false');
-        $this->assertFalse($categories->getPrice()=== 233.99);
+        $this->assertFalse($categories->getName()=== 'false');
     }
     public function testIsEmpty()
     {
         $categories = new Categories();
 
-        $this->assertEmpty($categories->getTitle());
-        $this->assertEmpty($categories->getDescription());
-        $this->assertEmpty($categories->getPrice());
+        $this->assertEmpty($categories->getName());
     }
 }
