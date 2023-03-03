@@ -1,0 +1,70 @@
+@use "../../utils/main" as utils;
+@use "../../utils/fonts" as fonts;
+@use "../../utils/sizes" as sizes;
+@use "../../atoms/buttons" as button; 
+
+.container-brig_title {
+    font-size: sizes.$h2;
+    font-family: fonts.$font-serif;
+}
+ 
+.col-brig_text {
+    font-family: fonts.$font-serif;
+    font-size: sizes.$paragraphe;
+}
+
+.carousel-brig_text {
+    font-family: fonts.$font-serif;
+    font-size: sizes.$title;
+    color: #F2F2F2;
+}
+
+.carousel-brig_fonction {
+    font-family: fonts.$font-serif;
+    font-size: sizes.$paragraphe;
+    color: #F2F2F2;
+}
+
+.carousel-brig_bg {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-item {
+    height: 600px;
+}
+
+.col-brig_scroller {
+    overflow-y: scroll;
+    height: 600px;
+    width: auto;
+    scrollbar-width: thin;
+}
+
+// ============= START media queries brigade text =================//
+
+//from 768px to higher ==> text size = $paragraphe
+@media (min-width: 768px) and (max-width: 992px){
+    .col-brig_text {
+        font-size: sizes.$mq-nav16;
+    }
+    .carousel-item {
+        height: 500px;
+    }
+}
+
+//sm $paragraphe
+@media (max-width: 576px) {
+    .col-brig_text {
+        font-size: sizes.$paragraphe;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 800px;
+    }
+}
+
+//xs $paragraphe
+
+// ============= END media queries brigade text =================//

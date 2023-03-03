@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservations - Quai Antique{% endblock %}
+
+{% block body %}
+<div class="row">
+        <div class="col"></div>
+        <div class="col">
+        <h1 class="mb-3 text-center form-title_style mt-3 text-primary">Réservation</h1>
+
+            {{ form_start(reservationForm) }}
+
+                {{ form_row(reservationForm.name) }}
+                {{ form_row(reservationForm.numberGuests) }}
+                {{ form_row(reservationForm.date) }}
+                {{ form_row(reservationForm.hours) }}
+                {{ form_row(reservationForm.allergies) }} 
+                
+              
+                <button type="submit" class="mt-3 w-100 btn-sub_style mb-2">RÉSERVER</button>
+            {{ form_end(reservationForm) }}
+        
+        </div>
+        <div class="col"></div>
+    </div>  
+</div>
+<div class="row mt-3">
+        <div class="col"></div>
+        <div class="col text-center form-title_style text-danger">
+            Attention, le nombre de place est 
+            <span class="form-title_color danger">limité</span>
+        </div>
+        <div class="col"></div>
+    </div>
+
+</div>
+
+{% endblock %}

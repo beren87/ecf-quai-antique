@@ -1,0 +1,326 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les vins - Quai Antique{% endblock %}
+
+{% block body %}
+<section>
+    <div class="border-bottom"></div>
+    <div class="row g-sm-0 g-0">
+        <div class="col-xl col-lg col-md "></div>
+        <div class="col-xl-2 col-lg-1 col-md"></div>
+        <div class="col col-xl col-lg col-md py-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="94" fill="currentColor" class="bi bi-chevron-left text-light" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/></svg>
+        </div>
+        <div class="col-xl-4 col-lg-3 col-md-4 col-sm-4 col-4"><div class="text-center mt-5 mb-3 dishe-title pe-xl-5 pe-sm-1 col-title_mq text-primary">Les vins</div></div>
+        <div class="col col-xl col-lg col-sm col py-4">
+        <a href="{{ path('app_noscocktails')}}" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="94" fill="currentColor" class="bi bi-chevron-right dishe-title_icon" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg>
+        </a>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md col-sm col mt-5 py-5 text-back_style text-back_size text-primary">page suivante - <span class="text-back_home text-secondary">Nos cocktails</span></div> 
+        <div class="col col-xl col-lg col-md col-sm col "></div>
+    </div>
+    <div class="row mb-5">
+        <div class="col"></div>
+        <div class="col-xl-10 border-bottom"></div>
+        <div class="col"></div>
+    </div>
+<!--Vins Blanc-->
+    <div class="row mb-2 text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">V</span>ins <span class="dishes-letter_fonts">B</span>lanc</h3></div>
+                <div class="col-xl-6 col-md-6 "></div>
+            </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Description</div>
+        <div class="col">verre 12cl</div>
+        <div class="col">demi-bouteille 37,5cl</div>
+        <div class="col">bouteille 75cl</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mt-5 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Grande Réserve</div>
+        <div class="col dishes_price">4€</div>
+        <div class="col dishes_price">12€</div>
+        <div class="col dishes_price">22,40€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Apremont « Mr Chapot »</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Grande Réserve</div>
+        <div class="col dishes_price">4€</div>
+        <div class="col dishes_price">12€</div>
+        <div class="col dishes_price">22,40€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Chignin « Mr Felix »</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Saint-Germain</div>
+        <div class="col dishes_price">5€</div>
+        <div class="col dishes_price">15€</div>
+        <div class="col dishes_price">27,60€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Roussette de Savoie « Altesse »</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Saint-Germain</div>
+        <div class="col dishes_price">5€</div>
+        <div class="col dishes_price">15€</div>
+        <div class="col dishes_price">27,60€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Chardonnay « Sous la chapelle »</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Saint-Germain</div>
+        <div class="col dishes_price">5€</div>
+        <div class="col dishes_price">15€</div>
+        <div class="col dishes_price">27,60€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Roussette de Savoie cru marestel</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Vin de Savoie</div>
+        <div class="col dishes_price">5€</div>
+        <div class="col dishes_price">15€</div>
+        <div class="col dishes_price">27,60€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Chignin « Authentique »</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Saint-Germain</div>
+        <div class="col dishes_price">6€</div>
+        <div class="col dishes_price">18€</div>
+        <div class="col dishes_price">31,50€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Roussette de Savoie cru Marestel « Terre natale »</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+        <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Cuvée Royale</div>
+        <div class="col dishes_price">7€</div>
+        <div class="col dishes_price">20€</div>
+        <div class="col dishes_price">38,80€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-5 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Apremont « Mme Thevenon »</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <!--Vins Rosé-->
+    <div class="row mt-5 mb-2 text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">V</span>ins <span class="dishes-letter_fonts">R</span>osé</h3></div>
+                <div class="col-xl-6 col-md-6 "></div>
+            </div>
+    <div class="row mt-5 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Saint-Germain</div>
+        <div class="col dishes_price">4€</div>
+        <div class="col dishes_price">12€</div>
+        <div class="col dishes_price">22,40€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Terre natale « Gamay Rosé »</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Vin de Savoie</div>
+        <div class="col dishes_price">4€</div>
+        <div class="col dishes_price">12€</div>
+        <div class="col dishes_price">22,40€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Gamay rosé « Authentique »</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Grande Réserve</div>
+        <div class="col dishes_price">6€</div>
+        <div class="col dishes_price">18€</div>
+        <div class="col dishes_price">31,50€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Gamay rosé « Authentique »</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <!--Vins Rouge-->
+    <div class="row mt-5 mb-2 text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">V</span>ins <span class="dishes-letter_fonts">R</span>ouge</h3></div>
+                <div class="col-xl-6 col-md-6 "></div>
+            </div>
+    <div class="row mt-5 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Saint-Romain</div>
+        <div class="col dishes_price">6€</div>
+        <div class="col dishes_price">18€</div>
+        <div class="col dishes_price">31,50€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Mondeuse cru Jongieux</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Grande Réserve</div>
+        <div class="col dishes_price">6€</div>
+        <div class="col dishes_price">18€</div>
+        <div class="col dishes_price">31,50€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Gamay cru Chautagne « Mr Thonet »</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Fabien Trosset</div>
+        <div class="col dishes_price">6€</div>
+        <div class="col dishes_price">18€</div>
+        <div class="col dishes_price">31,50€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Mondeuse cru Arbin « Mr Trosset »</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine Saint-Romaint</div>
+        <div class="col dishes_price">8€</div>
+        <div class="col dishes_price">22€</div>
+        <div class="col dishes_price">41,60€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-2 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Pinot noir cru Jongieux</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3">Domaine de la Bertinière</div>
+        <div class="col dishes_price">11€</div>
+        <div class="col dishes_price">26€</div>
+        <div class="col dishes_price">53,80€</div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+    <div class="row mb-5 dishes text-primary">
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+        <div class="col-xl-3 col-md-3 col-sm-3 col-3 dishes_dom">Pinot noir « Domaine de la Bertinière »</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+    </div>
+
+    <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-9"></div>
+            <div class="col me-sm-4 me-2">
+                <a href="{{path('app_lesvins')}}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-double-up dishe-title_icon" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"/>
+                <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>
+                </a>
+            </div>
+        </div>
+</section>
+{% endblock %}

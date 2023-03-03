@@ -1,0 +1,38 @@
+@use "../../utils/main" as utils;
+@use "../../utils/fonts" as fonts;
+@use "../../utils/sizes" as sizes;
+@use "../../atoms/buttons" as button; 
+
+// ***************** DISHES *****************
+
+.paragraphe-letter_all {
+    font-size: sizes.$paragraphe;
+    font-family: fonts.$font-serif;
+}
+
+.dishes-text_flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.dishes-btn_flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn_design-carte {
+    @extend .button-carte;
+}
+
+// ============= START media queries dishes & wines btn =================//
+
+//from <=576px ==> line arround buttons 
+@media (max-width: 767px) {
+    .btn_design-carte {
+        border: 0.5px solid #5b441f;
+    }
+}
+
+// ============= END media queries dishes & wines btn =================//
+
+// ***************** DISHES *****************
