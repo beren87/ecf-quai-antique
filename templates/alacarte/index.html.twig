@@ -1,0 +1,377 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}À la carte - Quai Antique{% endblock %}
+
+{% block body %}
+<section>
+    <div class="border-bottom"></div>
+    <div class="row g-sm-0 g-0">
+        <div class="col-xl col-lg col-md "></div>
+        <div class="col-xl-2 col-lg-1 col-md"></div>
+        <div class="col col-xl col-lg col-md py-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="94" fill="currentColor" class="bi bi-chevron-left text-light" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/></svg>
+        </div>
+        <div class="col-xl-4 col-lg-3 col-md-4 col-sm-4 col-4"><div class="text-center mt-5 mb-3 dishe-title pe-xl-5 pe-sm-1 col-title_mq text-primary">À la carte</div></div>
+        <div class="col col-xl col-lg col-sm col py-4">
+        <a href="{{ path('app_nosmenus')}}" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="94" height="94" fill="currentColor" class="bi bi-chevron-right dishe-title_icon" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg>
+        </a>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md col-sm col mt-5 py-5 text-back_style text-back_size text-primary">page suivante - <span class="text-back_home text-secondary">Nos menus</span></div> 
+        <div class="col col-xl col-lg col-md col-sm col "></div>
+    </div>
+    <div class="row mb-5">
+        <div class="col"></div>
+        <div class="col-xl-10 border-bottom"></div>
+        <div class="col"></div>
+    </div>
+<!-- ================== Start Entrées ========================-->            
+            <div class="row mb-2 text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">E</span>ntrées</h3></div>
+                <div class="col-xl-6 col-md-6 "></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Soupe à l’oignon</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row dishes mb-3">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Soupe à l’oignon, crouton aillés, gratiné de parmesan</div>
+                <div class="col dishes_price">16€</div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Royale d’artichaud</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row dishes mb-3">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Royale d’artichaud, chips de vitelotte, vinaigrette du soleil</div>
+                <div class="col dishes_price">18€</div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Rouleau de grison</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row dishes mb-3">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Rouleau de grison, mousseline de céleri, tomme de Savoie</div>
+                <div class="col dishes_price">21€</div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Lingot de foie</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-5 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Lingot de foie gras de canard et pain d’épices, fine gelée de cerise noire</div>
+                <div class="col dishes_price">22€</div>
+                <div class="col"></div>
+            </div>
+<!-- ================== END Entrées ========================-->            
+<!-- ================== START Plats spécialités savoyardes ========================-->            
+            <div class="row mb-2 text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">P</span>lats spécialités savoyardes</h3></div>
+                <div class="col-xl-6 col-md-6"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Tartiflette aux cèpes</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div> 
+            <div class="row dishes mb-3">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Tartiflette aux cèpes, panier de roquette, nid de pignons de pin</div>
+                <div class="col dishes_price">24€</div>
+                <div class="col"></div>
+            </div> 
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Fondu Roussette de Savoie</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row dishes mb-3">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Fondu Roussette de Savoie, pain charpentier, trio de fromages</div>
+                <div class="col dishes_price">24€</div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Raclette aux herbes</div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row dishes mb-3">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Raclette aux herbes, grenaille en robe des champs, caillasse de Savoie</div>
+                <div class="col dishes_price">24€</div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Matouille de Savoie</div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-5 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Matouille de Savoie, fondu de poireau, carottes glacées</div>
+                <div class="col dishes_price">24€</div>
+                <div class="col"></div>
+            </div>
+<!-- ================== END Plats spécialités savoyardes ========================-->    
+<!-- ================== START Plats de viande ========================-->            
+            <div class="row mb-2 text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">P</span>lats de viande</h3></div>
+                <div class="col-xl-6 col-md-6"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Diots fumées</div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-3 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Diots fumées au vin blanc Roussette de Savoie, crème ciboulette</div>
+                <div class="col dishes_price">26€</div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Poularde parfum pied-de-lion</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-3 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Poularde parfum pied-de-lion, sauce aux truffes noires, chanterelles sautées</div>
+                <div class="col dishes_price">28€</div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Tournedos</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-5 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Tournedos de filet de bœuf, jus au porto rouge</div>
+                <div class="col dishes_price">30€</div>
+                <div class="col"></div>
+            </div>
+<!-- ================== END Plats de viande ========================-->    
+<!-- ================== START Plats de poisson ========================-->            
+            <div class="row text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">P</span>lats de poisson</h3></div>
+                <div class="col-xl-6 col-md-6"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Omble chevalier</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-3 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Omble chevalier, genevoise pinot noir, écrasé de fenouil</div>
+                <div class="col dishes_price">31€</div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Lotte sur lit de poireau</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-3 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Lotte sur lit de poireau au curry, émulsion de langoustine</div>
+                <div class="col dishes_price">34€</div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 fw-bold text-primary">Suprême de turbot</div>
+                <div class="col dishes_price">37€</div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-5 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Suprême de turbot au jus de légumes et citron vert</div>
+                <div class="col dishes_price">37€</div>
+                <div class="col"></div>
+            </div>
+<!-- ================== END Plats de poisson ========================-->   
+<!-- ================== START Plateau de fromages et pains ========================-->            
+            <div class="row mb-2 text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">P</span>lateau de fromages et pains</h3></div>
+                <div class="col-xl-6 col-md-6"></div>
+            </div>
+            <div class="row dishes">
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5"><h6>•<span class="text-decoration-underline"> Charette de nos pâturages</span></h6></div>
+                <div class="col dishes_price">15€</div>
+                <div class="col-xl-4 col-md-4 col-sm-4 col-4"></div>
+            </div>
+
+            <div class="row mb-3 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Abondance, Beaufort et Tommette de chèvre</div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+                    <div class="row dishes">
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5"><h6>•<span class="text-decoration-underline"> Parfum de nos campagnes dans son enclos de verdures</span></h6></div>
+                <div class="col dishes_price">15€</div>
+                <div class="col-xl-4 col-md-4 col-sm-4 col-4"></div>
+            </div>
+
+            <div class="row mb-3 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Emmental de Savoie, Tome des Bauges, Reblochon</div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+                    <div class="row dishes">
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5"><h6>•<span class="text-decoration-underline"> Les offrandes du berger</span></h6></div>
+                <div class="col dishes_price">15€</div>
+                <div class="col-xl-4 col-md-4 col-sm-4 col-4"></div>
+            </div>
+
+            <div class="row mb-3 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Chevrotin, Roulé de chèvre frais, Séchon de chèvre</div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+<!-- ================== END Plateau de fromages et pains ========================-->       
+<!-- ================== START Pains ========================-->            
+            <div class="row text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">P</span>ains :</h3></div>
+                <div class="col-xl-6 col-md-6"></div>
+            </div>
+            <div class="row mb-1 dishes_price">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 col-sm-4 col-4 ps-5"><span class="fst-italic dishes_bread">à discretion</span></div>
+                <div class="col-xl-6 col-md-6 col-sm-6 col-6"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Pain aux figues-noix</div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Pain aux sésames</div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Pain bûcheron</div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-5 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Pain seigle des montagnes</div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </div>
+<!-- ================== END Pains ========================--> 
+<!-- ================== START Desserts ========================--> 
+            <div class="row mb-2 text-primary">
+                <div class="col"></div>
+                <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="dishes-fonts"><span class="dishes-letter_fonts">D</span>esserts</h3></div>
+                <div class="col-xl-6 col-md-6"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary fw-bold">Mousse au chocolat</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-3 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Mousse au chocolat et caramel mou à la fleur de sel</div>
+                <div class="col dishes_price">11€</div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary fw-bold">Sucrissime crème pâtissière</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-3 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Sucrissime crème pâtissière, zeste d’orange</div>
+                <div class="col dishes_price">12€</div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary fw-bold">Super moelleux</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-3 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Super moelleux de biscuit de Savoie</div>
+                <div class="col dishes_price">13€</div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-1 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary fw-bold">Crumble vanille-tonka</div>
+                <div class="col dishes_price"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row mb-5 dishes">
+                <div class="col"></div>
+                <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary">-	Crumble vanille-tonka, gel de citron yuzu</div>
+                <div class="col dishes_price">14€</div>
+                <div class="col"></div>
+            </div>
+<!-- ================== END Desserts ========================--> 
+
+<div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-9"></div>
+            <div class="col me-sm-4 me-2">
+                <a href="{{path('app_alacarte')}}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-double-up dishe-title_icon" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"/>
+                <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>
+                </a>
+            </div>
+        </div>
+</section>
+{% endblock %}

@@ -1,0 +1,151 @@
+@use "../utils/main" as utils;
+@use "../utils/fonts" as fonts;
+@use "../utils/sizes" as sizes;
+@use "../atoms/buttons" as button;
+
+// ************** NAVBAR ********************* 
+
+.header-navbar_logo {
+    @include utils.flex;
+    line-height: sizes.$line;
+    background-color: #5b441f;  
+    color: #DDB46A;
+    font-family: fonts.$font-cursive;
+    font-size: sizes.$logo;
+}
+
+.header-navbar_menus {
+    color: #5b441f;   
+}
+
+.header-navbar_list {
+    font-family: fonts.$font-serif;
+}
+
+.header-navbar_hover {
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0%;
+        height: 1px;
+        background: #5b441f;  
+        transition: width 0.2s ease-in-out;
+    }
+    &:hover::after {
+        width: 5.8%;
+    }
+}
+
+.btn_design{
+    @extend .button;
+}
+
+// ************** NAVBAR ********************* 
+
+// ************** COVER ********************** 
+
+.cover-icon_color {
+   color: #5b441f;
+}
+
+@media (max-width: 670px){
+    .col-present_icon {
+        display: none;
+    }
+}
+
+.home-cover_paragraphe {
+    font-family: fonts.$font-serif;
+    font-size: sizes.$paragraphe;
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5vh;
+}
+
+.header-cover_text {
+    font-family: fonts.$font-serif;
+    font-size: sizes.$paragraphe;
+}
+
+// ************** COVER ********************* 
+
+// ************** PREVIEW-GALLERIES ********************* 
+
+.title-letter_all {
+    font-size: sizes.$h2;
+    font-family: fonts.$font-serif;
+}
+
+.title-gallery_style {
+    font-family: fonts.$font-serif;
+    font-size: sizes.$h2;
+}
+
+.title-letter_first {
+    font-family: fonts.$font-cursive;
+    font-size: sizes.$logo;
+} 
+
+.home-galleries_reservation {
+    font-family: fonts.$font-serif;
+    font-family: sizes.$h2;
+}
+
+.home-galleries_text { 
+    position: absolute;
+    font-family: fonts.$font-serif;
+    font-size: sizes.$paragraphe;
+    opacity: 0;
+}
+
+// ======= zoom, scale, hidden & opcaty ======
+
+.home-galleries_zoom {
+    overflow: hidden;
+    transition: transform .1s;
+}
+
+.home-galleries_photos {
+    width: 100%; 
+    &:hover {
+        opacity: 0.50;
+        transform: scale(1.2);
+        transition: 1s;
+        filter: blur(1px);
+        & ~.home-galleries_text {
+            opacity: 1;
+        }
+    }
+}
+
+// ======= zoom, scale, hidden & opcaty ======
+
+.text-back_style{
+    font-size: sizes.$mq-nav11;
+    font-family: fonts.$font-serif;
+}
+
+.text-back_home {
+    font-family: fonts.$font-cursive;
+    font-size: sizes.$paragraphe;
+}
+
+// ************** PREVIEW-GALLERIES ********************* 
+
+// ************** FOOTER ********************* 
+
+.footer_logo {   
+    font-family: fonts.$font-cursive;
+    font-size: sizes.$logo;
+}
+
+.footer_list {
+    font-family: fonts.$font-serif;
+}
+
+.icon_color {
+    @include utils.icon;
+}
+
+// ************** FOOTER ********************* 
