@@ -48,30 +48,11 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\OneToMany(mappedBy: 'users', targetEntity: Reservations::class)]
     private Collection $reservations;
-
-    #[ORM\OneToMany(mappedBy: 'users', targetEntity: Menus::class)]
-    private Collection $menuses;
-
-    #[ORM\OneToMany(mappedBy: 'users', targetEntity: Images::class)]
-    private Collection $images;
-
-    #[ORM\OneToMany(mappedBy: 'users', targetEntity: OpeningHours::class)]
-    private Collection $openingHours;
-
-    #[ORM\OneToMany(mappedBy: 'users', targetEntity: Footer::class)]
-    private Collection $footers;
-
-    #[ORM\OneToMany(mappedBy: 'users', targetEntity: GuestLimit::class)]
-    private Collection $guestLimits;
+   
 
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
-        $this->menuses = new ArrayCollection();
-        $this->images = new ArrayCollection();
-        $this->openingHours = new ArrayCollection();
-        $this->footers = new ArrayCollection();
-        $this->guestLimits = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -252,157 +233,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-
-    /**
-     * @return Collection<int, Menus>
-     */
-    public function getMenuses(): Collection
-    {
-        return $this->menuses;
-    }
-
-    public function addMenus(Menus $menus): self
-    {
-        if (!$this->menuses->contains($menus)) {
-            $this->menuses->add($menus);
-            $menus->setUsers($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMenus(Menus $menus): self
-    {
-        if ($this->menuses->removeElement($menus)) {
-            // set the owning side to null (unless already changed)
-            if ($menus->getUsers() === $this) {
-                $menus->setUsers(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Images>
-     */
-    public function getImages(): Collection
-    {
-        return $this->images;
-    }
-
-    public function addImage(Images $image): self
-    {
-        if (!$this->images->contains($image)) {
-            $this->images->add($image);
-            $image->setUsers($this);
-        }
-
-        return $this;
-    }
-
-    public function removeImage(Images $image): self
-    {
-        if ($this->images->removeElement($image)) {
-            // set the owning side to null (unless already changed)
-            if ($image->getUsers() === $this) {
-                $image->setUsers(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, OpeningHours>
-     */
-    public function getOpeningHours(): Collection
-    {
-        return $this->openingHours;
-    }
-
-    public function addOpeningHour(OpeningHours $openingHour): self
-    {
-        if (!$this->openingHours->contains($openingHour)) {
-            $this->openingHours->add($openingHour);
-            $openingHour->setUsers($this);
-        }
-
-        return $this;
-    }
-
-    public function removeOpeningHour(OpeningHours $openingHour): self
-    {
-        if ($this->openingHours->removeElement($openingHour)) {
-            // set the owning side to null (unless already changed)
-            if ($openingHour->getUsers() === $this) {
-                $openingHour->setUsers(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Footer>
-     */
-    public function getFooters(): Collection
-    {
-        return $this->footers;
-    }
-
-    public function addFooter(Footer $footer): self
-    {
-        if (!$this->footers->contains($footer)) {
-            $this->footers->add($footer);
-            $footer->setUsers($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFooter(Footer $footer): self
-    {
-        if ($this->footers->removeElement($footer)) {
-            // set the owning side to null (unless already changed)
-            if ($footer->getUsers() === $this) {
-                $footer->setUsers(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, GuestLimit>
-     */
-    public function getGuestLimits(): Collection
-    {
-        return $this->guestLimits;
-    }
-
-    public function addGuestLimit(GuestLimit $guestLimit): self
-    {
-        if (!$this->guestLimits->contains($guestLimit)) {
-            $this->guestLimits->add($guestLimit);
-            $guestLimit->setUsers($this);
-        }
-
-        return $this;
-    }
-
-    public function removeGuestLimit(GuestLimit $guestLimit): self
-    {
-        if ($this->guestLimits->removeElement($guestLimit)) {
-            // set the owning side to null (unless already changed)
-            if ($guestLimit->getUsers() === $this) {
-                $guestLimit->setUsers(null);
-            }
-        }
-
-        return $this;
-    }
-
+   
      public function __toString(): string    
     {
           return $this->lastname;
