@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Dishes;
+use App\Entity\Dishe;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Dishes>
+ * @extends ServiceEntityRepository<Dishe>
  *
- * @method Dishes|null find($id, $lockMode = null, $lockVersion = null)
- * @method Dishes|null findOneBy(array $criteria, array $orderBy = null)
- * @method Dishes[]    findAll()
- * @method Dishes[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Dishe|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Dishe|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Dishe[]    findAll()
+ * @method Dishe[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class DishesRepository extends ServiceEntityRepository
+class DisheRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Dishes::class);
+        parent::__construct($registry, Dishe::class);
     }
 
-    public function save(Dishes $entity, bool $flush = false): void
+    public function save(Dishe $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class DishesRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Dishes $entity, bool $flush = false): void
+    public function remove(Dishe $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class DishesRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Dishes[] Returns an array of Dishes objects
+//     * @return Dishe[] Returns an array of Dishe objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class DishesRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Dishes
+//    public function findOneBySomeField($value): ?Dishe
 //    {
 //        return $this->createQueryBuilder('d')
 //            ->andWhere('d.exampleField = :val')
