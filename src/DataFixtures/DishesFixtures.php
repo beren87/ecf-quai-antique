@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Dishes;
+use App\Entity\Dishe;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -15,7 +15,7 @@ class DishesFixtures extends Fixture implements DependentFixtureInterface
         $faker = Factory::create('fr_FR');
         
         for($di = 1; $di <= 5; $di++){
-            $dishe = new Dishes();
+            $dishe = new Dishe();
             $dishe->setTitle($faker->text(5))
                   ->setDescription($faker->text(15))
                   ->setPrice($faker->randomFloat(11, 50));
