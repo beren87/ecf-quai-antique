@@ -2,12 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\MenusRepository;
+use App\Repository\ImageRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: MenusRepository::class)]
-class Menus
+#[ORM\Entity(repositoryClass: ImageRepository::class)]
+class Image
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -20,12 +20,8 @@ class Menus
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column]
-    private ?float $price = null;
-
-    #[ORM\ManyToOne(inversedBy: 'menuses')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Users $users = null;
+    #[ORM\ManyToOne(inversedBy: 'images')]
+    private ?Dishe $dishe = null;
 
     public function getId(): ?int
     {
@@ -56,26 +52,14 @@ class Menus
         return $this;
     }
 
-    public function getPrice(): ?float
+    public function getDishe(): ?Dishe
     {
-        return $this->price;
+        return $this->dishe;
     }
 
-    public function setPrice(float $price): self
+    public function setDishe(?Dishe $dishe): self
     {
-        $this->price = $price;
-
-        return $this;
-    }
-
-    public function getUsers(): ?Users
-    {
-        return $this->users;
-    }
-
-    public function setUsers(?Users $users): self
-    {
-        $this->users = $users;
+        $this->dishe = $dishe;
 
         return $this;
     }

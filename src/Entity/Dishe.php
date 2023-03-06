@@ -28,9 +28,17 @@ class Dishe
     #[ORM\ManyToMany(targetEntity: Categorie::class, mappedBy: 'dishe')]
     private Collection $categories;
 
+    #[ORM\OneToMany(mappedBy: 'dishe', targetEntity: Image::class)]
+    private Collection $images;
+
+    #[ORM\ManyToMany(targetEntity: Menu::class, mappedBy: 'dishe')]
+    private Collection $menus;
+
     public function __construct()
     {
         $this->categories = new ArrayCollection();
+        $this->images = new ArrayCollection();
+        $this->menus = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -96,6 +104,63 @@ class Dishe
     {
         if ($this->categories->removeElement($category)) {
             $category->removeDishe($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Image>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Image $image): self
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setDishe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): self
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getDishe() === $this) {
+                $image->setDishe(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Menu>
+     */
+    public function getMenus(): Collection
+    {
+        return $this->menus;
+    }
+
+    public function addMenu(Menu $menu): self
+    {
+        if (!$this->menus->contains($menu)) {
+            $this->menus->add($menu);
+            $menu->addDishe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMenu(Menu $menu): self
+    {
+        if ($this->menus->removeElement($menu)) {
+            $menu->removeDishe($this);
         }
 
         return $this;
