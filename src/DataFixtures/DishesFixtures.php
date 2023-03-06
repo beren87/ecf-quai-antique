@@ -18,7 +18,7 @@ class DishesFixtures extends Fixture implements DependentFixtureInterface
             $dishe = new Dishe();
             $dishe->setTitle($faker->text(5))
                   ->setDescription($faker->text(15))
-                  ->setPrice($faker->randomFloat(11, 50));
+                  ->setPrice($faker->randomFloat(11.50, 50.99));
             $category = $this->getReference('category_'. rand(1, 7));
             $dishe->getCategories($category);
            
