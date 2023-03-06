@@ -1,47 +1,36 @@
 <?php
 
 namespace App\Tests;
-use App\Entity\Users;
-use App\Entity\OpeningHours;
-use DateTime;
+use App\Entity\OpeningHour;
 use PHPUnit\Framework\TestCase;
 
 class OpeningHoursUnitTest extends TestCase
 {
     public function testIsTrue()
     {
-        $users = new Users();
-        $openinghours = new OpeningHours();
-        $datetime = new Datetime();
+        $openinghour = new OpeningHour();
 
-        $openinghours->setDays('jour');
-        $openinghours->setHours('heure');
-        $openinghours->setUsers($users);
+        $openinghour->setDays('jour');
+        $openinghour->setHours('heure');
 
-        $this->assertTrue($openinghours->getDays()=== 'jour');
-        $this->assertTrue($openinghours->getHours()=== 'heure');
-        $this->assertTrue($openinghours->getUsers()=== $users);
+        $this->assertTrue($openinghour->getDays()=== 'jour');
+        $this->assertTrue($openinghour->getHours()=== 'heure');
     }
     public function testIsFalse()
     {
-        $users = new Users();
-        $openinghours = new OpeningHours();
-        $datetime = new Datetime();
+        $openinghour = new OpeningHour();
 
-        $openinghours->setDays('jour');
-        $openinghours->setHours('heure');
-        $openinghours->setUsers($users);
+        $openinghour->setDays('jour');
+        $openinghour->setHours('heure');
 
-        $this->assertFalse($openinghours->getDays()=== 'false');
-        $this->assertFalse($openinghours->getHours()=== 'false');
-        $this->assertFalse($openinghours->getUsers()=== new Users());
+        $this->assertFalse($openinghour->getDays()=== 'false');
+        $this->assertFalse($openinghour->getHours()=== 'false');
     }
     public function testIsEmpty()
     {
-        $openinghours = new OpeningHours();
+        $openinghour = new OpeningHour();
         
-        $this->assertEmpty($openinghours->getDays());
-        $this->assertEmpty($openinghours->getHours());
-        $this->assertEmpty($openinghours->getUsers());
+        $this->assertEmpty($openinghour->getDays());
+        $this->assertEmpty($openinghour->getHours());
     }
 }
