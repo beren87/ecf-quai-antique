@@ -1,49 +1,43 @@
 <?php
 
 namespace App\Tests;
-use App\Entity\Users;
-use App\Entity\Menus;
+use App\Entity\Menu;
 use PHPUnit\Framework\TestCase;
 
 class MenusUnitTest extends TestCase
 {
     public function testIsTrue()
     {
-        $users = new Users();
-        $menus = new Menus();
+        
+        $menu = new Menu();
 
-        $menus->setTitle('titre');
-        $menus->setDescription('description');
-        $menus->setPrice(23.99);
-        $menus->setUsers($users);
+        $menu->setTitle('titre');
+        $menu->setDescription('description');
+        $menu->setPrice(23.99);
 
-        $this->assertTrue($menus->getTitle()=== 'titre');
-        $this->assertTrue($menus->getDescription()=== 'description');
-        $this->assertTrue($menus->getPrice()=== 23.99);
-        $this->assertTrue($menus->getUsers()=== $users);
+        $this->assertTrue($menu->getTitle()=== 'titre');
+        $this->assertTrue($menu->getDescription()=== 'description');
+        $this->assertTrue($menu->getPrice()=== 23.99);
     }
     public function testIsFalse()
     {
-        $users = new Users();
-        $menus = new Menus();
+        
+        $menu = new Menu();
 
-        $menus->setTitle('titre');
-        $menus->setDescription('description');
-        $menus->setPrice(23.99);
-        $menus->setUsers($users);
+        $menu->setTitle('titre');
+        $menu->setDescription('description');
+        $menu->setPrice(23.99);
 
-        $this->assertFalse($menus->getTitle()=== 'false');
-        $this->assertFalse($menus->getDescription()=== 'false');
-        $this->assertFalse($menus->getPrice()=== 233.99);
-        $this->assertFalse($menus->getUsers()=== new Users());
+        $this->assertFalse($menu->getTitle()=== 'false');
+        $this->assertFalse($menu->getDescription()=== 'false');
+        $this->assertFalse($menu->getPrice()=== 233.99);
     }
     public function testIsEmpty()
     {
-        $menus = new Menus();
+        $menu = new Menu();
 
-        $this->assertEmpty($menus->getTitle());
-        $this->assertEmpty($menus->getDescription());
-        $this->assertEmpty($menus->getPrice());
-        $this->assertEmpty($menus->getUsers());
+        $this->assertEmpty($menu->getTitle());
+        $this->assertEmpty($menu->getDescription());
+        $this->assertEmpty($menu->getPrice());
     }
 }
