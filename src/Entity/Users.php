@@ -55,9 +55,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'users', targetEntity: Images::class)]
     private Collection $images;
 
-    #[ORM\OneToMany(mappedBy: 'users', targetEntity: Dishes::class)]
-    private Collection $dishes;
-
     #[ORM\OneToMany(mappedBy: 'users', targetEntity: OpeningHours::class)]
     private Collection $openingHours;
 
@@ -72,7 +69,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         $this->reservations = new ArrayCollection();
         $this->menuses = new ArrayCollection();
         $this->images = new ArrayCollection();
-        $this->dishes = new ArrayCollection();
         $this->openingHours = new ArrayCollection();
         $this->footers = new ArrayCollection();
         $this->guestLimits = new ArrayCollection();
@@ -311,36 +307,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($image->getUsers() === $this) {
                 $image->setUsers(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Dishes>
-     */
-    public function getDishes(): Collection
-    {
-        return $this->dishes;
-    }
-
-    public function addDish(Dishes $dish): self
-    {
-        if (!$this->dishes->contains($dish)) {
-            $this->dishes->add($dish);
-            $dish->setUsers($this);
-        }
-
-        return $this;
-    }
-
-    public function removeDish(Dishes $dish): self
-    {
-        if ($this->dishes->removeElement($dish)) {
-            // set the owning side to null (unless already changed)
-            if ($dish->getUsers() === $this) {
-                $dish->setUsers(null);
             }
         }
 
