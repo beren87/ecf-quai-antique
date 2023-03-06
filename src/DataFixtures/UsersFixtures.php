@@ -8,7 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 Use Faker\Factory;
 Use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-class UsersFixtures extends Fixture
+class UsersFixtures extends Fixture 
 {
     private $encoder;
 
@@ -52,4 +52,7 @@ class UsersFixtures extends Fixture
 
         $manager->flush();
     }
+    
 }
+
+?>

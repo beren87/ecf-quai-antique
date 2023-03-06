@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\OpeningHours;
+use App\Entity\OpeningHour;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<OpeningHours>
+ * @extends ServiceEntityRepository<OpeningHour>
  *
- * @method OpeningHours|null find($id, $lockMode = null, $lockVersion = null)
- * @method OpeningHours|null findOneBy(array $criteria, array $orderBy = null)
- * @method OpeningHours[]    findAll()
- * @method OpeningHours[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method OpeningHour|null find($id, $lockMode = null, $lockVersion = null)
+ * @method OpeningHour|null findOneBy(array $criteria, array $orderBy = null)
+ * @method OpeningHour[]    findAll()
+ * @method OpeningHour[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class OpeningHoursRepository extends ServiceEntityRepository
+class OpeningHourRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, OpeningHours::class);
+        parent::__construct($registry, OpeningHour::class);
     }
 
-    public function save(OpeningHours $entity, bool $flush = false): void
+    public function save(OpeningHour $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class OpeningHoursRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(OpeningHours $entity, bool $flush = false): void
+    public function remove(OpeningHour $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class OpeningHoursRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return OpeningHours[] Returns an array of OpeningHours objects
+//     * @return OpeningHour[] Returns an array of OpeningHour objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class OpeningHoursRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?OpeningHours
+//    public function findOneBySomeField($value): ?OpeningHour
 //    {
 //        return $this->createQueryBuilder('o')
 //            ->andWhere('o.exampleField = :val')
