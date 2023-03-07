@@ -18,13 +18,9 @@ class Categorie
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\ManyToMany(targetEntity: Dishe::class, inversedBy: 'categories')]
-    private Collection $dishe;
+    #[ORM\ManyToOne(inversedBy: 'categories')]
+    private ?Dishe $dishe = null;
 
-    public function __construct()
-    {
-        $this->dishe = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -43,27 +39,16 @@ class Categorie
         return $this;
     }
 
-    /**
-     * @return Collection<int, Dishe>
-     */
-    public function getDishe(): Collection
+    public function getDishe(): ?Dishe
     {
         return $this->dishe;
     }
 
-    public function addDishe(Dishe $dishe): self
+    public function setDishe(?Dishe $dishe): self
     {
-        if (!$this->dishe->contains($dishe)) {
-            $this->dishe->add($dishe);
-        }
+        $this->dishe = $dishe;
 
         return $this;
     }
 
-    public function removeDishe(Dishe $dishe): self
-    {
-        $this->dishe->removeElement($dishe);
-
-        return $this;
-    }
 }
