@@ -18,13 +18,17 @@ class Categorie
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\ManyToMany(targetEntity: Dishe::class, inversedBy: 'categories')]
-    private Collection $dishe;
+    #[ORM\ManyToOne(inversedBy: 'categories')]
+    private ?Dishe $dishe = null;
+
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Dishe::class)]
+    private Collection $dishes;
 
     public function __construct()
     {
-        $this->dishe = new ArrayCollection();
+        $this->dishes = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {
@@ -43,27 +47,46 @@ class Categorie
         return $this;
     }
 
-    /**
-     * @return Collection<int, Dishe>
-     */
-    public function getDishe(): Collection
+    public function getDishe(): ?Dishe
     {
         return $this->dishe;
     }
 
-    public function addDishe(Dishe $dishe): self
+    public function setDishe(?Dishe $dishe): self
     {
-        if (!$this->dishe->contains($dishe)) {
-            $this->dishe->add($dishe);
+        $this->dishe = $dishe;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Dishe>
+     */
+    public function getDishes(): Collection
+    {
+        return $this->dishes;
+    }
+
+    public function addDish(Dishe $dish): self
+    {
+        if (!$this->dishes->contains($dish)) {
+            $this->dishes->add($dish);
+            $dish->setCategory($this);
         }
 
         return $this;
     }
 
-    public function removeDishe(Dishe $dishe): self
+    public function removeDish(Dishe $dish): self
     {
-        $this->dishe->removeElement($dishe);
+        if ($this->dishes->removeElement($dish)) {
+            // set the owning side to null (unless already changed)
+            if ($dish->getCategory() === $this) {
+                $dish->setCategory(null);
+            }
+        }
 
         return $this;
     }
+
 }

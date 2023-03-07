@@ -25,18 +25,19 @@ class Dishe
     #[ORM\Column]
     private ?float $price = null;
 
-    #[ORM\ManyToMany(targetEntity: Categorie::class, mappedBy: 'dishe')]
-    private Collection $categories;
-
     #[ORM\OneToMany(mappedBy: 'dishe', targetEntity: Image::class)]
     private Collection $images;
 
     #[ORM\ManyToMany(targetEntity: Menu::class, mappedBy: 'dishe')]
     private Collection $menus;
 
+    #[ORM\ManyToOne(inversedBy: 'dishes')]
+    private ?Categorie $category = null;
+
+   
+
     public function __construct()
     {
-        $this->categories = new ArrayCollection();
         $this->images = new ArrayCollection();
         $this->menus = new ArrayCollection();
     }
@@ -78,33 +79,6 @@ class Dishe
     public function setPrice(float $price): self
     {
         $this->price = $price;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Categorie>
-     */
-    public function getCategories(): Collection
-    {
-        return $this->categories;
-    }
-
-    public function addCategory(Categorie $category): self
-    {
-        if (!$this->categories->contains($category)) {
-            $this->categories->add($category);
-            $category->addDishe($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCategory(Categorie $category): self
-    {
-        if ($this->categories->removeElement($category)) {
-            $category->removeDishe($this);
-        }
 
         return $this;
     }
@@ -165,4 +139,18 @@ class Dishe
 
         return $this;
     }
+
+    public function getCategory(): ?Categorie
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Categorie $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+   
 }
