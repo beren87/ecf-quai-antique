@@ -31,14 +31,15 @@ class Dishe
     #[ORM\ManyToMany(targetEntity: Menu::class, mappedBy: 'dishe')]
     private Collection $menus;
 
-    #[ORM\OneToMany(mappedBy: 'dishe', targetEntity: Categorie::class)]
-    private Collection $categories;
+    #[ORM\ManyToOne(inversedBy: 'dishes')]
+    private ?Categorie $category = null;
+
+   
 
     public function __construct()
     {
         $this->images = new ArrayCollection();
         $this->menus = new ArrayCollection();
-        $this->categories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -139,33 +140,17 @@ class Dishe
         return $this;
     }
 
-    /**
-     * @return Collection<int, Categorie>
-     */
-    public function getCategories(): Collection
+    public function getCategory(): ?Categorie
     {
-        return $this->categories;
+        return $this->category;
     }
 
-    public function addCategory(Categorie $category): self
+    public function setCategory(?Categorie $category): self
     {
-        if (!$this->categories->contains($category)) {
-            $this->categories->add($category);
-            $category->setDishe($this);
-        }
+        $this->category = $category;
 
         return $this;
     }
 
-    public function removeCategory(Categorie $category): self
-    {
-        if ($this->categories->removeElement($category)) {
-            // set the owning side to null (unless already changed)
-            if ($category->getDishe() === $this) {
-                $category->setDishe(null);
-            }
-        }
-
-        return $this;
-    }
+   
 }

@@ -21,6 +21,14 @@ class Categorie
     #[ORM\ManyToOne(inversedBy: 'categories')]
     private ?Dishe $dishe = null;
 
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Dishe::class)]
+    private Collection $dishes;
+
+    public function __construct()
+    {
+        $this->dishes = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -47,6 +55,36 @@ class Categorie
     public function setDishe(?Dishe $dishe): self
     {
         $this->dishe = $dishe;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Dishe>
+     */
+    public function getDishes(): Collection
+    {
+        return $this->dishes;
+    }
+
+    public function addDish(Dishe $dish): self
+    {
+        if (!$this->dishes->contains($dish)) {
+            $this->dishes->add($dish);
+            $dish->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDish(Dishe $dish): self
+    {
+        if ($this->dishes->removeElement($dish)) {
+            // set the owning side to null (unless already changed)
+            if ($dish->getCategory() === $this) {
+                $dish->setCategory(null);
+            }
+        }
 
         return $this;
     }
