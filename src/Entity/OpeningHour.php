@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\OpeningHoursRepository;
+use App\Repository\OpeningHourRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: OpeningHoursRepository::class)]
-class OpeningHours
+#[ORM\Entity(repositoryClass: OpeningHourRepository::class)]
+class OpeningHour
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,10 +18,6 @@ class OpeningHours
 
     #[ORM\Column(length: 255)]
     private ?string $hours = null;
-
-    #[ORM\ManyToOne(inversedBy: 'openingHours')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Users $users = null;
 
     public function getId(): ?int
     {
@@ -48,18 +44,6 @@ class OpeningHours
     public function setHours(string $hours): self
     {
         $this->hours = $hours;
-
-        return $this;
-    }
-
-    public function getUsers(): ?Users
-    {
-        return $this->users;
-    }
-
-    public function setUsers(?Users $users): self
-    {
-        $this->users = $users;
 
         return $this;
     }

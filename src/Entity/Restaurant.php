@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\FooterRepository;
+use App\Repository\RestaurantRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: FooterRepository::class)]
-class Footer
+#[ORM\Entity(repositoryClass: RestaurantRepository::class)]
+class Restaurant
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -34,9 +34,8 @@ class Footer
     #[ORM\Column(length: 255)]
     private ?string $youtube = null;
 
-    #[ORM\ManyToOne(inversedBy: 'footers')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Users $users = null;
+    #[ORM\Column]
+    private ?int $maxGuests = null;
 
     public function getId(): ?int
     {
@@ -127,14 +126,14 @@ class Footer
         return $this;
     }
 
-    public function getUsers(): ?Users
+    public function getMaxGuests(): ?int
     {
-        return $this->users;
+        return $this->maxGuests;
     }
 
-    public function setUsers(?Users $users): self
+    public function setMaxGuests(int $maxGuests): self
     {
-        $this->users = $users;
+        $this->maxGuests = $maxGuests;
 
         return $this;
     }

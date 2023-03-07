@@ -2,26 +2,45 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Categories;
-use Doctrine\Bundle\FixturesBundle\Fixture;
+use App\Entity\Categorie;
+use Doctrine\Bundle\FixturesBundle\Fixture; 
 use Doctrine\Persistence\ObjectManager;
+Use Faker\Factory;
 
-class CategoriesFixtures extends Fixture
+class CategoriesFixtures extends Fixture 
 {
+    private $counter = 1;
+    
     public function load(ObjectManager $manager): void
     {
-        $category = new Categories();
-        $category->setTitle('Soupe à l’oignon');
-        $category->setDescription('Soupe à l’oignon, crouton aillés, gratiné de parmesan');
-        $category->setPrice(16);
+        
+        $category = new Categorie();
+        $category->setName('Entrées');
+        $this->addReference('category_'.$this->counter, $category);
+            $this->counter++;
+        
         $manager->persist($category);
-
-        $category = new Categories();
-        $category->setTitle('Matouille de Savoie');
-        $category->setDescription('Matouille de Savoie, fondu de poireau, carottes glacées');
-        $category->setPrice(24);
+        
+        $category = new Categorie();
+        $category->setName('Plats spécialités savoyardes');
         $manager->persist($category);
-
+        $this->addReference('category_'.$this->counter, $category);
+            $this->counter++;
+        
+        $faker = Factory::create('fr_FR');
+        
+        for($cat = 3; $cat <=7; $cat++){
+            $category = new Categorie();
+            $category->setName($faker->text(6));
+            
+            $manager->persist($category);
+            $this->addReference('category_'.$this->counter, $category);
+            $this->counter++;
+        }
+        
+        
+        
         $manager->flush();
     }
 }
+?>

@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\CategoriesRepository;
+use App\Repository\MenuRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: CategoriesRepository::class)]
-class Categories
+#[ORM\Entity(repositoryClass: MenuRepository::class)]
+class Menu
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -25,12 +25,12 @@ class Categories
     #[ORM\Column]
     private ?float $price = null;
 
-    #[ORM\ManyToMany(targetEntity: Dishes::class, inversedBy: 'categories')]
-    private Collection $dishes;
+    #[ORM\ManyToMany(targetEntity: Dishe::class, inversedBy: 'menus')]
+    private Collection $dishe;
 
     public function __construct()
     {
-        $this->dishes = new ArrayCollection();
+        $this->dishe = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -75,25 +75,25 @@ class Categories
     }
 
     /**
-     * @return Collection<int, Dishes>
+     * @return Collection<int, Dishe>
      */
-    public function getDishes(): Collection
+    public function getDishe(): Collection
     {
-        return $this->dishes;
+        return $this->dishe;
     }
 
-    public function addDish(Dishes $dish): self
+    public function addDishe(Dishe $dishe): self
     {
-        if (!$this->dishes->contains($dish)) {
-            $this->dishes->add($dish);
+        if (!$this->dishe->contains($dishe)) {
+            $this->dishe->add($dishe);
         }
 
         return $this;
     }
 
-    public function removeDish(Dishes $dish): self
+    public function removeDishe(Dishe $dishe): self
     {
-        $this->dishes->removeElement($dish);
+        $this->dishe->removeElement($dishe);
 
         return $this;
     }
