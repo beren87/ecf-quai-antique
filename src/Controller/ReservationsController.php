@@ -30,8 +30,9 @@ class ReservationsController extends AbstractController
             $em->flush();
 
             $reservationValid = $em->getRepository(Reservations::class)->findAll();
-            return $this->render('home/index.html.twig', [
+            return $this->render('valid_reservation/index.html.twig', [
                 'reservationValid' => $reservationValid,
+                
             ]);
         }
     
