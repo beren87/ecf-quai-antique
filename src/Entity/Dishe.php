@@ -25,20 +25,20 @@ class Dishe
     #[ORM\Column]
     private ?float $price = null;
 
-    #[ORM\ManyToMany(targetEntity: Categorie::class, mappedBy: 'dishe')]
-    private Collection $categories;
-
     #[ORM\OneToMany(mappedBy: 'dishe', targetEntity: Image::class)]
     private Collection $images;
 
     #[ORM\ManyToMany(targetEntity: Menu::class, mappedBy: 'dishe')]
     private Collection $menus;
 
+    #[ORM\OneToMany(mappedBy: 'dishe', targetEntity: Categorie::class)]
+    private Collection $categories;
+
     public function __construct()
     {
-        $this->categories = new ArrayCollection();
         $this->images = new ArrayCollection();
         $this->menus = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -78,33 +78,6 @@ class Dishe
     public function setPrice(float $price): self
     {
         $this->price = $price;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Categorie>
-     */
-    public function getCategories(): Collection
-    {
-        return $this->categories;
-    }
-
-    public function addCategory(Categorie $category): self
-    {
-        if (!$this->categories->contains($category)) {
-            $this->categories->add($category);
-            $category->addDishe($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCategory(Categorie $category): self
-    {
-        if ($this->categories->removeElement($category)) {
-            $category->removeDishe($this);
-        }
 
         return $this;
     }
@@ -161,6 +134,36 @@ class Dishe
     {
         if ($this->menus->removeElement($menu)) {
             $menu->removeDishe($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Categorie>
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Categorie $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories->add($category);
+            $category->setDishe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Categorie $category): self
+    {
+        if ($this->categories->removeElement($category)) {
+            // set the owning side to null (unless already changed)
+            if ($category->getDishe() === $this) {
+                $category->setDishe(null);
+            }
         }
 
         return $this;
