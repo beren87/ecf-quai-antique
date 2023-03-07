@@ -36,6 +36,6 @@ class Categorie
         return $this;
     }
 
-    
+
 
 }
