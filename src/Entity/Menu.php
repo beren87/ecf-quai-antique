@@ -28,6 +28,9 @@ class Menu
     #[ORM\ManyToOne(inversedBy: 'menus')]
     private ?Categorie $categorie = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $nextDescription = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -77,6 +80,18 @@ class Menu
     public function setCategorie(?Categorie $categorie): self
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getNextDescription(): ?string
+    {
+        return $this->nextDescription;
+    }
+
+    public function setNextDescription(string $nextDescription): self
+    {
+        $this->nextDescription = $nextDescription;
 
         return $this;
     }
