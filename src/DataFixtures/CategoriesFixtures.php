@@ -11,7 +11,7 @@ class CategoriesFixtures extends Fixture
     
     public function load(ObjectManager $manager): void
     {
-        
+        //a la carte
         $category = new Categorie();
         $category->setName('Entrées');
         $manager->persist($category);
@@ -47,6 +47,17 @@ class CategoriesFixtures extends Fixture
         $category->setName('Desserts');
         $manager->persist($category);
         $this->addReference('dessert', $category);
+
+        //Menus
+        $category = new Categorie();
+        $category->setName('Entrées-menu');
+        $manager->persist($category);
+        $this->addReference('menu-entrees_1', $category);
+        
+        $category = new Categorie();
+        $category->setName('Entrées-menu');
+        $manager->persist($category);
+        $this->addReference('menu-entrees_2', $category);
          
         $manager->flush();
     }
