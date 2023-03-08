@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Dishe;
 use App\Entity\Categorie;
+use App\Entity\Image;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -45,5 +46,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Catégories', 'fas fa-list', Categorie::class);
         yield MenuItem::linkToCrud('Les plats', 'fas fa-bowl-food', Dishe::class);
+        yield MenuItem::linkToCrud('Images', 'fas fa-image', Image::class);
     }
 }
