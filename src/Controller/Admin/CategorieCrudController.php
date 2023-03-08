@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Categorie;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminbundle\Config\Crud;
 
 class CategorieCrudController extends AbstractCrudController
@@ -19,6 +20,8 @@ class CategorieCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name'),
+            IdField::new('id')->hideOnForm(),
+
         ];
     }
     public function configureCrud(Crud $crud): Crud
