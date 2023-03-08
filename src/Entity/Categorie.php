@@ -18,6 +18,14 @@ class Categorie
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[ORM\OneToMany(mappedBy: 'categorie', targetEntity: Menu::class)]
+    private Collection $menus;
+
+    public function __construct()
+    {
+        $this->menus = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -32,6 +40,36 @@ class Categorie
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Menu>
+     */
+    public function getMenus(): Collection
+    {
+        return $this->menus;
+    }
+
+    public function addMenu(Menu $menu): self
+    {
+        if (!$this->menus->contains($menu)) {
+            $this->menus->add($menu);
+            $menu->setCategorie($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMenu(Menu $menu): self
+    {
+        if ($this->menus->removeElement($menu)) {
+            // set the owning side to null (unless already changed)
+            if ($menu->getCategorie() === $this) {
+                $menu->setCategorie(null);
+            }
+        }
 
         return $this;
     }
