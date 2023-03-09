@@ -24,6 +24,10 @@
     @extend .button-carte;
 }
 
+.btn_design-empty-carte {
+    @extend .button-empty-carte;
+}
+
 // ============= START media queries dishes & wines btn =================//
 
 //from <=576px ==> line arround buttons 
