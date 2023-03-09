@@ -21,7 +21,7 @@ class DisheCrudController extends AbstractCrudController
     {
         return [
             TextField::new('title'),
-            TextareaField::new('description'),
+            TextAreaField::new('description'),
             NumberField::new('price'),
         ];
     }
