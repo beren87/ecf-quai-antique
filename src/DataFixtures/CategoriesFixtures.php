@@ -5,41 +5,60 @@ namespace App\DataFixtures;
 use App\Entity\Categorie;
 use Doctrine\Bundle\FixturesBundle\Fixture; 
 use Doctrine\Persistence\ObjectManager;
-Use Faker\Factory;
 
 class CategoriesFixtures extends Fixture 
 {
-    private $counter = 1;
     
     public function load(ObjectManager $manager): void
     {
-        
+        //a la carte
         $category = new Categorie();
         $category->setName('Entrées');
-        $this->addReference('category_'.$this->counter, $category);
-            $this->counter++;
-        
         $manager->persist($category);
+        $this->addReference('entrées', $category);
+        
         
         $category = new Categorie();
         $category->setName('Plats spécialités savoyardes');
         $manager->persist($category);
-        $this->addReference('category_'.$this->counter, $category);
-            $this->counter++;
+        $this->addReference('specialite', $category);
+
+        $category = new Categorie();
+        $category->setName('Plats de viande');
+        $manager->persist($category);
+        $this->addReference('viande', $category);
+
+        $category = new Categorie();
+        $category->setName('Plats de poisson');
+        $manager->persist($category);
+        $this->addReference('poisson', $category);
+
+        $category = new Categorie();
+        $category->setName('Plateau de fromages et pains');
+        $manager->persist($category);
+        $this->addReference('fromage', $category);
+
+        $category = new Categorie();
+        $category->setName('Pains');
+        $manager->persist($category);
+        $this->addReference('pain', $category);
+
+        $category = new Categorie();
+        $category->setName('Desserts');
+        $manager->persist($category);
+        $this->addReference('dessert', $category);
+
+        //Menus
+        $category = new Categorie();
+        $category->setName('Dégustation Alpine');
+        $manager->persist($category);
+        $this->addReference('degustation', $category);
         
-        $faker = Factory::create('fr_FR');
-        
-        for($cat = 3; $cat <=7; $cat++){
-            $category = new Categorie();
-            $category->setName($faker->text(6));
-            
-            $manager->persist($category);
-            $this->addReference('category_'.$this->counter, $category);
-            $this->counter++;
-        }
-        
-        
-        
+        $category = new Categorie();
+        $category->setName('Préstige Savoyard ');
+        $manager->persist($category);
+        $this->addReference('prestige', $category);
+         
         $manager->flush();
     }
 }

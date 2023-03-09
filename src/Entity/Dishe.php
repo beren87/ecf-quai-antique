@@ -25,20 +25,18 @@ class Dishe
     #[ORM\Column]
     private ?float $price = null;
 
-    #[ORM\ManyToMany(targetEntity: Categorie::class, mappedBy: 'dishe')]
-    private Collection $categories;
-
     #[ORM\OneToMany(mappedBy: 'dishe', targetEntity: Image::class)]
     private Collection $images;
 
-    #[ORM\ManyToMany(targetEntity: Menu::class, mappedBy: 'dishe')]
-    private Collection $menus;
+
+    #[ORM\ManyToOne(inversedBy: 'dishes')]
+    private ?Categorie $category = null;
+
+   
 
     public function __construct()
     {
-        $this->categories = new ArrayCollection();
         $this->images = new ArrayCollection();
-        $this->menus = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -83,33 +81,6 @@ class Dishe
     }
 
     /**
-     * @return Collection<int, Categorie>
-     */
-    public function getCategories(): Collection
-    {
-        return $this->categories;
-    }
-
-    public function addCategory(Categorie $category): self
-    {
-        if (!$this->categories->contains($category)) {
-            $this->categories->add($category);
-            $category->addDishe($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCategory(Categorie $category): self
-    {
-        if ($this->categories->removeElement($category)) {
-            $category->removeDishe($this);
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection<int, Image>
      */
     public function getImages(): Collection
@@ -139,30 +110,17 @@ class Dishe
         return $this;
     }
 
-    /**
-     * @return Collection<int, Menu>
-     */
-    public function getMenus(): Collection
+    public function getCategory(): ?Categorie
     {
-        return $this->menus;
+        return $this->category;
     }
 
-    public function addMenu(Menu $menu): self
+    public function setCategory(?Categorie $category): self
     {
-        if (!$this->menus->contains($menu)) {
-            $this->menus->add($menu);
-            $menu->addDishe($this);
-        }
+        $this->category = $category;
 
         return $this;
     }
 
-    public function removeMenu(Menu $menu): self
-    {
-        if ($this->menus->removeElement($menu)) {
-            $menu->removeDishe($this);
-        }
-
-        return $this;
-    }
+   
 }
