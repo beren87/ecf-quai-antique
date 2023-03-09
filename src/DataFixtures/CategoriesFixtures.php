@@ -39,11 +39,6 @@ class CategoriesFixtures extends Fixture
         $this->addReference('fromage', $category);
 
         $category = new Categorie();
-        $category->setName('Pains');
-        $manager->persist($category);
-        $this->addReference('pain', $category);
-
-        $category = new Categorie();
         $category->setName('Desserts');
         $manager->persist($category);
         $this->addReference('dessert', $category);
