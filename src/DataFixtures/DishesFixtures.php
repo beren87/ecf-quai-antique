@@ -185,24 +185,6 @@ class DishesFixtures extends Fixture implements DependentFixtureInterface
             $dishe->setCategory($category);
             $manager->persist($dishe);
 
-            //menu dégustation alpine
-            $dishe = new Dishe();
-            $dishe->setTitle('Formule du midi');
-            $dishe->setDescription('Plat + Dessert');
-            $dishe->setPrice(14);
-            $category = $this->getReference('degustation');
-            $dishe->setCategory($category);
-            $manager->persist($dishe);
-
-            //menu prestige savoyard
-            $dishe = new Dishe();
-            $dishe->setTitle('Formule du soir');
-            $dishe->setDescription('Entrée + Plat + Dessert');
-            $dishe->setPrice(14);
-            $category = $this->getReference('prestige');
-            $dishe->setCategory($category);
-            $manager->persist($dishe);
-
         $manager->flush();
     }
 
