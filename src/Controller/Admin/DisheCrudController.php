@@ -23,6 +23,7 @@ class DisheCrudController extends AbstractCrudController
             TextField::new('title'),
             TextAreaField::new('description'),
             NumberField::new('price'),
+            TextField::new('category')->hideOnForm(),
         ];
     }
     public function configureCrud(Crud $crud): Crud
