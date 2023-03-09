@@ -2,18 +2,18 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Dishe;
+use App\Entity\Menus;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextAreaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
-use EasyCorp\Bundle\EasyAdminbundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class DisheCrudController extends AbstractCrudController
+class MenusCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Dishe::class;
+        return Menus::class;
     }
 
     
@@ -21,15 +21,14 @@ class DisheCrudController extends AbstractCrudController
     {
         return [
             TextField::new('title'),
-            TextAreaField::new('description'),
+            TextareaField::new('description'),
             NumberField::new('price'),
-            TextField::new('category')->hideOnForm(),
+            TextField::new('categorieMenus')->hideOnForm(),
         ];
     }
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setDefaultSort(['category'=>'ASC']);
+            ->setDefaultSort(['categorieMenus'=>'ASC']);
     }
-    
 }
