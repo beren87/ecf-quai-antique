@@ -4,39 +4,29 @@
 @use "../../atoms/buttons" as button; 
 
 // ***************** DISHES *****************
+.title-fonts{
+    font-family: fonts.$font-cursive;
+    font-size: sizes.$logo;
+}
 
-.paragraphe-letter_all {
-    font-size: sizes.$paragraphe;
+.category-title_fonts{
     font-family: fonts.$font-serif;
+    font-size: sizes.$h2;
 }
 
-.dishes-text_flex {
-    display: flex;
-    flex-direction: column;
+.category-title_letter::first-letter {
+    font-family: fonts.$font-cursive;
+    font-size: sizes.$logo;
 }
 
-.dishes-btn_flex {
-    display: flex;
-    flex-direction: row;
+.dishes-title_font{
+    font-family: fonts.$font-serif;
+    font-size: sizes.$title-dishe;
 }
 
-.btn_design-carte {
-    @extend .button-carte;
+.dishes-desc_font{
+    font-family: fonts.$font-serif;
+    font-size: sizes.$paragraphe;
 }
-
-.btn_design-empty-carte {
-    @extend .button-empty-carte;
-}
-
-// ============= START media queries dishes & wines btn =================//
-
-//from <=576px ==> line arround buttons 
-@media (max-width: 767px) {
-    .btn_design-carte {
-        border: 0.5px solid #5b441f;
-    }
-}
-
-// ============= END media queries dishes & wines btn =================//
 
 // ***************** DISHES *****************
