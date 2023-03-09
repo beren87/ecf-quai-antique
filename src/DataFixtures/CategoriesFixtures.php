@@ -50,14 +50,14 @@ class CategoriesFixtures extends Fixture
 
         //Menus
         $category = new Categorie();
-        $category->setName('Entrées-menu');
+        $category->setName('Dégustation Alpine');
         $manager->persist($category);
-        $this->addReference('menu-entrees_1', $category);
+        $this->addReference('degustation', $category);
         
         $category = new Categorie();
-        $category->setName('Entrées-menu');
+        $category->setName('Préstige Savoyard ');
         $manager->persist($category);
-        $this->addReference('menu-entrees_2', $category);
+        $this->addReference('prestige', $category);
          
         $manager->flush();
     }
