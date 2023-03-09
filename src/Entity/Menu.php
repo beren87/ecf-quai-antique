@@ -6,7 +6,7 @@ use App\Repository\MenuRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping as ORM; 
 
 #[ORM\Entity(repositoryClass: MenuRepository::class)]
 class Menu
@@ -25,13 +25,11 @@ class Menu
     #[ORM\Column]
     private ?float $price = null;
 
-    #[ORM\ManyToMany(targetEntity: Dishe::class, inversedBy: 'menus')]
-    private Collection $dishe;
+    #[ORM\ManyToOne(inversedBy: 'menus')]
+    private ?Categorie $categorie = null;
 
-    public function __construct()
-    {
-        $this->dishe = new ArrayCollection();
-    }
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $nextDescription = null;
 
     public function getId(): ?int
     {
@@ -74,27 +72,28 @@ class Menu
         return $this;
     }
 
-    /**
-     * @return Collection<int, Dishe>
-     */
-    public function getDishe(): Collection
+    public function getCategorie(): ?Categorie
     {
-        return $this->dishe;
+        return $this->categorie;
     }
 
-    public function addDishe(Dishe $dishe): self
+    public function setCategorie(?Categorie $categorie): self
     {
-        if (!$this->dishe->contains($dishe)) {
-            $this->dishe->add($dishe);
-        }
+        $this->categorie = $categorie;
 
         return $this;
     }
 
-    public function removeDishe(Dishe $dishe): self
+    public function getNextDescription(): ?string
     {
-        $this->dishe->removeElement($dishe);
+        return $this->nextDescription;
+    }
+
+    public function setNextDescription(string $nextDescription): self
+    {
+        $this->nextDescription = $nextDescription;
 
         return $this;
     }
+
 }

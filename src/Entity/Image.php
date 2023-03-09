@@ -23,6 +23,9 @@ class Image
     #[ORM\ManyToOne(inversedBy: 'images')]
     private ?Dishe $dishe = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $photo = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +63,18 @@ class Image
     public function setDishe(?Dishe $dishe): self
     {
         $this->dishe = $dishe;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(string $photo): self
+    {
+        $this->photo = $photo;
 
         return $this;
     }
