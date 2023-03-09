@@ -127,10 +127,10 @@ class DishesFixtures extends Fixture implements DependentFixtureInterface
             $dishe->setCategory($category);
             $manager->persist($dishe);
 
-            //plateau de fromages 
+            //plateau de fromages et pains
             $dishe = new Dishe();
             $dishe->setTitle('Charette de nos pâturages');
-            $dishe->setDescription('Abondance, Beaufort et Tommette de chèvre');
+            $dishe->setDescription('Abondance, Beaufort et Tommette de chèvre - Pain aux figues-noix');
             $dishe->setPrice(15);
             $category = $this->getReference('fromage');
             $dishe->setCategory($category);
@@ -138,7 +138,7 @@ class DishesFixtures extends Fixture implements DependentFixtureInterface
 
             $dishe = new Dishe();
             $dishe->setTitle('Parfum de nos campagnes dans son enclos de verdures');
-            $dishe->setDescription('Emmental de Savoie, Tome des Bauges, Reblochon');
+            $dishe->setDescription('Emmental de Savoie, Tome des Bauges, Reblochon - Pain aux sésames');
             $dishe->setPrice(15);
             $category = $this->getReference('fromage');
             $dishe->setCategory($category);
@@ -146,42 +146,9 @@ class DishesFixtures extends Fixture implements DependentFixtureInterface
 
             $dishe = new Dishe();
             $dishe->setTitle('Les offrandes du berger');
-            $dishe->setDescription('Chevrotin, Roulé de chèvre frais, Séchon de chèvre');
+            $dishe->setDescription('Chevrotin, Roulé de chèvre frais, Séchon de chèvre - Pain bûcheron');
             $dishe->setPrice(15);
             $category = $this->getReference('fromage');
-            $dishe->setCategory($category);
-            $manager->persist($dishe);
-
-            //pains
-            $dishe = new Dishe();
-            $dishe->setTitle('');
-            $dishe->setDescription('Pain aux figues-noix');
-            $dishe->setPrice(0);
-            $category = $this->getReference('pain');
-            $dishe->setCategory($category);
-            $manager->persist($dishe);
-
-            $dishe = new Dishe();
-            $dishe->setTitle('');
-            $dishe->setDescription('Pain aux sésames');
-            $dishe->setPrice(0);
-            $category = $this->getReference('pain');
-            $dishe->setCategory($category);
-            $manager->persist($dishe);
-
-            $dishe = new Dishe();
-            $dishe->setTitle('');
-            $dishe->setDescription('Pain bûcheron');
-            $dishe->setPrice(0);
-            $category = $this->getReference('pain');
-            $dishe->setCategory($category);
-            $manager->persist($dishe);
-
-            $dishe = new Dishe();
-            $dishe->setTitle('');
-            $dishe->setDescription('Pain seigle des montagnes');
-            $dishe->setPrice(0);
-            $category = $this->getReference('pain');
             $dishe->setCategory($category);
             $manager->persist($dishe);
 
@@ -215,6 +182,24 @@ class DishesFixtures extends Fixture implements DependentFixtureInterface
             $dishe->setDescription('Crumble vanille-tonka, gel de citron yuzu');
             $dishe->setPrice(14);
             $category = $this->getReference('dessert');
+            $dishe->setCategory($category);
+            $manager->persist($dishe);
+
+            //menu dégustation alpine
+            $dishe = new Dishe();
+            $dishe->setTitle('Formule du midi');
+            $dishe->setDescription('Plat + Dessert');
+            $dishe->setPrice(14);
+            $category = $this->getReference('degustation');
+            $dishe->setCategory($category);
+            $manager->persist($dishe);
+
+            //menu prestige savoyard
+            $dishe = new Dishe();
+            $dishe->setTitle('Formule du soir');
+            $dishe->setDescription('Entrée + Plat + Dessert');
+            $dishe->setPrice(14);
+            $category = $this->getReference('prestige');
             $dishe->setCategory($category);
             $manager->persist($dishe);
 
