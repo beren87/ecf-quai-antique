@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Tests;
-use App\Entity\Image;
+
+use App\Entity\Images;
 use PHPUnit\Framework\TestCase;
 
 class ImagesUnitTest extends TestCase
@@ -9,30 +10,35 @@ class ImagesUnitTest extends TestCase
     public function testIsTrue()
     {
         
-        $image = new Image();
+        $images = new Images();
 
-        $image->setTitle('titre');
-        $image->setDescription('description');
+        $images->setTitle('titre');
+        $images->setDescription('description');
+        $images->setFile('file');
 
-        $this->assertTrue($image->getTitle()=== 'titre');
-        $this->assertTrue($image->getDescription()=== 'description');
+        $this->assertTrue($images->getTitle()=== 'titre');
+        $this->assertTrue($images->getDescription()=== 'description');
+        $this->assertTrue($images->getFile()=== 'file');
     }
     public function testIsFalse()
     {
         
-        $image = new Image();
+        $images = new Images();
 
-        $image->setTitle('titre');
-        $image->setDescription('description');
+        $images->setTitle('titre');
+        $images->setDescription('description');
+        $images->setFile('file');
 
-        $this->assertFalse($image->getTitle()=== 'false');
-        $this->assertFalse($image->getDescription()=== 'false');
+        $this->assertFalse($images->getTitle()=== 'false');
+        $this->assertFalse($images->getDescription()=== 'false');
+        $this->assertFalse($images->getFile()=== 'false');
     }
     public function testIsEmpty()
     {
-        $image = new Image();
+        $images = new Images();
 
-        $this->assertEmpty($image->getTitle());
-        $this->assertEmpty($image->getDescription());
+        $this->assertEmpty($images->getTitle());
+        $this->assertEmpty($images->getDescription());
+        $this->assertEmpty($images->getFile());
     }
 }

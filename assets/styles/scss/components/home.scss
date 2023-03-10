@@ -41,6 +41,10 @@
     @extend .button;
 }
 
+.btn_resa {
+    @extend .button-reservation;
+}
+
 // ************** NAVBAR ********************* 
 
 // ************** COVER ********************** 
@@ -98,28 +102,6 @@
     font-size: sizes.$paragraphe;
     opacity: 0;
 }
-
-// ======= zoom, scale, hidden & opcaty ======
-
-.home-galleries_zoom {
-    overflow: hidden;
-    transition: transform .1s;
-}
-
-.home-galleries_photos {
-    width: 100%; 
-    &:hover {
-        opacity: 0.50;
-        transform: scale(1.2);
-        transition: 1s;
-        filter: blur(1px);
-        & ~.home-galleries_text {
-            opacity: 1;
-        }
-    }
-}
-
-// ======= zoom, scale, hidden & opcaty ======
 
 .text-back_style{
     font-size: sizes.$mq-nav11;
