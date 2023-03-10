@@ -45,14 +45,11 @@
     opacity: 0;
 }
 
-// ======= ZOOM ======
-
 .col-img_zoom {
     overflow: hidden;
     transition: transform .1s;
 }
 
- 
 .img-w {
     width: 100%; 
     &:hover {
@@ -66,38 +63,18 @@
     }
 }
 
-// ======= ZOOM ======
-
-
-
 .card-text_descr, .card-text_title {
     font-family: fonts.$font-serif;
     font-size: sizes.$paragraphe;
     cursor: default;
     opacity: 0;
+    background-color: rgba($color: #2d2d2d, $alpha: 0.9);
     overflow: hidden;
     &:hover {
+        height: 130px;
+        width: 100%;
+        border-radius: 0;
         transition: 0.5s;
         opacity: 1;
-            & ~.card-over_photo {
-                transform: scale(1.2);
-                filter: blur(1px);
-            }
         }
 }
-
-// .card-gall_zoom {
-    
-    
-// }
-
-// .card-over_photo {
-//     width: 100%; 
-//         &:hover {
-//             transform: scale(1.2);
-//             transition: 1s;
-//                 & ~.card-text_descr, .card-text_title {
-//                     opacity: 1;
-//                 }
-//         }
-// }
