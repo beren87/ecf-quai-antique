@@ -9,7 +9,14 @@
         <h1 class="mb-3 text-center form-title_style mt-3 text-primary">Réservation</h1>
 
             {{ form_start(reservationForm) }}
-
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success">
+                    {{ message }}
+                    </div>
+                {% endfor %}
+                {% for restaurant in restaurants %}
+                    <div class="text-danger text-center form-title_style mb-3">Nombre de place disponible ce jour : {{ restaurant.maxGuests }}</div>
+                {% endfor %}
                 {{ form_row(reservationForm.name) }}
                 {{ form_row(reservationForm.numberGuests) }}
                 {{ form_row(reservationForm.date) }}
