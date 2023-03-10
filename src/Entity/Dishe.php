@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\DisheRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -25,19 +23,8 @@ class Dishe
     #[ORM\Column]
     private ?float $price = null;
 
-    #[ORM\OneToMany(mappedBy: 'dishe', targetEntity: Image::class)]
-    private Collection $images;
-
-
     #[ORM\ManyToOne(inversedBy: 'dishes')]
     private ?Categorie $category = null;
-
-   
-
-    public function __construct()
-    {
-        $this->images = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -76,36 +63,6 @@ class Dishe
     public function setPrice(float $price): self
     {
         $this->price = $price;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Image>
-     */
-    public function getImages(): Collection
-    {
-        return $this->images;
-    }
-
-    public function addImage(Image $image): self
-    {
-        if (!$this->images->contains($image)) {
-            $this->images->add($image);
-            $image->setDishe($this);
-        }
-
-        return $this;
-    }
-
-    public function removeImage(Image $image): self
-    {
-        if ($this->images->removeElement($image)) {
-            // set the owning side to null (unless already changed)
-            if ($image->getDishe() === $this) {
-                $image->setDishe(null);
-            }
-        }
 
         return $this;
     }

@@ -2,12 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\ImageRepository;
+use App\Repository\ImagesRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ImageRepository::class)]
-class Image
+#[ORM\Entity(repositoryClass: ImagesRepository::class)]
+class Images
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -20,11 +20,8 @@ class Image
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\ManyToOne(inversedBy: 'images')]
-    private ?Dishe $dishe = null;
-
     #[ORM\Column(length: 255)]
-    private ?string $photo = null;
+    private ?string $file = null;
 
     public function getId(): ?int
     {
@@ -55,26 +52,14 @@ class Image
         return $this;
     }
 
-    public function getDishe(): ?Dishe
+    public function getFile(): ?string
     {
-        return $this->dishe;
+        return $this->file;
     }
 
-    public function setDishe(?Dishe $dishe): self
+    public function setFile(string $file): self
     {
-        $this->dishe = $dishe;
-
-        return $this;
-    }
-
-    public function getPhoto(): ?string
-    {
-        return $this->photo;
-    }
-
-    public function setPhoto(string $photo): self
-    {
-        $this->photo = $photo;
+        $this->file = $file;
 
         return $this;
     }
