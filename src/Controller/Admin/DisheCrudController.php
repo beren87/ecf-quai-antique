@@ -29,7 +29,7 @@ class DisheCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setDefaultSort(['title'=>'DESC']);
+            ->setDefaultSort(['category'=>'ASC']);
     }
     
 }

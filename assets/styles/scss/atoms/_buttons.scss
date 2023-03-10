@@ -20,23 +20,23 @@
         }
 }
 
-//button carte :
-.button-carte {
-    width: 200px; 
-    height: 150px; 
+.button-reservation {
+    @include utils.flex-btn;
+    width: 140px;
+    height: 40px;
     border-radius: 0;
+    border-style:double;
+    border-color: #5b441f;
     font-weight: bold;
-    font-family: fonts.$font-cursive;
-    font-size: sizes.$title;
-    background-color: #DDB46A;
-    color: #5b441f;;
-    &:hover {
-        color: #5b441f;;
-        background-color: #edd19f;
-        transition: 0.2s all ease-in-out;
-        transform: scale(1.05);
-        cursor: pointer;
-    }
+    font-family: fonts.$font-serif;    
+    color: #5b441f;; //primary
+    background-color: #DDB46A; //secondary
+        &:hover {
+            color: #5b441f;;
+            background-color: #edd19f;
+            transition: 0.2s all ease-in-out;
+            transform: scale(1.05);
+        }
 }
 
 .button-empty-carte {
