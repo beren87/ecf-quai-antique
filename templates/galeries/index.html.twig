@@ -5,179 +5,26 @@
 {% block body %}
 <section>
     <div class="container border-top py-3 my-3 g-0"> 
-        <h2 class="container-gal_title mb-3 text-primary category-title_letter">Galeries</h2>
+        <h2 class="container-gal_title mb-3 text-primary category-title_letter mt-3">Galeries</h2>
     </div>
 <div class="container mb-2">
-    <div class="row g-1">
-            <div class="card col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0">
-            <img src="{{ asset('build/images/Matouille-de-Savoie.png') }}" class="card-img w-100 rounded-0" alt="...">
-                <div class="card-img-overlay card-text_title card-text_descr text-center">
-                    <h5 class="card-title text-secondary">Matouille de Savoie</h5>
-                    <p class="card-text text-secondary">Matouille de Savoie, fondu de poireau, carottes glacées</p>
+    <div class="row g-1 ">
+    {% for image in images %}
+            <div class="card h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ image.file }}" class="card-img w-100 rounded-0" alt="...">
+                    <h5 class="card-title text-primary title-card_size mt-1">{{ image.title }}</h5>
+                    <p class="card-text text-primary header-cover_text">{{ image.description }}</p>
                 </div>
             </div>
-            <div class="card col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0">
-                <img src="{{ asset('build/images/rouleau-de-grison.png') }}" class="card-img w-100 rounded-0" alt="...">
-                    <div class="card-img-overlay card-text_title card-text_descr text-center">
-                        <h5 class="card-title text-secondary">Matouille de Savoie</h5>
-                        <p class="card-text text-secondary">Matouille de Savoie, fondu de poireau, carottes glacée sjqdqklhdqd lqsdhl qqshdlqhdql dliqdhlq dliqs</p>
-                    </div>
-            </div>
-            <div class="card col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0">
-                <img src="{{ asset('build/images/fondu-plan-01.png') }}" class="card-img w-100 rounded-0" alt="...">
-                    <div class="card-img-overlay card-text_title card-text_descr text-center">
-                        <h5 class="card-title text-secondary">Matouille de Savoie</h5>
-                        <p class="card-text text-secondary">Matouille de Savoie, fondu de poireau, carottes glacées</p>
-                    </div>
-            </div>
+          
+    {% endfor %}
     </div>
+
+
 </div>
 <div class="container mt-5 mb-5 "></div>
 
-
-    <div class="container g-0 mb-5 text-primary">
-        <div class="row align-items-center"> 
-            <div class="col"></div>
-            <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12 col-chef_text">
-            <h5>Réinventer la gastronomie en montagne</h5> 
-            Le Chef Arnaud Michant aime le challenge et ne recule devant rien. 
-            Faire du Quai Antique le restaurant gastronomique de Chambéry n’est pas une mince affaire. 
-            Le mélange authentique et raffiné est ce qui séduit notre clientèle.</div>
-            <div class="col"></div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 g-0 container-pics_hidd">
-                <img class="w-100 col-pics_zoom" src="{{ asset('build/images/chef-cuisinier-02.png') }}" alt="">
-            </div>
-            <div class="col"></div>
-        </div>
-    </div>
-
-    <div class="container border-top my-2 g-0">
-    
-    <div class="container g-0 mt-5 mb-5 text-primary">
-        <div class="row align-items-center">
-            <div class="col"></div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 g-0 container-pics_hidd">
-                <img class="w-100 col-pics_zoom" src="{{ asset('build/images/cuisinier-02.png') }}" alt="">
-            </div>
-            <div class="col"></div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 col-chef_text">
-            <h5>Le souci du détail</h5>
-                Que ce soit pour des plats de spécialités savoyardes ou bien des desserts, chaque détail compte. 
-                La brigade se plie en quatre pour respecter au grain de sel près les promesses que le restaurant met en avant. 
-                </div>
-            <div class="col"></div>
-        </div>
-    </div>
-
-    <div class="container border-top my-2 g-0">
-
-    <div class="container g-0 mt-3 mb-5 text-primary">
-        <div class="row align-items-center">
-            <div class="col"></div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 col-chef_text">
-            <h5>Diversité dans vos assiettes</h5>
-            Le Quai Antique vous propose un voyage depuis l’assiette. 
-            Passez de la montagne à la mer, de la mer à la ferme, de la ferme à la ville. 
-            Vos papilles seront vous faire revivre des lieux ou des odeurs qui vous feront 
-            fermez les yeux en guise de moments savourés.</div>
-            <div class="col"></div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 g-0 container-pics_hidd">
-                <img class="w-100 col-pics_zoom" src="{{ asset('build/images/cuisinier-01.png') }}" alt="">
-            </div>
-            <div class="col"></div>
-        </div>
-    </div>
-
-    <div class="container border-top my-2 g-0">
-
-    <div class="container g-0 mt-3 mb-5 text-primary">
-        <div class="row align-items-center">
-            <div class="col"></div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 g-0 container-pics_hidd">
-                <img class="w-100 col-pics_zoom" src="{{ asset('build/images/cuisinier-03.png') }}" alt="">
-            </div>
-            <div class="col"></div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 col-chef_text">
-            <h5>Une brigade toujours dévouée</h5>
-            Chaque corps de métiers dans une cuisine à son importance, 
-            surtout pour varier les spécialités au Quai Antique. 
-            Du second de cuisine aux commis, les tâches et responsabilités dans la cuisine sont maîtrisés. 
-            Une équipe soudée et dévouée pour vous raconter des saveurs.</div>
-            <div class="col"></div>
-        </div>
-    </div>
-
-<div class="container border-top my-2 g-0">
-
-<div class="container g-0 mt-3 mb-5 text-primary">
-        <div class="row align-items-center">
-            <div class="col"></div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 col-chef_text">
-            <h5>Accompagnez vos plats</h5>
-            Comment un plat parfait peut-il être servis sans un accompagnement digne de l'établissement. 
-            Notre sommelier et notre bartender vous suggèrerons les vins et cocktails les plus adaptés à vos plats.</div>
-            <div class="col"></div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 g-0 container-pics_hidd">
-                <img class="w-100 col-pics_zoom" src="{{ asset('build/images/cocktail-fresh.png') }}" alt="">
-            </div>
-            <div class="col"></div>
-        </div>
-    </div>
-
-<div class="container border-top my-2 g-0">
-
-    <div class="container g-0 mt-3 mb-5 text-primary">
-        <div class="row align-items-center">
-            <div class="col"></div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 g-0 container-pics_hidd">
-                <img class="w-100 col-pics_zoom" src="{{ asset('build/images/services.png') }}" alt="">
-            </div>
-            <div class="col"></div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 col-chef_text">
-            <h5>Pour vous servir</h5>
-            La qualité du service et son organisation au sein du Quai Antique 
-            seront vous mettre à vos aises. L’écoute et les conseils seront vous satisfaire.</div>
-            <div class="col"></div>
-        </div>
-    </div> 
-
-    
-
-
-<div class="container mt-5 text-primary">
-<div class="title-gallery_style text-center mb-4">Travailler avec des produits locaux</div>
-    <div class="row">
-        <div class="col-xl-4 container-pics_hidd">
-            <img class="w-100 col-pics_zoom" src="{{ asset('build/images/herd-cows.png') }}" alt="Une vache">
-        </div>
-        <div class="col-xl-4 container-pics_hidd">
-            <img class="w-100 col-pics_zoom" src="{{ asset('build/images/beautiful-lake.png') }}" alt="Lac et montagnes">
-        </div>
-        <div class="col-xl-4 container-pics_hidd">
-            <img class="w-100 col-pics_zoom" src="{{ asset('build/images/vignes-chambery.png') }}" alt="Des vignes">
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-xl-4 container-pics_hidd mt-3">
-            <p class="col-chef_text text-center text-primary">
-            L’élevage bovine de la haut Savoie est un plus pour notre restaurant. 
-            Le Chef tient à choisir les produits les mieux traités dans son environnement. </p>
-        </div>
-        <div class="col-xl-4 container-pics_hidd mt-3">
-            <p class="col-chef_text text-center text-primary">
-            La vie pullule également dans les rivières de haute Savoie. 
-            Appréciez les produits d’eau douce en plus des produits de la mer. 
-            Une pêche plus contrôlée et respectueuse de la biodiversité.</p>
-        </div>
-        <div class="col-xl-4 container-pics_hidd mt-3">
-           <p class="col-chef_text text-center text-primary">
-           Un vin issu des vendanges local est une bénédiction pour nos accompagnements. 
-           Les producteurs de vins se réjouissent de nos collaborations. 
-           Faire découvrir la qualité de la haute Savoie est un objectif atteint pour nous.</p>
-        </div>
-    </div>
-</div>
     <div class="container text-center mt-5">
         <div class="row">
             <div class="col">
