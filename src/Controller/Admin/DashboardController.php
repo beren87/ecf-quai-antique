@@ -2,14 +2,15 @@
 
 namespace App\Controller\Admin;
 
+
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Dishe;
+use App\Entity\Menus;
 use App\Entity\Categorie;
-use App\Entity\Image;
 use App\Entity\OpeningHour;
 use App\Entity\Restaurant;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -56,7 +57,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Catégories', 'fas fa-list', Categorie::class);
         yield MenuItem::linkToCrud('Les plats', 'fas fa-bowl-food', Dishe::class);
-        yield MenuItem::linkToCrud('Images', 'fas fa-image', Image::class);
+        yield MenuItem::linkToCrud('Les menus', 'fas fa-drumstick-bite', Menus::class);
         yield MenuItem::linkToCrud('Restaurant', 'fas fa-utensils', Restaurant::class);
         yield MenuItem::linkToCrud('Horaires', 'fas fa-clock', OpeningHour::class);
     }

@@ -2,30 +2,33 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Image;
+use App\Entity\Menus;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextAreaField;
-use EasyCorp\Bundle\EasyAdminbundle\Config\Crud;
 
-class ImageCrudController extends AbstractCrudController
+class MenusCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Image::class;
+        return Menus::class;
     }
 
+    
     public function configureFields(string $pageName): iterable
     {
         return [
             TextField::new('title'),
             TextareaField::new('description'),
-            TextField::new('photo'),
+            NumberField::new('price'),
+            TextField::new('categorieMenus')->hideOnForm(),
         ];
     }
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setDefaultSort(['title'=>'DESC']);
+            ->setDefaultSort(['categorieMenus'=>'ASC']);
     }
 }

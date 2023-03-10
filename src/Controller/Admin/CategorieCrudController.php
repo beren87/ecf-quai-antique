@@ -27,6 +27,6 @@ class CategorieCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setDefaultSort(['name'=>'DESC']);
+            ->setDefaultSort(['id'=>'ASC']);
     }
 }
