@@ -12,7 +12,7 @@
     {% for image in images %}
             <div class="card h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
                 <div class="card-body">
-                    <img src="{{ image.file }}" class="card-img w-100 rounded-0" alt="...">
+                    <img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="card-img w-100 rounded-0" alt="...">
                     <h5 class="card-title text-primary title-card_size mt-1">{{ image.title }}</h5>
                     <p class="card-text text-primary header-cover_text">{{ image.description }}</p>
                 </div>
@@ -45,7 +45,13 @@
             </div>
             <div class="col"></div>
             <div class="col"></div>
-            <div class="col "></div>
+            <div class="col ">
+            <a href="{{ path('app_reservations')}}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-double-right text-secondary" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+                <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/></svg>
+                </a>
+            </div>
         </div>
     </div>
     <div class="row mt-5">
