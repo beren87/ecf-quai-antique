@@ -1,15 +1,11 @@
 <div class="container">
   <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-2 border-top">
   {% for restaurant in restaurants %}
-    
-  
     <div class="col mb-3">
       <a class="footer_logo text-decoration-none text-primary" href="{{path('app_home')}}">Quai Antique</a>
       <p class="text-muted mt-2">© 2023</p>
     </div> 
-
     <div class="col mb-3"></div>
-
     <div class="col mb-3 footer_list"> 
       <h5 class="text-primary">Nous contacter</h5>
         <ul class="nav flex-column">
@@ -22,17 +18,15 @@
             </svg><a href="mailto: " class="text-decoration-none"> {{ restaurant.mail }}</a></li>  
         </ul>
     </div>
-
     <div class="col mb-3 footer_list">
     <h5 class="text-primary">Horaires d'ouverture</h5>
         <ul class="nav flex-column">
-            <li class="nav-item mb-2 text-primary">Lundi au Vendredi midi <br> 12:00 - 14:00</li>
-            <li class="nav-item mb-2 text-primary">Lundi au Vendredi soir <br> 19:00 - 22:00</li>
-            <li class="nav-item mb-2 text-primary">Dimanche et Mercredi midi <br> 12:00 - 14:00</li>
+        {% for openinghour in openinghours %}
+            <li class="nav-item mb-2 text-primary">{{ openinghour.days }} <br> {{ openinghour.hours }}</li>
+        {% endfor %}
         </ul>
         <a href="{{ path('app_reservations')}}" class="text-decoration-none"><div class="btn_design me-md-2 btn_resa">Réserver</div></a>
     </div>
-
     <div class="col mb-3 footer_list">
       <h5 class="text-primary">Nous suivre</h5>
         <ul class="nav flex-column">
@@ -53,4 +47,3 @@
     {% endfor %}
   </footer>
 </div>
-
