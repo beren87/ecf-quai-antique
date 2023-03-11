@@ -2,15 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\ImagesRepository;
+use App\Repository\ImagesBrigadeRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Symfony\Component\HttpFoundation\File\File;
 
-#[ORM\Entity(repositoryClass: ImagesRepository::class)]
-#[Vich\Uploadable]
-class Images
+#[ORM\Entity(repositoryClass: ImagesBrigadeRepository::class)]
+class ImagesBrigade
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -26,10 +23,7 @@ class Images
     #[ORM\Column(length: 255)]
     private ?string $file = null;
 
-    #[Vich\UploadableField(mapping: 'galerie_images', fileNameProperty: 'file')]
-    private ?File $imageFile = null;
-
-    #[ORM\ManyToOne(inversedBy: 'images')]
+    #[ORM\ManyToOne(inversedBy: 'imagesBrigades')]
     private ?CategorieImages $categorieImages = null;
 
     public function getId(): ?int
@@ -73,17 +67,6 @@ class Images
         return $this;
     }
 
-    public function setImageFile(?File $imageFile = null): void
-    {
-        $this->imageFile = $imageFile;
-
-    }
-
-    public function getImageFile(): ?File
-    {
-        return $this->imageFile;
-    }
-
     public function getCategorieImages(): ?CategorieImages
     {
         return $this->categorieImages;
@@ -95,5 +78,4 @@ class Images
 
         return $this;
     }
-
 }
