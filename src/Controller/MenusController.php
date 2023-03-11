@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Repository\CategorieMenusRepository;
 use App\Repository\MenusRepository;
 use App\Repository\OpeningHourRepository;
@@ -20,7 +19,8 @@ class MenusController extends AbstractController
             'categorieMenus' => $categorieMenusRepository->findBy([]),
             'menus' => $menusRepository->findBy([]),
             'restaurants' => $restaurantRepository->findBy([]),
-            'openinghours' => $openingHourRepository->findBy([])
+            'openinghours' => $openingHourRepository->findBy([]),
+            
         ]);
     }
 }
