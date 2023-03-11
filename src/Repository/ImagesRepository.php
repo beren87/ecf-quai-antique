@@ -39,6 +39,17 @@ class ImagesRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @return Images[] Retuns an array of Images objects
+     */
+    public function treeImg()
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.id', 'ASC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+    }
 //    /**
 //     * @return Images[] Returns an array of Images objects
 //     */
