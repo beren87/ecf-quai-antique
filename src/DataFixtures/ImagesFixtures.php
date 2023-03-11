@@ -108,8 +108,8 @@ class ImagesFixtures extends Fixture
         $images->setDescription('La qualité du service et son organisation au sein du Quai Antique 
         seront vous mettre à vos aises. L’écoute et les conseils seront vous satisfaire.');
         $images->setFile('services.png');
-        $manager->persist($images);
-
+            $manager->persist($images);
+            
         $images = new Images();
         $images->setTitle('Une viande de qualité exemplaire');
         $images->setDescription('L’élevage bovine de la haut Savoie est un plus pour notre restaurant. 

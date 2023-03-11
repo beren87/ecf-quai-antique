@@ -80,5 +80,4 @@ class Images
     {
         return $this->imageFile;
     }
-
 }
