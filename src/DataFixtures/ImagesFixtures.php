@@ -15,72 +15,54 @@ class ImagesFixtures extends Fixture
         $images->setTitle('Matouille de Savoie');
         $images->setDescription('Matouille de Savoie, fondu de poireau, carottes glacées');
         $images->setFile('Matouille-de-Savoie.png');
-        $categorieImages = $this->getReference('incontournable');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
         $images->setTitle('Poularde parfum pied-de-lion');
         $images->setDescription('Poularde parfum pied-de-lion, sauce aux truffes noires, chanterelles sautées');
         $images->setFile('poulet-sauce-onctueuse.png');
-        $categorieImages = $this->getReference('incontournable');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
         $images->setTitle('Omble chevalier');
         $images->setDescription('Omble chevalier, genevoise pinot noir, écrasé de fenouil');
         $images->setFile('omble-chevalier-pinot-noir.png');
-        $categorieImages = $this->getReference('incontournable');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
         $images->setTitle('Soupe à l\'oignon');
         $images->setDescription('Soupe à l’oignon, crouton aillés, gratiné de parmesan');
         $images->setFile('soupe-oignon-01.png');
-        $categorieImages = $this->getReference('incontournable');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
         $images->setTitle('Crumble vanille-tonka');
         $images->setDescription('Crumble vanille-tonka, gel de citron yuzu');
         $images->setFile('desert-vanilla-crumble-01.png');
-        $categorieImages = $this->getReference('incontournable');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
         $images->setTitle('Lingot de foie gras de canard');
         $images->setDescription('Lingot de foie gras de canard et pain d’épices, fine gelée de cerise noire');
         $images->setFile('foie-gras-viande-canard-sauce-douce.png');
-        $categorieImages = $this->getReference('incontournable');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
         $images->setTitle('Rouleau de grison');
         $images->setDescription('Rouleau de grison, mousseline de céleri, tomme de Savoie');
         $images->setFile('rouleau-de-grison.png');
-        $categorieImages = $this->getReference('incontournable');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
         $images->setTitle('Fondu Roussette de Savoie');
         $images->setDescription('Fondu Roussette de Savoie, pain charpentier, trio de fromages');
         $images->setFile('fondu-plan-01.png');
-        $categorieImages = $this->getReference('incontournable');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
         $images->setTitle('Parfum de nos campagnes dans son enclos de verdures');
         $images->setDescription('Emmental de Savoie, Tome des Bauges, Reblochon - Pain aux sésames');
         $images->setFile('Parfum-campagnes-verdures.png');
-        $categorieImages = $this->getReference('incontournable');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         //restaurant-environnements
@@ -90,8 +72,6 @@ class ImagesFixtures extends Fixture
         Faire du Quai Antique le restaurant gastronomique de Chambéry n’est pas une mince affaire. 
         Le mélange authentique et raffiné est ce qui séduit notre clientèle.');
         $images->setFile('chef-cuisinier-02.png');
-        $categorieImages = $this->getReference('environnement');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
@@ -99,8 +79,6 @@ class ImagesFixtures extends Fixture
         $images->setDescription('Que ce soit pour des plats de spécialités savoyardes ou bien des desserts, chaque détail compte. 
         La brigade se plie en quatre pour respecter au grain de sel près les promesses que le restaurant met en avant.');
         $images->setFile('cuisinier-02.png');
-        $categorieImages = $this->getReference('environnement');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
@@ -109,8 +87,6 @@ class ImagesFixtures extends Fixture
         Passez de la montagne à la mer, de la mer à la ferme, de la ferme à la ville. Vos papilles seront vous faire revivre des lieux ou des odeurs qui vous feront 
         fermez les yeux en guise de moments savourés.');
         $images->setFile('cuisinier-01.png');
-        $categorieImages = $this->getReference('environnement');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
@@ -119,16 +95,12 @@ class ImagesFixtures extends Fixture
         surtout pour varier les spécialités au Quai Antique. Du second de cuisine aux commis, les tâches et responsabilités dans la cuisine sont maîtrisés. 
         Une équipe soudée et dévouée pour vous raconter des saveurs.');
         $images->setFile('cuisinier-03.png');
-        $categorieImages = $this->getReference('environnement');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
         $images->setTitle('Accompagnez vos plats');
         $images->setDescription('Comment un plat parfait peut-il être servis sans un accompagnement digne de notre établissement. Notre sommelier et notre bartender vous suggèrerons les vins et cocktails les plus adaptés à vos plats.');
         $images->setFile('cocktail-fresh.png');
-        $categorieImages = $this->getReference('environnement');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
@@ -136,8 +108,6 @@ class ImagesFixtures extends Fixture
         $images->setDescription('La qualité du service et son organisation au sein du Quai Antique 
         seront vous mettre à vos aises. L’écoute et les conseils seront vous satisfaire.');
         $images->setFile('services.png');
-        $categorieImages = $this->getReference('environnement');
-            $images->setCategorieImages($categorieImages);
             $manager->persist($images);
             
         $images = new Images();
@@ -145,8 +115,6 @@ class ImagesFixtures extends Fixture
         $images->setDescription('L’élevage bovine de la haut Savoie est un plus pour notre restaurant. 
         Le Chef tient à choisir les produits les mieux traités dans son environnement.');
         $images->setFile('herd-cows.png');
-        $categorieImages = $this->getReference('locaux');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
@@ -155,8 +123,6 @@ class ImagesFixtures extends Fixture
         Appréciez les produits d’eau douce en plus des produits de la mer. 
         Une pêche plus contrôlée et respectueuse de la biodiversité.');
         $images->setFile('beautiful-lake.png');
-        $categorieImages = $this->getReference('locaux');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $images = new Images();
@@ -165,8 +131,6 @@ class ImagesFixtures extends Fixture
         Les producteurs de vins se réjouissent de nos collaborations. 
         Faire découvrir la qualité de la haute Savoie est un objectif atteint pour nous.');
         $images->setFile('vignes-chambery.png');
-        $categorieImages = $this->getReference('locaux');
-            $images->setCategorieImages($categorieImages);
         $manager->persist($images);
 
         $manager->flush();
