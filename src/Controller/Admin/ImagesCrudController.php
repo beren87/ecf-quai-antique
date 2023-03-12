@@ -26,7 +26,7 @@ class ImagesCrudController extends AbstractCrudController
             TextField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex(),
             ImageField::new('file', 'Photos')->setBasePath('/uploads/galeries')->onlyOnIndex(),
                 
-        ];
+        ]; 
     }
     public function configureCrud(Crud $crud): Crud
     {
