@@ -18,14 +18,14 @@ class RestaurantCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('address'),
-            TextField::new('telephone'),
-            TextField::new('mail'),
+            TextField::new('address', 'Adresse'),
+            TextField::new('telephone', 'Téléphone'),
+            TextField::new('mail', 'Email'),
             TextField::new('instagram'),
             TextField::new('facebook'),
             TextField::new('twitter'),
             TextField::new('youtube'),
-            IntegerField::new('maxGuests'),
+            IntegerField::new('maxGuests', 'Maximum de personnes'),
         ];
     }
    

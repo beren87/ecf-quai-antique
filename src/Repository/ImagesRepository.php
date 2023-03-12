@@ -44,8 +44,8 @@ class ImagesRepository extends ServiceEntityRepository
      */
     public function treeImg()
     {
-        return $this->createQueryBuilder('p')
-            ->orderBy('p.id', 'ASC')
+        return $this->createQueryBuilder('i')
+            ->orderBy('i.id', 'ASC')
             ->setMaxResults(3)
             ->getQuery()
             ->getResult();
