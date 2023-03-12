@@ -19,6 +19,7 @@ class ReservationService
 
     public function persistReservation(Reservations $reservations): void
     {
+        //$reservations->setAllergies(false);
         $this->manager->persist($reservations);
         $this->manager->flush();
         $this->flash->add('success', 'Votre réservation à bien été prise en compte, merci.');

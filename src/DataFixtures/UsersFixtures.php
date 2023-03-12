@@ -5,13 +5,13 @@ namespace App\DataFixtures;
 use App\Entity\Users; 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-Use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
-class UsersFixtures extends Fixture 
+class UsersFixtures extends Fixture  
 {
     private $encoder;
 
-    Public function __construct(UserPasswordEncoderInterface $encoder)
+    Public function __construct(UserPasswordHasherInterface $encoder)
     {
         $this->encoder = $encoder;
     }
@@ -27,7 +27,7 @@ class UsersFixtures extends Fixture
               ->setZipcode('73000')
               ->setCity('Chambéry');
 
-              $password = $this->encoder->encodePassword($admin, 'password');
+              $password = $this->encoder->hashPassword($admin, 'password');
               $admin->setPassword($password)
 
               ->setRoles(['ROLE_ADMIN']);
