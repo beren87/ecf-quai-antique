@@ -35,6 +35,9 @@ class Images
     #[Vich\UploadableField(mapping: 'galerie_images', fileNameProperty: 'file')]
     private ?File $imageFile = null;
 
+    #[ORM\ManyToOne(inversedBy: 'images')]
+    private ?Categorie $categorie = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,5 +88,17 @@ class Images
     public function getImageFile(): ?File
     {
         return $this->imageFile;
+    }
+
+    public function getCategorie(): ?Categorie
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?Categorie $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
     }
 }
