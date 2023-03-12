@@ -39,7 +39,7 @@ class UsersRepository extends ServiceEntityRepository implements PasswordUpgrade
 
         if ($flush) {
             $this->getEntityManager()->flush();
-        }
+        } 
     }
 
     /**
