@@ -36,8 +36,8 @@
             </div>
             <!--login & book-->
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        {% if app.user %}
-          <a href="{{ path('app_login')}}"><div class="btn_design me-md-2 ">Mon compte</div></a>
+        {% if app.user %} 
+          <a href="{{ path('admin')}}"><div class="btn_design me-md-2 ">Administration</div></a>
           <a href="{{ path('app_logout')}}"><div class="btn_design me-md-2">Se déconnecter</div></a>
           <a href="{{ path('app_reservations')}}" class="text-decoration-none"><div class="me-md-2 btn_resa">Réserver</div></a>      
         {% else %}
