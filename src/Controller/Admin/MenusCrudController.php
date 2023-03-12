@@ -20,10 +20,10 @@ class MenusCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('title'),
+            TextField::new('title', 'Titre'),
             TextareaField::new('description'),
-            NumberField::new('price'),
-            TextField::new('categorieMenus')->hideOnForm(),
+            NumberField::new('price', 'Prix'),
+            TextField::new('categorieMenus', 'Catégories')->hideOnForm(),
         ];
     }
     public function configureCrud(Crud $crud): Crud

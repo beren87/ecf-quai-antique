@@ -17,6 +17,7 @@ class ReservationsController extends AbstractController
     #[Route('/reservations', name: 'app_reservations')]
     public function index(Request $request, RestaurantRepository $restaurantRepository, ReservationService $reservationService, OpeningHourRepository $openingHourRepository): Response
     {
+        
         //création d'une réservation
         $reservations = new Reservations();   
         //création du formulaire

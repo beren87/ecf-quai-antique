@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ReservationsRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ReservationsRepository::class)]
 class Reservations
@@ -14,11 +15,21 @@ class Reservations
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\Length(
+        min: 4,
+        max: 15,
+        minMessage: 'Le nom de la réservation doit dépasser {{ limit }} caractères',
+        maxMessage: 'Le nom de la réservation ne doit pas dépasser {{ limit }} caractères',
+    )]
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[Assert\Range(
+        min: 2,
+        max: 8,
+        notInRangeMessage: 'Vous devez au minimum être {{ min }} et {{ max }} au maximum pour la réservation',
+    )]
     #[ORM\Column]
-    
     private ?int $numberGuests = null; 
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
@@ -27,6 +38,7 @@ class Reservations
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $hours = null;
 
+    
     #[ORM\Column(type: Types::TEXT)]
     private ?string $allergies = null;
 
