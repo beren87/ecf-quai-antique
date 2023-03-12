@@ -20,10 +20,10 @@ class DisheCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('title'),
+            TextField::new('title', 'Titre'),
             TextAreaField::new('description'),
-            NumberField::new('price'),
-            TextField::new('category')->hideOnForm(),
+            NumberField::new('price', 'Prix'),
+            TextField::new('category', 'Catégories')->hideOnForm(),
         ];
     }
     public function configureCrud(Crud $crud): Crud
