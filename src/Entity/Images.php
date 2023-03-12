@@ -7,6 +7,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ImagesRepository::class)]
 #[Vich\Uploadable]
@@ -23,6 +24,11 @@ class Images
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
+    #[Assert\File(
+        maxSize: '10240k',
+        mimeTypes: ['application/pdf', 'application/x-pdf','application/png', 'application/jpg', 'application/jpeg',],
+        mimeTypesMessage: 'Please upload a valid PDF',
+    )]
     #[ORM\Column(length: 255)]
     private ?string $file = null;
 
