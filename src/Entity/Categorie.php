@@ -18,6 +18,14 @@ class Categorie
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[ORM\OneToMany(mappedBy: 'categorie', targetEntity: Images::class)]
+    private Collection $images;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,8 +42,39 @@ class Categorie
 
         return $this;
     }
+    
+
+    /**
+     * @return Collection<int, Images>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Images $image): self
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setCategorie($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Images $image): self
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getCategorie() === $this) {
+                $image->setCategorie(null);
+            }
+        }
+
+        return $this;
+    } 
     public function __toString(): string    
     {
           return $this->id;
-     } 
+     }
 }

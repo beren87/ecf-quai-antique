@@ -4,24 +4,29 @@
 
 {% block body %}
 <section>
-    <div class="container border-top py-3 my-3 g-0"> 
-        <h2 class="container-gal_title mb-3 text-primary category-title_letter mt-3">Galeries</h2>
-    </div>
+    <div class="container border-top py-3 my-3 g-0"> </div>
+{% for categorie in categories %}
+    
 <div class="container mb-2">
     <div class="row g-1 ">
+<div class="text-primary category-title_fonts ps-3 category-title_letter">{{ categorie.name }}</div>
     {% for image in images %}
+        {% if image.categorie is same as(categorie) %}
             <div class="card h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
                 <div class="card-body">
-                    <img src="{{ vich_uploader_asset(image, 'imageFile') | imagine_filter('preview_dishes') }}" class="card-img w-100 rounded-0" alt="...">
+                    <img src="{{ vich_uploader_asset(image, 'imageFile') | imagine_filter('galeries')  }}" class="card-img w-100 rounded-0" alt="...">
                     <h5 class="card-title text-primary title-card_size mt-1">{{ image.title }}</h5>
                     <p class="card-text text-primary header-cover_text">{{ image.description }}</p>
                 </div>
             </div>
-    {% endfor %}
+        {% endif %}
+    {% endfor %} 
     </div>
+   {% endfor %}
 
 
-</div>
+
+
 <div class="container mt-5 mb-5 "></div>
 
     <div class="container text-center mt-5">
