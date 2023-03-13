@@ -29,4 +29,9 @@
     font-size: sizes.$paragraphe;
 }
 
+.card-z:hover {
+    transition: .8s cubic-bezier(.5, 0, 0, 1);
+    transform: scale(1.1);
+}
+
 // ***************** DISHES *****************
