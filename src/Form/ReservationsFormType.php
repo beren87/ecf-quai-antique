@@ -27,12 +27,8 @@ class ReservationsFormType extends AbstractType
             'hours'=>[12, 13, 19 , 20, 21],
             'minutes'=>[00, 15, 30, 45]
             ])
-            
             ->add('allergies', TextType::class, ['attr' => ['class' => 'form-control form-title_style text-primary', 'placeholder'=>'exemple: fruits de mer'], 
-            'label' => false,])
-            
-            // ->add('users')
-        ;
+            'label' => false,]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
