@@ -5,6 +5,13 @@
 
 // ************** NAVBAR ********************* 
 
+.welcome-text_nav {
+    font-family: fonts.$font-serif;
+    font-size: sizes.$mq-nav16;
+    background-color: #5b441f;
+}
+
+
 .header-navbar_logo {
     @include utils.flex;
     line-height: sizes.$line;
@@ -131,3 +138,16 @@
 }
 
 // ************** FOOTER ********************* 
+
+// Javascript Animation
+
+.reveal {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: .8s cubic-bezier(.5, 0, 0, 1);
+}

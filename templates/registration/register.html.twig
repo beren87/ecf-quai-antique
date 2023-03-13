@@ -5,6 +5,7 @@
 {% block body %}
 <div class="border-bottom"></div>
 <div class="container"> 
+            <div class="text-success text-center fst-italic mt-3 mb-3">Gagner du temps lors de vos prochaines réservations en créant votre compte</div>
     <div class="row">
         <div class="col"></div>
         <div class="col">
@@ -12,12 +13,19 @@
 
             {{ form_start(registrationForm) }}
 
+                <div class="form-title_style text-primary">Nom</div>
                 {{ form_row(registrationForm.lastname) }}
+                <div class="form-title_style text-primary">Prénom</div>
                 {{ form_row(registrationForm.firstname) }}
+                <div class="form-title_style text-primary">Email</div>
                 {{ form_row(registrationForm.email) }}
-                {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
+                <div class="form-title_style text-primary">Mot de passe</div>
+                {{ form_row(registrationForm.plainPassword, {label: false}) }}
+                <div class="form-title_style text-primary">Adresse</div>
                 {{ form_row(registrationForm.address) }}
+                <div class="form-title_style text-primary">Code postal</div>
                 {{ form_row(registrationForm.zipcode) }}
+                <div class="form-title_style text-primary">Ville</div>
                 {{ form_row(registrationForm.city) }}
  
 

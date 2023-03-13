@@ -42,10 +42,7 @@ class Categorie
 
         return $this;
     }
-    public function __toString(): string    
-    {
-          return $this->id;
-     }
+    
 
     /**
      * @return Collection<int, Images>
@@ -76,4 +73,8 @@ class Categorie
 
         return $this;
     } 
+    public function __toString(): string    
+    {
+          return $this->name;
+     }
 }
