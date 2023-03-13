@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminbundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
 class DisheCrudController extends AbstractCrudController
 {
@@ -23,7 +24,7 @@ class DisheCrudController extends AbstractCrudController
             TextField::new('title', 'Titre'),
             TextareaField::new('description'),
             NumberField::new('price', 'Prix'),
-            TextField::new('category', 'Catégories')->hideOnForm(),
+            AssociationField::new('category', 'Catégories'),
         ];
     }
     public function configureCrud(Crud $crud): Crud
