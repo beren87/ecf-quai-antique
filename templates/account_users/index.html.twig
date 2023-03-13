@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte - Quai Antique{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+<div class="text-primary mt-5 mb-5 title-letter_all">Récapitulatif de vos réservations</div>
+    <div class="row"> 
+    {% for reservation in reservations %}
+        <div class="col-sm-6 mb-3 mb-sm-4 mb-xl-4 mb-lg-4 mb-md-4 header-cover_text">
+            <div class="card bg-light rounded-0">
+                <div class="card-body">
+                    <p class="card-text text-primary fw-bold">Nom de la réservation : <span class="text-primary fw-normal">{{ reservation.name }}</span></p>
+                    <p class="card-text text-primary fw-bold">Nombre de personnes : <span class="text-primary fw-normal">{{ reservation.numberGuests }}</span></p>
+                    <p class="card-text text-primary fw-bold">Date de réservation : <span class="text-primary fw-normal">{{ reservation.date | date("d/m/Y") }}</span></p>
+                    <p class="card-text text-primary fw-bold">Heure de réservation : <span class="text-primary fw-normal">{{ reservation.hours | date("H:i") }}</span></p> 
+                    <p class="card-text text-primary fw-bold">Allergies mentionnées : <span class="text-primary fw-normal">{{ reservation.allergies }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

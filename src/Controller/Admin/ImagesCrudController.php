@@ -27,7 +27,7 @@ class ImagesCrudController extends AbstractCrudController
             TextEditorField::new('description'),
             AssociationField::new('categorie'),
             TextField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex(),
-            ImageField::new('file', 'Photos')->setBasePath('/uploads/galeries')->onlyOnIndex(),
+            ImageField::new('file', 'galeries')->setBasePath('/uploads/galeries')->onlyOnIndex(),
                 
         ]; 
     }

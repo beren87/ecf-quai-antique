@@ -5,6 +5,13 @@
 
 // ************** NAVBAR ********************* 
 
+.welcome-text_nav {
+    font-family: fonts.$font-serif;
+    font-size: sizes.$mq-nav16;
+    background-color: #5b441f;
+}
+
+
 .header-navbar_logo {
     @include utils.flex;
     line-height: sizes.$line;
