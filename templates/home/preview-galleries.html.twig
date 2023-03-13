@@ -6,7 +6,7 @@
     <div class="row g-1">
     {% for image in images %}
             <div class="card col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0">
-            <img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="card-img w-100 rounded-0" alt="...">
+            <img src="{{ vich_uploader_asset(image, 'imageFile') | imagine_filter('galeries') }}" class="card-img w-100 rounded-0" alt="...">
                 <div class="card-img-overlay card-text_title card-text_descr text-center">
                     <h5 class="card-title text-secondary">{{ image.title }}</h5> 
                     <p class="card-text text-secondary">{{ image.description }}</p>
