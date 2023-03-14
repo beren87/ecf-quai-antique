@@ -16,7 +16,7 @@ class Categorie
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private ?string $name = null; 
 
     #[ORM\OneToMany(mappedBy: 'categorie', targetEntity: Images::class)]
     private Collection $images;

@@ -44,7 +44,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $zipcode = null;
 
     #[ORM\Column(length: 150)]
-    private ?string $city = null;
+    private ?string $city = null; 
 
     #[ORM\OneToMany(mappedBy: 'users', targetEntity: Reservations::class)]
     private Collection $reservations;
@@ -217,7 +217,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         if (!$this->reservations->contains($reservation)) {
             $this->reservations->add($reservation);
             $reservation->setUsers($this);
-        }
+        } 
 
         return $this;
     }
@@ -233,9 +233,9 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-   
+    
      public function __toString(): string    
-    {
+    { 
           return $this->lastname;
      } 
 }
