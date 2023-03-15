@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connexion - Quai Antique{% endblock %}
+{% block title %}Connexion - Quai Antique{% endblock %} 
 
 {% block body %}
 <div class="border-bottom"></div>
@@ -14,8 +14,8 @@
                 {% endif %}
 
                 {% if app.user %} 
-                    <div class="mb-3 text-center text-success form-log_success">
-                        Vous êtes bien connecté(e) en tant que {{ app.user.userIdentifier }} <a href="{{ path('app_logout') }}">
+                    <div class="mb-3 text-center text-success form-log_success"><span class="is-connected">
+                        Vous êtes bien connecté(e) en tant que {{ app.user.userIdentifier }} <a href="{{ path('app_logout') }}"></span>
                         <div class="mt-3 w-100 btn-sub_logout mb-2" >
                     SE DÉCONNECTER
                 </div>

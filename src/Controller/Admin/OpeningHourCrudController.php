@@ -18,8 +18,8 @@ class OpeningHourCrudController extends AbstractCrudController
     {
         return [
 
-            TextField::new('days'),
-            TextField::new('hours'),
+            TextField::new('days', 'Jours d\'ouvertures'),
+            TextField::new('hours', 'Heures d\'ouverture'),
             
         ];
     }

@@ -11,8 +11,12 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Dishe;
 use App\Entity\Menus;
 use App\Entity\Categorie;
+use App\Entity\CategorieMenus;
+use App\Entity\Images;
 use App\Entity\OpeningHour;
+use App\Entity\Reservations;
 use App\Entity\Restaurant;
+use App\Entity\Users;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 
 class DashboardController extends AbstractDashboardController
@@ -20,7 +24,7 @@ class DashboardController extends AbstractDashboardController
     public function __construct(private AdminUrlGenerator $adminUrlGenerator)
     {
         
-    }
+    } 
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
@@ -55,10 +59,14 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToCrud('Les réservations', 'fas fa-pen', Reservations::class);
         yield MenuItem::linkToCrud('Catégories', 'fas fa-list', Categorie::class);
         yield MenuItem::linkToCrud('Les plats', 'fas fa-bowl-food', Dishe::class);
+        yield MenuItem::linkToCrud('Catégories menus', 'fas fa-list', CategorieMenus::class);
         yield MenuItem::linkToCrud('Les menus', 'fas fa-drumstick-bite', Menus::class);
+        yield MenuItem::linkToCrud('Photos', 'fas fa-image', Images::class);
         yield MenuItem::linkToCrud('Restaurant', 'fas fa-utensils', Restaurant::class);
         yield MenuItem::linkToCrud('Horaires', 'fas fa-clock', OpeningHour::class);
+        yield MenuItem::linkToCrud('Clients inscrits', 'fas fa-user', Users::class);
     }
 }

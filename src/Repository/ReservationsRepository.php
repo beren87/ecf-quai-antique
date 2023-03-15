@@ -38,6 +38,9 @@ class ReservationsRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+  
+
+    }
 
 //    /**
 //     * @return Reservations[] Returns an array of Reservations objects
@@ -63,4 +66,4 @@ class ReservationsRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
-}
+

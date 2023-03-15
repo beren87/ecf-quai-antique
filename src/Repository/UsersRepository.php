@@ -39,7 +39,7 @@ class UsersRepository extends ServiceEntityRepository implements PasswordUpgrade
 
         if ($flush) {
             $this->getEntityManager()->flush();
-        }
+        } 
     }
 
     /**
@@ -55,6 +55,7 @@ class UsersRepository extends ServiceEntityRepository implements PasswordUpgrade
 
         $this->save($user, true);
     }
+
 
 //    /**
 //     * @return Users[] Returns an array of Users objects
