@@ -29,7 +29,9 @@ class UsersFixtures extends Fixture
             ->setFirstname('Alfred')
             ->setAddress('124 Rue de la République')
             ->setZipcode('73000')
-            ->setCity('Chambéry');
+            ->setCity('Chambéry')
+            ->setNbGuests(0)
+            ->setAllergiesMentioned('aucune');
             $password = $this->encoder->hashPassword($admin, 'password');
             $admin->setPassword($password)
             ->setRoles(['ROLE_ADMIN']);
@@ -44,6 +46,8 @@ class UsersFixtures extends Fixture
             $users->setAddress($faker->streetAddress());
             $users->setZipcode(str_replace(' ', '', $faker->postcode()));
             $users->setCity($faker->city());
+            $users->setNbGuests($faker->numberBetween(2, 8));
+            $users->setAllergiesMentioned($faker->words(5, true));
             $password = $this->encoder->hashPassword($users, 'secret');
             $users->setPassword($password);
             $users->setRoles(['ROLE_USER']);
