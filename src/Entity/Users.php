@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\UsersRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -48,6 +49,12 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\OneToMany(mappedBy: 'users', targetEntity: Reservations::class)]
     private Collection $reservations;
+
+    #[ORM\Column]
+    private ?int $nbGuests = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $allergiesMentioned = null;
    
 
     public function __construct()
@@ -237,5 +244,29 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
      public function __toString(): string    
     { 
           return $this->lastname;
+     }
+
+     public function getNbGuests(): ?int
+     {
+         return $this->nbGuests;
+     }
+
+     public function setNbGuests(int $nbGuests): self
+     {
+         $this->nbGuests = $nbGuests;
+
+         return $this;
+     }
+
+     public function getAllergiesMentioned(): ?string
+     {
+         return $this->allergiesMentioned;
+     }
+
+     public function setAllergiesMentioned(string $allergiesMentioned): self
+     {
+         $this->allergiesMentioned = $allergiesMentioned;
+
+         return $this;
      } 
 }
