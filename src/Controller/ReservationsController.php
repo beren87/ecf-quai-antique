@@ -20,7 +20,7 @@ class ReservationsController extends AbstractController
     ReservationService $reservationService, 
     OpeningHourRepository $openingHourRepository): Response
     {
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_REMEMBERED');
+        
         //création d'une réservation
         $reservations = new Reservations();   
 
@@ -33,7 +33,6 @@ class ReservationsController extends AbstractController
         //Si Formulaire soumis et valide, alors on ajoute l'objet $reservations dans la BDD
         if ($reservationForm ->isSubmitted() && $reservationForm->isValid()){
             $reservations = $reservationForm->getData();
-            
             $reservationService->persistReservation($reservations);
 
             return $this->redirectToRoute('app_reservations');

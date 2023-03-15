@@ -18,7 +18,7 @@ class ReservationService
     Security $security)
     {
         $this->manager = $manager;
-        $this->flash = $flash;
+        $this->flash = $flash; 
         $this->security = $security;
     }
 
