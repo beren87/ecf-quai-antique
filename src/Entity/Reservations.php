@@ -21,6 +21,7 @@ class Reservations
         minMessage: 'Le nom de la réservation doit dépasser {{ limit }} caractères',
         maxMessage: 'Le nom de la réservation ne doit pas dépasser {{ limit }} caractères',
     )]
+    #[Assert\Regex(pattern: "/^[a-zA-ZÀ-ÿ -]+$/", message: "Le nom de la réservation ne peut contenir uniquement des lettres")]
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
@@ -33,6 +34,7 @@ class Reservations
     private ?int $numberGuests = null; 
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Assert\GreaterThan("now", message: "Votre réservation ne peut pas être inférieure à la date d'aujourd'hui")]
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE)]
@@ -121,4 +123,5 @@ class Reservations
 
         return $this;
     }
+
 }

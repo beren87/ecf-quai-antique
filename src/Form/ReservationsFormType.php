@@ -10,16 +10,19 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
+use Symfony\Component\Security\Core\Security;
+
 // use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ReservationsFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        
         $builder
             ->add('name', TextType::class, ['attr' => ['class' => 'form-control mb-3 form-title_style text-primary', 'placeholder'=>'exemple: Dupont'], 'label' => false])
-            ->add('numberGuests', IntegerType::class, ['attr' => ['class' => 'form-control form-title_style mb-3 text-primary', 'placeholder'=>'exemple: 4'], 'label' => false])
-            ->add('date', DateType::class, ['attr' => ['class' => 'form-control mb-3 form-title_style text-primary'], 'label' => false, 'widget'=>'single_text'])
+            ->add('numberGuests', IntegerType::class, ['attr' => ['min' => 2, 'max' => 8, 'class' => 'form-control form-title_style mb-3 text-primary', 'placeholder'=>'exemple: 4'], 'label' => false])
+            ->add('date', DateType::class, ['attr' => ['class' => 'form-control mb-3 form-title_style text-primary'], 'label' => false, 'widget'=>'single_text', 'model_timezone' => 'Europe/Paris'])
             ->add('hours', TimeType::class, ['attr' => ['class' => 'form-control mb-3 form-title_style text-primary'], 
             'label' => false, 
             'widget'=>'choice', 
@@ -27,12 +30,18 @@ class ReservationsFormType extends AbstractType
             'hours'=>[12, 13, 19 , 20, 21],
             'minutes'=>[00, 15, 30, 45]
             ])
-            
             ->add('allergies', TextType::class, ['attr' => ['class' => 'form-control form-title_style text-primary', 'placeholder'=>'exemple: fruits de mer'], 
-            'label' => false,])
+            'label' => false,]);
             
-            // ->add('users')
-        ;
+    }
+     
+    // Déclaration de la variable de sécurité
+    private $security;
+
+    // Constructeur qui prend en entrée un objet de sécurité
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
@@ -41,4 +50,6 @@ class ReservationsFormType extends AbstractType
             'data_class' => Reservations::class,
         ]);
     }
+
+   
 }

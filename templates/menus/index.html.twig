@@ -22,20 +22,20 @@
 {# start A la carte #}
 
 {% for categorieMenu in categorieMenus %}
-    <div class="row mb-2 mt-5 text-primary">
+    <div class="row mb-2 mt-5 text-primary reveal">
         <div class="col"></div>
         <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="category-title_fonts category-title_letter">{{ categorieMenu.name }}</h3></div>
         <div class="col-xl-6 col-md-6 "></div>
     </div>
     {% for menu in menus %}
     {% if menu.categorieMenus is same as(categorieMenu) %}
-    <div class="row mb-1">
+    <div class="row mb-1 reveal">
         <div class="col"></div>
         <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary dishes-title_font">{{ menu.title }}</div>
         <div class="col"></div>
         <div class="col"></div>
     </div>
-    <div class="row dishes mb-3">
+    <div class="row dishes mb-3 reveal">
         <div class="col"></div>
         <div class="col-xl-5 col-md-5 col-sm-5 col-5 dishes-desc_font text-primary">{{ menu.description }}</div>
         <div class="col text-secondary">{{ menu.price }}€</div>

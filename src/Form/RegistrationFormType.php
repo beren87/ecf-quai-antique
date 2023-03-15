@@ -19,12 +19,12 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email', EmailType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => 'E-mail'])
-            ->add('lastname',TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => 'Nom'])
-            ->add('firstname', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => 'Prénom'])
-            ->add('address', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => 'Adresse'])
-            ->add('zipcode', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => 'Code postal'])
-            ->add('city', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => 'Ville'])
+            ->add('email', EmailType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
+            ->add('lastname',TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
+            ->add('firstname', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
+            ->add('address', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
+            ->add('zipcode', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
+            ->add('city', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
             ->add('agreeTerms', CheckboxType::class, ['attr' => ['class' => 'form-check-input py-2'],
                 'mapped' => false,
                 'constraints' => [
@@ -43,7 +43,7 @@ class RegistrationFormType extends AbstractType
                 ],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veuillez entrer un mot de passe',
                     ]),
                     new Length([
                         'min' => 6,
@@ -52,7 +52,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 12,
                         'maxMessage' => 'Votre mot de passe doit contenir au maximum {{ limit }} caractères',
                     ]),
-                ], 'label' => 'mot de passe',
+                ], 'label' => false,
             ])
         ;
     }

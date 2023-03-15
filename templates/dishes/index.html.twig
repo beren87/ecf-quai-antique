@@ -29,13 +29,13 @@
     </div>
     {% for dishe in dishes %}
     {% if dishe.category is same as(categorie) %} 
-    <div class="row mb-1">
+    <div class="row mb-1 reveal">
         <div class="col"></div>
         <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary dishes-title_font">{{ dishe.title }}</div>
         <div class="col"></div>
         <div class="col"></div>
     </div>
-    <div class="row dishes mb-3">
+    <div class="row dishes mb-3 reveal">
         <div class="col"></div>
         <div class="col-xl-5 col-md-5 col-sm-5 col-5 dishes-desc_font text-primary">{{ dishe.description }}</div>
         <div class="col text-secondary">{{ dishe.price }}€</div>
