@@ -16,7 +16,9 @@ class UsersUnitTest extends TestCase
               ->setFirstname('prénom') 
               ->setAddress('adresse')
               ->setZipcode('73000') 
-              ->setCity('chambéry'); 
+              ->setCity('chambéry')
+              ->setNbGuests(8) 
+              ->setAllergiesMentioned('aucune');  
 
         $this->assertTrue($users->getEmail() === 'true@mail.fr');
         $this->assertTrue($users->getPassword() === 'password');
@@ -25,6 +27,8 @@ class UsersUnitTest extends TestCase
         $this->assertTrue($users->getAddress() === 'adresse');
         $this->assertTrue($users->getZipcode() === '73000');
         $this->assertTrue($users->getCity() === 'chambéry');
+        $this->assertTrue($users->getNbGuests() === 8);
+        $this->assertTrue($users->getAllergiesMentioned() === 'aucune');
     }
     public function testIsFalse()
     {
@@ -36,7 +40,9 @@ class UsersUnitTest extends TestCase
               ->setFirstname('prénom') 
               ->setAddress('adresse')
               ->setZipcode('73000') 
-              ->setCity('chambéry'); 
+              ->setCity('chambéry')
+              ->setNbGuests(8) 
+              ->setAllergiesMentioned('aucune'); 
 
         $this->assertFalse($users->getEmail() === 'false@mail.com');
         $this->assertFalse($users->getPassword() === 'false');
@@ -45,6 +51,8 @@ class UsersUnitTest extends TestCase
         $this->assertFalse($users->getAddress() === 'false');
         $this->assertFalse($users->getZipcode() === 'false');
         $this->assertFalse($users->getCity() === 'false');
+        $this->assertFalse($users->getNbGuests() === 9);
+        $this->assertFalse($users->getAllergiesMentioned() === 'poisson');
     }
     public function testIsEmpty()
     {
@@ -57,5 +65,7 @@ class UsersUnitTest extends TestCase
         $this->assertEmpty($users->getAddress());
         $this->assertEmpty($users->getZipcode());
         $this->assertEmpty($users->getCity());
+        $this->assertEmpty($users->getNbGuests());
+        $this->assertEmpty($users->getAllergiesMentioned());
     }
 }
