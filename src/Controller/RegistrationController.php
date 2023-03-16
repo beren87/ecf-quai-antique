@@ -18,13 +18,21 @@ use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 class RegistrationController extends AbstractController
 {
     #[Route('/inscription', name: 'app_register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, UsersAuthenticator $authenticator, EntityManagerInterface $entityManager, RestaurantRepository $restaurantRepository, OpeningHourRepository $openingHourRepository): Response
+    public function register(Request $request, 
+    UserPasswordHasherInterface $userPasswordHasher, 
+    UserAuthenticatorInterface $userAuthenticator, 
+    UsersAuthenticator $authenticator, 
+    EntityManagerInterface $entityManager, 
+    RestaurantRepository $restaurantRepository, 
+    OpeningHourRepository $openingHourRepository): Response
     {
         $user = new Users();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
  
         if ($form->isSubmitted() && $form->isValid()) {
+            // Récupération des données du formulaire
+            $user=$form->getData();
             // encode the plain password
             $user->setPassword(
                 $userPasswordHasher->hashPassword(

@@ -24,6 +24,7 @@ class ReservationService
 
     public function persistReservation(Reservations $reservations): void
     {
+       
         $user = $this->security->getUser();
         $reservations->setUsers($user);
         $this->manager->persist($reservations);

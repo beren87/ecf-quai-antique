@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Reservations;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -38,24 +39,9 @@ class ReservationsRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-  
 
-    }
-
-//    /**
-//     * @return Reservations[] Returns an array of Reservations objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('r.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    
+}
 
 //    public function findOneBySomeField($value): ?Reservations
 //    {
