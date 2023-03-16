@@ -13,7 +13,7 @@ class Reservations
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id = null; 
 
     #[Assert\Length(
         min: 4,

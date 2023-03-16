@@ -3,25 +3,7 @@
 {% block title %}Mon compte - Quai Antique{% endblock %}
 
 {% block body %}
-
-
 <div class="container border-top">
-{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-{# <div class="text-primary mt-5 mb-3 title-letter_all">Récapitulatif de votre compte</div>
-<div class="col-sm-6 mb-3 mb-sm-4 mb-xl-4 mb-lg-4 mb-md-4 header-cover_text">
-            <div class="card border-secondary rounded-0">
-                <div class="card-body">
-                    <p class="card-text text-primary fw-bold mb-1">Email : <span class="text-primary fw-normal">{{ app.user.email }}</span></p>
-                    <p class="card-text text-primary fw-bold mb-1">Nom : <span class="text-primary fw-normal">{{ app.user.lastname }}</span></p>
-                    <p class="card-text text-primary fw-bold mb-1">Prénom: <span class="text-primary fw-normal">{{ app.user.firstname }}</span></p>
-                    <p class="card-text text-primary fw-bold mb-1">Adresse: <span class="text-primary fw-normal">{{ app.user.address }}</span></p>
-                    <p class="card-text text-primary fw-bold mb-1">Code postal: <span class="text-primary fw-normal">{{ app.user.zipcode }}</span></p> 
-                    <p class="card-text text-primary fw-bold mb-1">Ville : <span class="text-primary fw-normal">{{ app.user.city }}</p>
-                </div>
-            </div>
-        </div> #}
-{% endif %}
-
 <div class="text-primary mt-5 mb-3 title-letter_all">Récapitulatif de vos réservations</div>
     <div class="row reveal"> 
     {% for reservation in app.user.reservations %}
@@ -37,7 +19,6 @@
             </div>
         </div>
     {% endfor %}
-
     </div>
 </div>
 {% endblock %}
