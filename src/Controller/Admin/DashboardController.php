@@ -17,6 +17,7 @@ use App\Entity\OpeningHour;
 use App\Entity\Reservations;
 use App\Entity\Restaurant;
 use App\Entity\Users;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 
 class DashboardController extends AbstractDashboardController
