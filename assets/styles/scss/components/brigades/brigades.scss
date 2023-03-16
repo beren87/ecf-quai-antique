@@ -3,29 +3,29 @@
 @use "../../utils/sizes" as sizes;
 @use "../../atoms/buttons" as button; 
 
-.container-brig_title {
+.container--brigade-title {
     font-size: sizes.$h2;
     font-family: fonts.$font-serif;
 }
  
-.col-brig_text {
-    font-family: fonts.$font-serif;
+.container--brigade-text {
+    font-family: fonts.$font-serif; 
     font-size: sizes.$paragraphe;
 }
 
-.carousel-brig_text {
+.carousel--brigade-text {
     font-family: fonts.$font-serif;
     font-size: sizes.$title;
     color: #F2F2F2;
 }
 
-.carousel-brig_fonction {
+.carousel--brigade-fonction {
     font-family: fonts.$font-serif;
     font-size: sizes.$paragraphe;
     color: #F2F2F2;
 }
 
-.carousel-brig_bg {
+.carousel--brigrade-background {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -33,7 +33,7 @@
     height: 600px;
 }
 
-.col-brig_scroller {
+.container--brigade-scroller {
     overflow-y: scroll;
     height: 600px;
     width: auto;
@@ -44,7 +44,7 @@
 
 //from 768px to higher ==> text size = $paragraphe
 @media (min-width: 768px) and (max-width: 992px){
-    .col-brig_text {
+    .container--brigade-text {
         font-size: sizes.$mq-nav16;
     }
     .carousel-item {
@@ -54,7 +54,7 @@
 
 //sm $paragraphe
 @media (max-width: 576px) {
-    .col-brig_text {
+    .container--brigade-text {
         font-size: sizes.$paragraphe;
     }
 }

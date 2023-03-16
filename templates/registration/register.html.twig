@@ -11,35 +11,36 @@
     <div class="row">
         <div class="col"></div>
         <div class="col">
-        <h1 class="mb-3 text-center form-title_style mt-3 text-primary">Inscription</h1>
+        <h1 class="mb-3 text-center container--form-fonts mt-3 text-primary">Inscription</h1>
 
-            {{ form_start(registrationForm) }}
+            {{ form_start(registrationForm) }} 
 
-                <div class="form-title_style text-primary">Nom</div>
+                <div class="container--form-fonts text-primary">Nom</div>
                 {{ form_row(registrationForm.lastname) }}
-                <div class="form-title_style text-primary">Prénom</div>
+                <div class="container--form-fonts text-primary">Prénom</div>
                 {{ form_row(registrationForm.firstname) }}
-                <div class="form-title_style text-primary">Email</div>
+                <div class="container--form-fonts text-primary">Email</div>
                 {{ form_row(registrationForm.email) }}
-                <div class="form-title_style text-primary">Mot de passe</div>
+                <div class="container--form-fonts text-primary">Mot de passe</div>
                 {{ form_row(registrationForm.plainPassword, {label: false}) }}
-                <div class="form-title_style text-primary">Adresse</div>
+                <div class="container--form-fonts text-primary">Adresse</div>
                 {{ form_row(registrationForm.address) }}
-                <div class="form-title_style text-primary">Code postal</div>
+                <div class="container--form-fonts text-primary">Code postal</div>
                 {{ form_row(registrationForm.zipcode) }}
-                <div class="form-title_style text-primary">Ville</div>
+                <div class="container--form-fonts text-primary">Ville</div>
                 {{ form_row(registrationForm.city) }}
                 {# <div class="text-success text-center fst-italic mt-3 mb-3">
                 Veuillez compléter les champs suivant pour pré-remplir vos prochaines réservations</div> #}
-                {# <div class="form-title_style text-primary">Nombre d'invité(e)s</div> #}
-                {# <div class="form-size_allergy text-primary fst-italic">* minimum 2 / maximum 8 personnes</div> #}
+                {# <div class="container--form-fonts text-primary">Nombre d'invité(e)s</div> #}
+                {# <div class="container--form-allergy text-primary fst-italic">* minimum 2 / maximum 8 personnes</div> #}
                 {# {{ form_row(registrationForm.nbGuests) }} #}
-                {# <div class="form-title_style text-primary">En cas d'allergies, veuillez le précisez</div> #}
+                {# <div class="container--form-fonts text-primary">En cas d'allergies, veuillez le précisez</div> #}
                 {# {{ form_row(registrationForm.allergiesMentioned) }} #}
-                {# <div class="form-size_allergy text-primary fst-italic">* Si aucune allergies, veuillez écrire : aucune</div> #}
+                {# <div class="container--form-allergy text-primary fst-italic">* Si aucune allergies, veuillez écrire : aucune</div> #}
 
-                {{ form_row(registrationForm.agreeTerms) }}
-                <button type="submit" class="mt-3 w-100 btn-sub_style mb-2 text-secondary">S'INSCRIRE</button>
+                <div class="container--form-fonts text-primary">Accepter les conditions d'utilisation {{ form_row(registrationForm.agreeTerms) }}</div>
+                
+                <button type="submit" class="mt-3 w-100 login--btn-style mb-2 text-secondary">S'INSCRIRE</button>
             {{ form_end(registrationForm) }}
         
         </div>
@@ -48,7 +49,7 @@
 
     <div class="row mt-3 mb-5">
         <div class="col"></div>
-        <div class="col text-center form-title_style text-primary">Déjà un compte ? <span class="form-title_color">
+        <div class="col text-center container--form-fonts text-primary">Déjà un compte ? <span class="container--form-fonts">
         <a href="{{ path('app_login')}}" class="text-secondary text-decoration-none">
         Connectez-vous</a>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right dishe-title_icon" viewBox="0 0 16 16">

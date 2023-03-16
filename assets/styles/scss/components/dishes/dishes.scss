@@ -4,33 +4,33 @@
 @use "../../atoms/buttons" as button; 
 
 // ***************** DISHES *****************
-.title-fonts{
+.container--dishes-bigtitle {
     font-family: fonts.$font-cursive;
     font-size: sizes.$logo;
 }
 
-.category-title_fonts{
+.container--category-fonts {
     font-family: fonts.$font-serif;
     font-size: sizes.$h2;
 }
 
-.category-title_letter::first-letter {
+.container--categorie-firstletter::first-letter {
     font-family: fonts.$font-cursive;
     font-size: sizes.$logo;
 }
 
-.dishes-title_font{
+.container--dishes-title {
     font-family: fonts.$font-serif;
     font-size: sizes.$title-dishe;
 }
 
-.dishes-desc_font{
+.container--dishes-description {
     font-family: fonts.$font-serif;
     font-size: sizes.$paragraphe;
 }
 
-.card-z:hover {
-    transition: .8s cubic-bezier(.5, 0, 0, 1);
+.container--card-hover:hover {
+    transition: .8s cubic-bezier(.5, 0, 0, 1); 
     transform: scale(1.1);
 }
 

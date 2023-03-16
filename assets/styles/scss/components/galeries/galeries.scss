@@ -3,32 +3,21 @@
 @use "../../utils/sizes" as sizes;
 @use "../../atoms/buttons" as button; 
 
-.container-gal_title {
-    font-size: sizes.$h2;
-    font-family: fonts.$font-serif;
-}
-
-.title-gallery_style {
+.container--preview-title {
     font-family: fonts.$font-serif;
     font-size: sizes.$h2;
 }
 
-.title-card_size{
+.container--card-title {
     font-family: fonts.$font-serif;
-    font-size: sizes.$title-dishe;
+    font-size: sizes.$title-dishe; 
 }
 
-.span-gal_letter {
-    font-family: fonts.$font-cursive;
-    font-size: sizes.$logo;
-} 
-
-.container-gal_text {
+.container---card-text {
     font-family: fonts.$font-serif;
-    font-family: sizes.$h2;
 }
 
-.card-text_descr, .card-text_title {
+.container--card-description, .card-text_title {
     font-family: fonts.$font-serif;
     font-size: sizes.$paragraphe;
     cursor: default;

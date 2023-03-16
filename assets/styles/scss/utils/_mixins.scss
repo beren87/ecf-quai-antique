@@ -1,8 +1,3 @@
-//Colors icon
-@mixin icon {
-    color: #DDB46A;
-}
-
 //Display flex for logo:
 @mixin flex($justify: center, $align: center){
 display: flex;
