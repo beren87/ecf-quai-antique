@@ -5,13 +5,15 @@ namespace App\Entity;
 use App\Repository\UsersRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UsersRepository::class)]
-#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+#[UniqueEntity(fields: ['email'], message: 'Un compte a déjà été créé avec cette adresse email')]
 class Users implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -19,6 +21,10 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank(message: 'Veuillez renseigner un email.')]
+    #[Assert\Email(
+        message: 'L\'email {{ value }}, n•\'est pas une adresse email valide.',
+    )]
     #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
@@ -31,23 +37,53 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 30,
+        minMessage: 'Le nom pour vous inscrire doit dépasser {{ limit }} caractères',
+        maxMessage: 'Le nom pour vous inscrire ne doit pas dépasser {{ limit }} caractères',
+    )]
+    #[Assert\Regex(pattern: "/^[a-zA-ZÀ-ÿ -]+$/", message: "Le nom de famille doit contenir uniquement des lettres")]
     #[ORM\Column(length: 150)]
     private ?string $lastname = null;
 
+    #[Assert\Length(
+        min: 2,
+        max: 30,
+        minMessage: 'Le prénom pour vous inscrire doit dépasser {{ limit }} caractère',
+        maxMessage: 'Le prénom pour vous inscrire ne doit pas dépasser {{ limit }} caractères',
+    )]
+    #[Assert\Regex(pattern: "/^[a-zA-ZÀ-ÿ -]+$/", message: "Le prénom doit contenir uniquement des lettres")]
     #[ORM\Column(length: 150)]
     private ?string $firstname = null;
 
+    #[Assert\NotBlank(message: 'Veuillez saisir une adresse')]
     #[ORM\Column(length: 255)]
     private ?string $address = null;
 
+    #[Assert\Range(
+        min: 5,
+        notInRangeMessage: 'Votre code postal doit contenir au minimum {{ min }} chiffre',
+    )]
     #[ORM\Column(length: 5)]
     private ?string $zipcode = null;
 
     #[ORM\Column(length: 150)]
-    private ?string $city = null;
+    private ?string $city = null; 
 
     #[ORM\OneToMany(mappedBy: 'users', targetEntity: Reservations::class)]
     private Collection $reservations;
+
+    #[Assert\Range(
+        min: 2,
+        max: 8,
+        notInRangeMessage: 'Vous devez au minimum être {{ min }} et {{ max }} au maximum pour la réservation',
+    )]
+    #[ORM\Column]
+    private ?int $nbGuests = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $allergiesMentioned = null;
    
 
     public function __construct()
@@ -217,7 +253,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         if (!$this->reservations->contains($reservation)) {
             $this->reservations->add($reservation);
             $reservation->setUsers($this);
-        }
+        } 
 
         return $this;
     }
@@ -233,9 +269,33 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-   
+    
      public function __toString(): string    
-    {
+    { 
           return $this->lastname;
+     }
+
+     public function getNbGuests(): ?int
+     {
+         return $this->nbGuests;
+     }
+
+     public function setNbGuests(int $nbGuests): self
+     {
+         $this->nbGuests = $nbGuests;
+
+         return $this;
+     }
+
+     public function getAllergiesMentioned(): ?string
+     {
+         return $this->allergiesMentioned;
+     }
+
+     public function setAllergiesMentioned(string $allergiesMentioned): self
+     {
+         $this->allergiesMentioned = $allergiesMentioned;
+
+         return $this;
      } 
 }

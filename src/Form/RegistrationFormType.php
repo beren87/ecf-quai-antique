@@ -13,23 +13,26 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email', EmailType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => 'E-mail'])
-            ->add('lastname',TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => 'Nom'])
-            ->add('firstname', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => 'Prénom'])
-            ->add('address', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => 'Adresse'])
-            ->add('zipcode', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => 'Code postal'])
-            ->add('city', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => 'Ville'])
+            ->add('email', EmailType::class, ['attr' => ['class' => 'form-control mb-3'], 'constraints' => [ new NotBlank(['message' => 'Veuillez saisir une adresse email'])], 'label' => false])
+            ->add('lastname',TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
+            ->add('firstname', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
+            ->add('address', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
+            ->add('zipcode', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
+            ->add('city', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
+            //->add('nbGuests', IntegerType::class, ['attr' => ['min' => 2, 'max' => 8, 'class' => 'form-control form-title_style mb-3 text-primary', 'placeholder'=>'exemple: 4'], 'label' => false])
+            //->add('allergiesMentioned', TextType::class, ['attr' => ['class' => 'form-control form-title_style text-primary', 'placeholder'=>'exemple: fruits de mer'], 'label' => false,])
             ->add('agreeTerms', CheckboxType::class, ['attr' => ['class' => 'form-check-input py-2'],
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Vous n\'avez pas accepté les conditions d\'utilisation',
                     ]),
                 ], 'label' => 'Accepter les conditions d\'utilisation'
             ])
@@ -43,7 +46,7 @@ class RegistrationFormType extends AbstractType
                 ],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veuillez entrer un mot de passe',
                     ]),
                     new Length([
                         'min' => 6,
@@ -52,7 +55,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 12,
                         'maxMessage' => 'Votre mot de passe doit contenir au maximum {{ limit }} caractères',
                     ]),
-                ], 'label' => 'mot de passe',
+                ], 'label' => false,
             ])
         ;
     }
