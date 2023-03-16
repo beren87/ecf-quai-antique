@@ -7,16 +7,16 @@
     <div class="container border-top py-3 my-3 g-0"> </div>
 {% for categorie in categories %}
     
-<div class="container mb-2">
+<div class="container mb-2"> 
     <div class="row g-1 reveal">
-<div class="text-primary category-title_fonts ps-3 category-title_letter">{{ categorie.name }}</div>
+<div class="container--category-fonts container--categorie-firstletter text-primary ps-3">{{ categorie.name }}</div>
     {% for image in images %}
         {% if image.categorie is same as(categorie) %}
-            <div class="card card-z h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+            <div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
                 <div class="card-body">
                     <img src="{{ vich_uploader_asset(image, 'imageFile') | imagine_filter('galeries')  }}" class="card-img w-100 rounded-0" alt="...">
-                    <h5 class="card-title text-primary title-card_size mt-1">{{ image.title }}</h5>
-                    <p class="card-text text-primary header-cover_text">{{ image.description }}</p>
+                    <h5 class="card-title text-primary container--card-title mt-1">{{ image.title }}</h5>
+                    <p class="card-text text-primary container---card-text">{{ image.description }}</p>
                 </div>
             </div>
         {% endif %}
@@ -60,7 +60,7 @@
     </div>
     <div class="row mt-5">
         <div class="col"></div>
-        <div class="col text-back_style text-primary">Pour revenir à la page d'accueil, cliquez sur le logo en pied ou en haut de page du <span class="text-back_home text-secondary">Quai Antique<span></div>
+        <div class="container--foot-text col text-primary">Pour revenir à la page d'accueil, cliquez sur le logo en pied ou en haut de page du <span class="container--foot-back text-secondary">Quai Antique<span></div>
     </div>
 </section>
 {% endblock %}

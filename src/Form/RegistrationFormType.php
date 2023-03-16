@@ -26,15 +26,15 @@ class RegistrationFormType extends AbstractType
             ->add('address', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
             ->add('zipcode', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
             ->add('city', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
-            //->add('nbGuests', IntegerType::class, ['attr' => ['min' => 2, 'max' => 8, 'class' => 'form-control form-title_style mb-3 text-primary', 'placeholder'=>'exemple: 4'], 'label' => false])
-            //->add('allergiesMentioned', TextType::class, ['attr' => ['class' => 'form-control form-title_style text-primary', 'placeholder'=>'exemple: fruits de mer'], 'label' => false,])
-            ->add('agreeTerms', CheckboxType::class, ['attr' => ['class' => 'form-check-input py-2'],
+            //->add('nbGuests', IntegerType::class, ['attr' => ['min' => 2, 'max' => 8, 'class' => 'form-control container--form-fonts mb-3 text-primary', 'placeholder'=>'exemple: 4'], 'label' => false])
+            //->add('allergiesMentioned', TextType::class, ['attr' => ['class' => 'form-control container--form-fonts text-primary', 'placeholder'=>'exemple: fruits de mer'], 'label' => false,])
+            ->add('agreeTerms', CheckboxType::class, ['attr' => ['class' => 'form-check-input '],
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
                         'message' => 'Vous n\'avez pas accepté les conditions d\'utilisation',
                     ]),
-                ], 'label' => 'Accepter les conditions d\'utilisation'
+                ], 'label' => false
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,

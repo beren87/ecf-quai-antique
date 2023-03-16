@@ -9,7 +9,7 @@
         <div class="col-xl col-lg col-md "></div>
         <div class="col-xl-2 col-lg-1 col-md"></div>
         <div class="col col-xl col-lg col-md py-4"></div>
-        <div class="col-xl-4 col-lg-3 col-md-4 col-sm-4 col-4"><div class="text-center mt-5 mb-3 pe-xl-5 pe-sm-1 col-title_mq title-fonts text-primary">La carte</div></div>
+        <div class="col-xl-4 col-lg-3 col-md-4 col-sm-4 col-4"><div class="container--dishes-bigtitle text-center mt-5 mb-3 pe-xl-5 pe-sm-1 text-primary">La carte</div></div>
         <div class="col col-xl col-lg col-sm col py-4"></div>
         <div class="col-xl-2 col-lg-2 col-md col-sm col mt-5 py-5 "></div> 
         <div class="col col-xl col-lg col-md col-sm col "></div>
@@ -21,24 +21,24 @@
     </div>
 {# start A la carte #}
 
-{% for categorie in categories %}
+{% for categorie in categories %} 
     <div class="row mb-2 mt-5 text-primary">
         <div class="col"></div>
-        <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="category-title_fonts category-title_letter">{{ categorie.name }}</h3></div>
+        <div class="col-xl-4 col-md-4 ms-sm-5 ms-5"><h3 class ="container--category-fonts container--categorie-firstletter">{{ categorie.name }}</h3></div>
         <div class="col-xl-6 col-md-6 "></div>
     </div>
     {% for dishe in dishes %}
     {% if dishe.category is same as(categorie) %} 
     <div class="row mb-1 reveal">
         <div class="col"></div>
-        <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary dishes-title_font">{{ dishe.title }}</div>
+        <div class="col-xl-5 col-md-5 col-sm-5 col-5 text-primary container--dishes-title">{{ dishe.title }}</div>
         <div class="col"></div>
         <div class="col"></div>
     </div>
     <div class="row dishes mb-3 reveal">
         <div class="col"></div>
-        <div class="col-xl-5 col-md-5 col-sm-5 col-5 dishes-desc_font text-primary">{{ dishe.description }}</div>
-        <div class="col text-secondary">{{ dishe.price }}€</div>
+        <div class="col-xl-5 col-md-5 col-sm-5 col-5 container--dishes-description text-primary">{{ dishe.description }}</div>
+        <div class="col text-secondary header--menu-font">{{ dishe.price }}€</div>
         <div class="col"></div>
     </div>
     {% endif %}
@@ -82,7 +82,7 @@
     </div>
    <div class="row mt-5">
         <div class="col"></div>
-        <div class="col text-back_style text-primary">Pour revenir à la page d'accueil, cliquez sur le logo en pied ou en haut de page du <span class="text-back_home text-secondary"> Quai Antique<span></div>
+        <div class="container--foot-text col text-primary">Pour revenir à la page d'accueil, cliquez sur le logo en pied ou en haut de page du <span class="container--foot-back text-secondary"> Quai Antique<span></div>
     </div>
 </section>
 

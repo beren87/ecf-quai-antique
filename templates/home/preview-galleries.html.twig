@@ -1,28 +1,28 @@
 <section>
     <div class="container mt-3 g-0 border-top"> 
-    <h2 class="title-letter_all mb-4 mt-4 text-primary category-title_letter">Voici quelques plats les plus appréciés</h2>
+    <h2 class="container--preview-text container--categorie-firstletter mb-4 mt-4 text-primary">Voici quelques plats les plus appréciés</h2>
         
 <div class="container mb-2">
     <div class="row g-1"> 
     {% for image in images %}
             <div class="card col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0">
             <img src="{{ vich_uploader_asset(image, 'imageFile') | imagine_filter('galeries') }}" class="card-img w-100 rounded-0 reveal" alt="...">
-                <div class="card-img-overlay card-text_title card-text_descr text-center">
+                <div class="card-img-overlay container--card-title container--card-description text-center">
                     <h5 class="card-title text-secondary">{{ image.title }}</h5> 
                     <p class="card-text text-secondary">{{ image.description }}</p>
                 </div>
             </div>
-    {% endfor %}
+    {% endfor %} 
     </div>
 </div>
-<div class="text-center m-2 d-flex flex-column justify-content-center align-items-center text-primary header-cover_text">Savourez nos plats les plus incontournable du Quai Antique concocté par le Chef et sa brigade.
-    <a href="{{ path('app_reservations')}}" class="text-decoration-none"><div class="btn_design me-md-2 m-2 btn_resa">Réserver</div></a></div> 
+<div class="container--cover-text text-center m-2 d-flex flex-column justify-content-center align-items-center text-primary">Savourez nos plats les plus incontournable du Quai Antique concocté par le Chef et sa brigade.
+    <a href="{{ path('app_reservations')}}" class="text-decoration-none"><div class="header--btn-booking me-md-2 m-2">Réserver</div></a></div> 
        
     <div class="row mt-5">
         <div class="col"></div>
-        <div class="col text-back_style text-primary">
+        <div class="container--foot-text col text-primary">
         Consultez la barre de navigation en haut de page pour accéder aux différents menus du 
-        <span class="text-back_home text-secondary">Quai Antique<span></div>
+        <span class="container--foot-back text-secondary">Quai Antique<span></div>
     </div>
 </section>
 

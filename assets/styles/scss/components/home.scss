@@ -3,16 +3,13 @@
 @use "../utils/sizes" as sizes;
 @use "../atoms/buttons" as button;
 
+// BEM :
+// Block (header, container, menu, ..),
+// Element (menu item, list item, input, ...), 
+// Modifier (checked, disabled, size big, ...)
+
 // ************** NAVBAR ********************* 
-
-.welcome-text_nav {
-    font-family: fonts.$font-serif;
-    font-size: sizes.$mq-nav16;
-    background-color: #5b441f;
-}
-
-
-.header-navbar_logo {
+.header--menu-logo {
     @include utils.flex;
     line-height: sizes.$line;
     background-color: #5b441f;  
@@ -21,22 +18,28 @@
     font-size: sizes.$logo;
 }
 
-.header-navbar_menus {
+.header--menu-name {
+    font-family: fonts.$font-serif;
+    font-size: sizes.$mq-nav16;
+    background-color: #5b441f;
+}
+
+.header--menu-background {
     color: #5b441f;   
 }
 
-.header-navbar_list {
+.header--menu-font {
     font-family: fonts.$font-serif;
 }
 
-.header-navbar_hover {
+.header--menu-hover {
     &::after {
         content: "";
         display: block;
         position: absolute;
         width: 0%;
         height: 1px;
-        background: #5b441f;  
+        background: #DDB46A;  
         transition: width 0.2s ease-in-out;
     }
     &:hover::after {
@@ -44,29 +47,17 @@
     }
 }
 
-.btn_design{
+.header--menu-btn {
     @extend .button;
 }
 
-.btn_resa {
+.header--btn-booking {
     @extend .button-reservation;
 }
-
 // ************** NAVBAR ********************* 
 
 // ************** COVER ********************** 
-
-.cover-icon_color {
-   color: #5b441f;
-}
-
-@media (max-width: 670px){
-    .col-present_icon {
-        display: none;
-    }
-}
-
-.home-cover_paragraphe {
+.container--cover-paragraphe {
     font-family: fonts.$font-serif;
     font-size: sizes.$paragraphe;
     display: flex;
@@ -74,73 +65,41 @@
     margin-top: 2.5vh;
 }
 
-.header-cover_text {
+.container--cover-text {
     font-family: fonts.$font-serif;
     font-size: sizes.$paragraphe;
 }
-
 // ************** COVER ********************* 
 
 // ************** PREVIEW-GALLERIES ********************* 
-
-.title-letter_all {
+.container--preview-text {
     font-size: sizes.$h2;
     font-family: fonts.$font-serif;
 }
 
-.title-gallery_style {
-    font-family: fonts.$font-serif;
-    font-size: sizes.$h2;
-}
-
-.title-letter_first {
-    font-family: fonts.$font-cursive;
-    font-size: sizes.$logo;
-} 
-
-.home-galleries_reservation {
-    font-family: fonts.$font-serif;
-    font-family: sizes.$h2;
-}
-
-.home-galleries_text { 
-    position: absolute;
-    font-family: fonts.$font-serif;
-    font-size: sizes.$paragraphe;
-    opacity: 0;
-}
-
-.text-back_style{
+.container--foot-text {
     font-size: sizes.$mq-nav11;
     font-family: fonts.$font-serif;
 }
 
-.text-back_home {
+.container--foot-back {
     font-family: fonts.$font-cursive;
     font-size: sizes.$paragraphe;
 }
-
 // ************** PREVIEW-GALLERIES ********************* 
 
 // ************** FOOTER ********************* 
-
-.footer_logo {   
+.footer--menu-logo {   
     font-family: fonts.$font-cursive;
     font-size: sizes.$logo;
 }
 
-.footer_list {
+.footer--menu-list {
     font-family: fonts.$font-serif;
 }
-
-.icon_color {
-    @include utils.icon;
-}
-
 // ************** FOOTER ********************* 
 
 // Javascript Animation
-
 .reveal {
     opacity: 0;
     transform: translateY(-30px);

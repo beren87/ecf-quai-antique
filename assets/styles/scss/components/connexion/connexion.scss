@@ -3,24 +3,15 @@
 @use "../../utils/sizes" as sizes;
 @use "../../atoms/buttons" as button; 
 
-.btn-sub_style {
+.login--btn-style {
     @extend .button-log;
 }
 
-.btn-sub_logout {
-    @extend .button-logout;
-    padding-top: 6px;
+.container--form-fonts {
+    font-family: fonts.$font-serif; 
 }
 
-.form-title_style {
-    font-family: fonts.$font-serif;
-}
-
-.form-title_color {
-    font-family: fonts.$font-serif;
-}
-
-.form-log_success {
+.container--form-success {
     font-family: fonts.$font-serif;
 }
 
@@ -29,7 +20,7 @@
     font-family: fonts.$font-serif;
 }
 
-.form-size_allergy{
+.container--form-allergy {
     font-family: fonts.$font-serif;
     font-size: sizes.$mq-nav11;
 }
