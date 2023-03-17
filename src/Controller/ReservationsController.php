@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Form\ReservationsFormType;
 use App\Repository\OpeningHourRepository;
 use App\Repository\RestaurantRepository;
-use App\Service\ReservationService;
+use App\Service\ReservationService; 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,7 +16,7 @@ class ReservationsController extends AbstractController
 {
     #[Route('/reservations', name: 'app_reservations')]
     public function index(Request $request, 
-    RestaurantRepository $restaurantRepository, 
+    RestaurantRepository $restaurantRepository,
     ReservationService $reservationService, 
     OpeningHourRepository $openingHourRepository): Response
     {   

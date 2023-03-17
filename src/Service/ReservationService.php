@@ -14,7 +14,7 @@ class ReservationService
     private $flash;
 
     public function __construct(EntityManagerInterface $manager, 
-    FlashBagInterface $flash, 
+    FlashBagInterface $flash,  
     Security $security)
     {
         $this->manager = $manager;
