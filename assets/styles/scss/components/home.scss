@@ -18,6 +18,12 @@
     font-size: sizes.$logo;
 }
 
+.header--menu-warning {
+    font-family: fonts.$font-serif;
+    font-size: sizes.$mq-nav11;
+    background-color: #dc3545;
+}
+
 .header--menu-name {
     font-family: fonts.$font-serif;
     font-size: sizes.$mq-nav16;
