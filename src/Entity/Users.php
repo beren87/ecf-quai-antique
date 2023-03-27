@@ -61,7 +61,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $address = null;
 
-    #[Assert\Range(
+    #[Assert\Range( 
         min: 5,
         notInRangeMessage: 'Votre code postal doit contenir au minimum {{ min }} chiffre',
     )]
