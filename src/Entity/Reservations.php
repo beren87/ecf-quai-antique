@@ -10,10 +10,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: ReservationsRepository::class)]
 class Reservations
 {
-
-    const RESERVATIONS_ADDED_SUCCESSFULLY = 'RESERVATIONS_ADDED_SUCCESSFULLY';
-    const RESERVATIONS_INVALID_FORM = 'RESERVATIONS_INVALID_FORM';
-    
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

@@ -14,7 +14,7 @@
                     {{ message }}
                     </div>
                 {% endfor %}
-                
+               
                 <div class="container--form-fonts text-primary">Nom de la réservation</div>
                 {{ form_row(reservationForm.name) }}
                 <div class="container--form-fonts text-primary">Choisissez une date</div>
@@ -22,9 +22,9 @@
                 <div class="container--form-fonts text-primary">Choisissez une heure</div>
                 {{ form_row(reservationForm.hours) }}
                 <div class="container--form-fonts text-primary">Nombre d'invité(e)s</div>
-                {% for restaurant in restaurants %}
+                {# {% for restaurant in restaurants %}
                     <div class="text-danger container--form-fonts">Nombre de place disponible ce jour : {{ restaurant.maxGuests }}</div>
-                {% endfor %}
+                {% endfor %} #}
                 <div class="container--form-allergy text-primary fst-italic">* minimum 2 / maximum 8 personnes pour une réservation</div>
                 {{ form_row(reservationForm.numberGuests) }} 
                 <div class="container--form-fonts text-primary">En cas d'allergies, veuillez le précisez</div>
@@ -44,5 +44,4 @@
     </div>
 
 </div>
-
 {% endblock %}
