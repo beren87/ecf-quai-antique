@@ -24,13 +24,13 @@ class RegistrationFormType extends AbstractType
             ->add('lastname',TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
             ->add('firstname', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
             ->add('address', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
-            ->add('zipcode', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
+            ->add('zipcode', TextType::class, ['attr' => ['class' => 'form-control mb-3'],  'label' => false])
             ->add('city', TextType::class, ['attr' => ['class' => 'form-control mb-3'], 'label' => false])
             //->add('nbGuests', IntegerType::class, ['attr' => ['min' => 2, 'max' => 8, 'class' => 'form-control container--form-fonts mb-3 text-primary', 'placeholder'=>'exemple: 4'], 'label' => false])
             //->add('allergiesMentioned', TextType::class, ['attr' => ['class' => 'form-control container--form-fonts text-primary', 'placeholder'=>'exemple: fruits de mer'], 'label' => false,])
             ->add('agreeTerms', CheckboxType::class, ['attr' => ['class' => 'form-check-input '],
                 'mapped' => false,
-                'constraints' => [
+                'constraints' => [ 
                     new IsTrue([
                         'message' => 'Vous n\'avez pas accepté les conditions d\'utilisation',
                     ]),
