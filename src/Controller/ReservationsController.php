@@ -20,28 +20,28 @@ class ReservationsController extends AbstractController
     ReservationService $reservationService, 
     OpeningHourRepository $openingHourRepository): Response
     {   
-        //création d'une réservation
-        $reservations = new Reservations();   
+       //création d'une réservation
+       $reservations = new Reservations();   
         
         
-        //création du formulaire
-        $reservationForm = $this->createForm(ReservationsFormType::class, $reservations);
+       //création du formulaire
+       $reservationForm = $this->createForm(ReservationsFormType::class, $reservations);
 
-        //traite de la requete du formulaire
-        $reservationForm->handleRequest($request);  
-        
-        //Si Formulaire soumis et valide, alors on ajoute l'objet $reservations dans la BDD
-        if ($reservationForm ->isSubmitted() && $reservationForm->isValid()){
-            $reservations = $reservationForm->getData();
-            
-            $reservationService->persistReservation($reservations);
-            return $this->redirectToRoute('app_reservations');
+       //traite de la requete du formulaire
+       $reservationForm->handleRequest($request);  
+       
+       //Si Formulaire soumis et valide, alors on ajoute l'objet $reservations dans la BDD
+       if ($reservationForm ->isSubmitted() && $reservationForm->isValid()){
+           $reservations = $reservationForm->getData();
            
-            }
-            return $this->render('reservations/index.html.twig', [
-                'reservationForm' => $reservationForm->createView(),
-                'restaurants' => $restaurantRepository->findBy([]),
-                'openinghours' => $openingHourRepository->findBy([])
-            ]);             
-    }
+           $reservationService->persistReservation($reservations);
+           return $this->redirectToRoute('app_reservations');
+          
+           }
+           return $this->render('reservations/index.html.twig', [
+               'reservationForm' => $reservationForm->createView(),
+               'restaurants' => $restaurantRepository->findBy([]),
+               'openinghours' => $openingHourRepository->findBy([])
+           ]);             
+   }
 }
