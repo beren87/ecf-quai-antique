@@ -4,17 +4,17 @@
 
 {% block body %}
 <div class="container border-top">
-<div class="text-primary mt-5 mb-3 title-letter_all">Récapitulatif de vos réservations</div>
+<div class="text-primary mt-5 mb-3 container--preview-text">Récapitulatif de vos réservations</div>
     <div class="row reveal"> 
     {% for reservation in app.user.reservations %}
         <div class="col-sm-6 mb-3 mb-sm-4 mb-xl-4 mb-lg-4 mb-md-4 header-cover_text">
             <div class="card bg-light border-primary rounded-0">
                 <div class="card-body">
-                    <p class="card-text text-primary fw-bold mb-1">Nom de la réservation : <span class="text-primary fw-normal">{{ reservation.name }}</span></p>
-                    <p class="card-text text-primary fw-bold mb-1">Nombre de personnes : <span class="text-primary fw-normal">{{ reservation.numberGuests }}</span></p>
-                    <p class="card-text text-primary fw-bold mb-1">Date de réservation : <span class="text-primary fw-normal">{{ reservation.date | date("d/m/Y") }}</span></p>
-                    <p class="card-text text-primary fw-bold mb-1">Heure de réservation : <span class="text-primary fw-normal">{{ reservation.hours | date("H:i") }}</span></p> 
-                    <p class="card-text text-primary fw-bold mb-1">Allergies mentionnées : <span class="text-primary fw-normal">{{ reservation.allergies }}</p>
+                    <p class="container--dishes-description text-primary fw-bold mb-1">Nom de la réservation : <span class="container--dishes-description text-primary fw-normal">{{ reservation.name }}</span></p>
+                    <p class="container--dishes-description text-primary fw-bold mb-1">Nombre de personnes : <span class="container--dishes-description text-primary fw-normal">{{ reservation.numberGuests }}</span></p>
+                    <p class="container--dishes-description text-primary fw-bold mb-1">Date de réservation : <span class="container--dishes-description text-primary fw-normal">{{ reservation.date | date("d/m/Y") }}</span></p>
+                    <p class="container--dishes-description text-primary fw-bold mb-1">Heure de réservation : <span class="container--dishes-description text-primary fw-normal">{{ reservation.hours | date("H:i") }}</span></p> 
+                    <p class="container--dishes-description text-primary fw-bold mb-1">Allergies mentionnées : <span class="container--dishes-description text-primary fw-normal">{{ reservation.allergies }}</p>
                 </div>
             </div>
         </div>
