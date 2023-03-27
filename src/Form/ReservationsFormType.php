@@ -29,7 +29,7 @@ class ReservationsFormType extends AbstractType
             ->add('numberGuests', IntegerType::class, ['attr' => ['min' => 2, 'max' => 8, 'class' => 'form-control form-title_style mb-3 text-primary'], 'label' => false])
             ->add('date', DateType::class, ['attr' => ['class' => 'form-control mb-3 form-title_style text-primary'], 'label' => false, 'widget'=>'single_text', 'model_timezone' => 'Europe/Paris'])
             ->add('hours', TimeType::class, ['attr' => ['class' => 'form-control mb-3 form-title_style text-primary'], 
-            'label' => false, 
+            'label' => false,  
             'widget'=>'choice', 
             'placeholder'=>['hour'=>'Heure', 'minute'=>'Minute'],
             'hours'=>[12, 13, 19 , 20, 21],
