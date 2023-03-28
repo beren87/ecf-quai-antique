@@ -11,9 +11,17 @@ Ici la [documentation Symfony](https://symfony.com/doc/current/setup.html) pour 
 
 ```bash
 php -v
+```
+```bash
 composer -v
+```
+```bash
 node -v
+```
+```bash
 npm -v
+```
+```bash
 symfony check:requirements
 ```
 
@@ -25,21 +33,33 @@ symfony new quai_antique --version="5.4.*"--webapp
 ```
 ## Mise en place de Webpack Encore + Bootstrap v5
 
-[documentation Webpack Encore](https://symfony.com/doc/5.4/setup.html).
-[documentation CSS/SASS](https://symfony.com/doc/5.4/frontend/encore/css-preprocessors.html).
-[documentation PostCSS/autoprefixer](https://symfony.com/doc/5.4/frontend/encore/postcss.html).
-[documentation référencer des images](https://symfony.com/doc/5.4/frontend/encore/copy-files.html).
-[documentation bootstrap ](https://symfony.com/doc/5.4/frontend/encore/bootstrap.html) + (https://getbootstrap.com/)
+[documentation Webpack Encore](https://symfony.com/doc/5.4/setup.html)  [documentation CSS/SASS](https://symfony.com/doc/5.4/frontend/encore/css-preprocessors.html)  [documentation PostCSS/autoprefixer](https://symfony.com/doc/5.4/frontend/encore/postcss.html)  [documentation référencer des images](https://symfony.com/doc/5.4/frontend/encore/copy-files.html)  [documentation bootstrap](https://symfony.com/doc/5.4/frontend/encore/bootstrap.html) + (https://getbootstrap.com/)
 
 ```bash
 composer require symfony/webpack-encore-bundle
+```
+```bash
 npm install
+```
+```bash
 npm install sass-loader@^13.0.0 sass --save-dev
+```
+```bash
 npm install postcss-loader@^7.0.0 --save-dev
+```
+```bash
 npm install autoprefixer --save-dev
+```
+```bash
 npm install file-loader@^6.0.0 --save-dev
+```
+```bash
 npm i bootstrap@5.3.0-alpha1
+```
+```bash
 npm i --save bootstrap @popperjs/core
+```
+```bash
 npm run build  
 ```
 ## Serveur local
@@ -60,8 +80,7 @@ symfony serve:stop
 ```
 
 ## Partie admin
-Email : admin@mail.fr
-Mot de passe : password
+Email : admin@mail.fr  Mot de passe : password
 
 Vous aurez ensuite un accès à la partie administration depuis la barre de navigation à côté du bouton se déconnecter.
 
