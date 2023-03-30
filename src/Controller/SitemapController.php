@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use App\Repository\OpeningHourRepository;
-use App\Repository\RestaurantRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +14,7 @@ class SitemapController extends AbstractController
         '_locale' => 'en|fr',
         '_format' => 'xml',
     ])]
-    public function index(Request $request): Response
+    public function index(Request $request, Hostname $hostname): Response
     {
         $hostname = $request->getSchemeAndHttpHost();
 
