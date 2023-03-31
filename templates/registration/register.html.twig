@@ -29,14 +29,14 @@
                 {{ form_row(registrationForm.zipcode) }}
                 <div class="container--form-fonts text-primary">Ville</div>
                 {{ form_row(registrationForm.city) }}
-                {# <div class="text-success text-center fst-italic mt-3 mb-3">
-                Veuillez compléter les champs suivant pour pré-remplir vos prochaines réservations</div> #}
-                {# <div class="container--form-fonts text-primary">Nombre d'invité(e)s</div> #}
-                {# <div class="container--form-allergy text-primary fst-italic">* minimum 2 / maximum 8 personnes</div> #}
-                {# {{ form_row(registrationForm.nbGuests) }} #}
-                {# <div class="container--form-fonts text-primary">En cas d'allergies, veuillez le précisez</div> #}
-                {# {{ form_row(registrationForm.allergiesMentioned) }} #}
-                {# <div class="container--form-allergy text-primary fst-italic">* Si aucune allergies, veuillez écrire : aucune</div> #}
+                 <div class="text-success text-center fst-italic mt-3 mb-3">
+                Veuillez compléter les champs suivant pour pré-remplir vos prochaines réservations</div> 
+                <div class="container--form-fonts text-primary">Nombre d'invité(e)s</div>
+                <div class="container--form-allergy text-primary fst-italic">* minimum 2 / maximum 8 personnes</div>
+                {{ form_row(registrationForm.nbGuests) }}
+                <div class="container--form-fonts text-primary">En cas d'allergies, veuillez le précisez</div>
+                {{ form_row(registrationForm.allergiesMentioned) }}
+                <div class="container--form-allergy text-primary fst-italic">* Si aucune allergies, veuillez écrire : aucune</div>
 
                 <div class="container--form-fonts text-primary">Accepter les conditions d'utilisation {{ form_row(registrationForm.agreeTerms) }}</div>
                 
