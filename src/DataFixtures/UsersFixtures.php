@@ -4,7 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Reservations;
 use App\Entity\Users; 
-use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Bundle\FixturesBundle\Fixture; 
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory as FakerFactory;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
