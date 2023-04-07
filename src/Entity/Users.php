@@ -23,10 +23,10 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[Assert\NotBlank(message: 'Veuillez renseigner un email.')]
     #[Assert\Email(
-        message: 'L\'email {{ value }}, n•\'est pas une adresse email valide.',
+        message: 'L\'email {{ value }}, n\'est pas une adresse email valide.',
     )]
     #[ORM\Column(length: 180, unique: true)]
-    private ?string $email = null;
+    private ?string $email = null; 
 
     #[ORM\Column]
     private array $roles = ['ROLE_USER'];

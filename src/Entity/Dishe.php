@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Dishe
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
+    #[ORM\GeneratedValue] 
     #[ORM\Column]
     private ?int $id = null;
 

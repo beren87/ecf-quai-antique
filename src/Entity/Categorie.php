@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: CategorieRepository::class)]
 class Categorie
 {
-    #[ORM\Id]
+    #[ORM\Id] 
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;

@@ -15,7 +15,7 @@ class Reservations
     #[ORM\Column]
     private ?int $id = null; 
 
-    #[Assert\Length(
+    #[Assert\Length( 
         min: 4,
         max: 15,
         minMessage: 'Le nom de la réservation doit dépasser {{ limit }} caractères',
