@@ -23,7 +23,7 @@ class UsersFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         
-        $admin = new Users();
+        $admin = new Users(); 
         $admin->setEmail('admin@mail.fr')
             ->setLastname('Dumilly')
             ->setFirstname('Alfred')
