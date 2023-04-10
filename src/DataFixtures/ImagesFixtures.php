@@ -38,7 +38,7 @@ class ImagesFixtures extends Fixture
         $images = new Images();
         $images->setTitle('Lingot de foie gras de canard');
         $images->setDescription('Lingot de foie gras de canard et pain d’épices, fine gelée de cerise noire');
-        $images->setFile('foie-gras-viande-canard-sauce-douce.png');
+        $images->setFile('foi-gras.png');
         $category = $this->getReference('entrées');
             $images->setCategorie($category);
         $manager->persist($images);
@@ -88,7 +88,7 @@ class ImagesFixtures extends Fixture
         $images = new Images();
         $images->setTitle('Poularde parfum pied-de-lion');
         $images->setDescription('Poularde parfum pied-de-lion, sauce aux truffes noires, chanterelles sautées');
-        $images->setFile('poulet-sauce-onctueuse.png');
+        $images->setFile('poularde.png');
         $category = $this->getReference('viande');
         $images->setCategorie($category);
         $manager->persist($images);
@@ -121,7 +121,7 @@ class ImagesFixtures extends Fixture
         $images = new Images();
         $images->setTitle('Suprême de turbot');
         $images->setDescription('Suprême de turbot au jus de légumes et citron vert');
-        $images->setFile('turbot.png');
+        $images->setFile('turbot-poisson.png');
         $category = $this->getReference('poisson');
         $images->setCategorie($category);
         $manager->persist($images);
