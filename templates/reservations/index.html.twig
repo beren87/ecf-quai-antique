@@ -21,11 +21,13 @@
                 {{ form_row(reservationForm.date) }}
                 <div class="container--form-fonts text-primary">Choisissez une heure</div>
                 {{ form_row(reservationForm.hours) }}
+
                 {% for restaurant in restaurants %}
                 <div class="text-danger container--form-fonts">Nombre de place disponible restante ce jour : {{ restaurant.maxGuests }}</div>
                 {% endfor %}
                 <div class="container--form-fonts text-primary">Nombre d'invité(e)s</div>
                 <div class="container--form-allergy text-primary fst-italic">* minimum 2 / maximum 8 personnes pour une réservation</div>
+                
                 {% if app.user %}
                 {{ form_row(reservationForm.numberGuests, {'value': app.user.nbGuests}) }}
                 <div class="container--form-fonts text-primary">En cas d'allergies, veuillez le précisez</div>
