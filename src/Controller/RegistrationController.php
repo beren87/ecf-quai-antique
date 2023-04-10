@@ -31,6 +31,17 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
  
         if ($form->isSubmitted() && $form->isValid()) {
+            //récupère les données pour le nombre d'invités
+            $nbGuests = $form->get('nbGuests')->getData();
+            $allergiesMentioned = $form->get('allergiesMentioned')->getData();
+
+            // si l'utilisateur est connecté, mettre à jour ses informations
+            if ($user) {
+                $user->setNbGuests($nbGuests);
+                $user->setAllergiesMentioned($allergiesMentioned);
+                $this->getDoctrine()->getManager()->flush();
+            }
+            
             // Récupération des données du formulaire
             $user=$form->getData();
             // encode the plain password
