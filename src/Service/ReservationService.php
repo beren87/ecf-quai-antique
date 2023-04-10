@@ -19,7 +19,7 @@ class ReservationService
     {
         $this->manager = $manager;
         $this->flash = $flash; 
-        $this->security = $security;
+        $this->security = $security; 
     }
 
     public function persistReservation(Reservations $reservations): void

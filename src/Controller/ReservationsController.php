@@ -7,7 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Form\ReservationsFormType;
 use App\Repository\OpeningHourRepository;
 use App\Repository\RestaurantRepository;
-use App\Service\ReservationService; 
+use App\Service\ReservationService;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -33,7 +34,7 @@ class ReservationsController extends AbstractController
        //Si Formulaire soumis et valide, alors on ajoute l'objet $reservations dans la BDD
        if ($reservationForm ->isSubmitted() && $reservationForm->isValid()){
            $reservations = $reservationForm->getData();
-           
+   
            $reservationService->persistReservation($reservations);
            return $this->redirectToRoute('app_reservations');
           

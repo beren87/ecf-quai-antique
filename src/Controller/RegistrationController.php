@@ -17,6 +17,12 @@ use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 
 class RegistrationController extends AbstractController
 {
+    private $manager;
+    public function __construct(EntityManagerInterface $manager)
+    {
+        $this->manager = $manager;
+    }
+
     #[Route('/inscription', name: 'app_register')]
     public function register(Request $request, 
     UserPasswordHasherInterface $userPasswordHasher, 
@@ -26,6 +32,8 @@ class RegistrationController extends AbstractController
     RestaurantRepository $restaurantRepository, 
     OpeningHourRepository $openingHourRepository): Response
     {
+        
+
         $user = new Users();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
@@ -39,7 +47,7 @@ class RegistrationController extends AbstractController
             if ($user) {
                 $user->setNbGuests($nbGuests);
                 $user->setAllergiesMentioned($allergiesMentioned);
-                $this->getDoctrine()->getManager()->flush();
+                $this->manager->flush();
             }
             
             // Récupération des données du formulaire
