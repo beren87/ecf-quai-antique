@@ -35,6 +35,7 @@ class Reservations
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     #[Assert\GreaterThan("now", message: "Votre réservation ne peut pas être inférieure à la date d'aujourd'hui")]
+    #[Assert\LessThan("2025-01-01", message:"La date de réservation ne peut pas être après le 1er janvier 2025")]
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE)]
@@ -123,5 +124,7 @@ class Reservations
 
         return $this;
     }
+
+    
 
 }

@@ -33,7 +33,8 @@ class ReservationsFormType extends AbstractType
             'widget'=>'choice', 
             'placeholder'=>['hour'=>'Heure', 'minute'=>'Minute'],
             'hours'=>[12, 13, 19 , 20, 21],
-            'minutes'=>[00, 15, 30, 45]
+            'minutes'=>[00, 15, 30, 45],
+            'mapped' => true, // Cette option permet de lier ce champ au champ "hours" de l'entité "Reservations"
     ])
             ->add('allergies', TextType::class, ['attr' => ['class' => 'form-control form-title_style text-primary', 'placeholder'=>'exemple: fruits de mer'], 'label' => false,]);       
         }
