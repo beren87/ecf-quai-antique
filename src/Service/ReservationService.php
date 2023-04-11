@@ -66,7 +66,20 @@ class ReservationService
 
         return $reservations;
     }
-        
+
+    public function countGuestsByDate(\DateTimeInterface $date): int
+    {
+        $formattedDate = $date->format('Y-m-d');
+        $reservations = $this->reservationRepository->createQueryBuilder('r')
+            ->select('SUM(r.numberGuests)')
+            ->where('r.date LIKE :date')
+            ->setParameter('date', $formattedDate.'%')
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        return $reservations ?: 0;
+    }
+    
     public function persistReservation(Reservations $reservations): void
     {
        

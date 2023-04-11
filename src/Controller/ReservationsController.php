@@ -40,6 +40,21 @@ class ReservationsController extends AbstractController
             $date = $reservations->getDate();
             $hour = $reservations->getHours();
 
+            // Vérifier si le nombre total de convives pour cette date est supérieur ou égal à 40
+            $totalGuests = $reservationService->countGuestsByDate($date);
+            if ($totalGuests + $reservations->getNumberGuests() > 40) {
+                $this->addFlash('error', 'Le nombre total de convives pour cette journée a atteint sa limite de 40. Veuillez choisir une autre journée.');
+                return $this->redirectToRoute('app_reservations');
+            }else {
+                $availablePlaces = 40 - $totalGuests;
+                if ($availablePlaces > 0 && $availablePlaces < 5) {
+                    $this->addFlash('warning', 'Il ne reste plus que ' . $availablePlaces . ' places disponibles pour cette journée. Pensez à réserver rapidement !');
+                } elseif ($availablePlaces == 0) {
+                    $this->addFlash('error', 'Il n\'y a plus de places disponibles pour cette journée. Veuillez choisir une autre journée.');
+                    return $this->redirectToRoute('app_reservations');
+                }
+            }
+
             // Vérifier si une autre réservation existe pour la même date et heure différente
             $conflictingReservations = $reservationService->findReservationsByDateAndDifferentHour($date, $hour);
 
@@ -69,9 +84,9 @@ class ReservationsController extends AbstractController
                 $this->addFlash('error', 'Toutes les heures pour cette journée ont été réservées. Veuillez choisir une autre journée.');
                 return $this->redirectToRoute('app_reservations');
             }
-            
+
             $reservationService->persistReservation($reservations);
-            $this->addFlash('success', 'Votre réservation a été enregistrée avec succès !');
+            $this->addFlash('success', 'Votre réservation a été enregistrée avec succès ! Vous pouvez faire une autre réservation ou voir vos réservations dans l\'onglet "Vos réservations"');
             return $this->redirectToRoute('app_reservations');
           
            }

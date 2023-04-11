@@ -10,9 +10,14 @@
         
             {{ form_start(reservationForm) }}
                 {% for message in app.flashes('success') %}
-                    <div class="alert alert-success border-0">
+                    <div class="alert alert-success border-0 text-center">
                     {{ message }}
                     </div>
+                {% endfor %}
+                {% for message in app.flashes('warning') %}
+                    <div class="alert alert-warning border-0">
+                    {{ message }}
+                    </div>    
                 {% endfor %}
                 {% for message in app.flashes('error') %}
                     <div class="alert alert-danger border-0">
@@ -20,6 +25,9 @@
                     </div>    
                 {% endfor %}
                
+                {% for restaurant in restaurants %}
+                <div class="text-danger container--form-fonts fst-italic mb-2">Le restaurant accueil jusqu'à un total de {{ restaurant.maxGuests }} converts par jour</div>
+                {% endfor %}
                 <div class="container--form-fonts text-primary">Nom de la réservation</div>
                 {{ form_row(reservationForm.name) }}
                 <div class="container--form-fonts text-primary">Choisissez une date</div>
@@ -27,9 +35,6 @@
                 <div class="container--form-fonts text-primary">Choisissez une heure</div>
                 {{ form_row(reservationForm.hours) }}
 
-                {% for restaurant in restaurants %}
-                <div class="text-danger container--form-fonts">Nombre de place disponible restante ce jour : {{ restaurant.maxGuests }}</div>
-                {% endfor %}
                 <div class="container--form-fonts text-primary">Nombre d'invité(e)s</div>
                 <div class="container--form-allergy text-primary fst-italic">* minimum 2 / maximum 8 personnes pour une réservation</div>
                 
