@@ -8,7 +8,8 @@
         <div class="col">
         <h1 class="mb-3 text-center container--form-fonts mt-3 text-primary">Réservation</h1>
         
-            {{ form_start(reservationForm) }}
+            {{ form_start(reservationForm, {'attr': {'id': 'reservation-form'}}) }}
+
                 {% for message in app.flashes('success') %}
                     <div class="alert alert-success border-0 text-center">
                     {{ message }}
@@ -30,8 +31,10 @@
                 {% endfor %}
                 <div class="container--form-fonts text-primary">Nom de la réservation</div>
                 {{ form_row(reservationForm.name) }}
+
                 <div class="container--form-fonts text-primary">Choisissez une date</div>
                 {{ form_row(reservationForm.date) }}
+
                 <div class="container--form-fonts text-primary">Choisissez une heure</div>
                 {{ form_row(reservationForm.hours) }}
 

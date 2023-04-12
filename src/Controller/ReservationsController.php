@@ -8,7 +8,6 @@ use App\Form\ReservationsFormType;
 use App\Repository\OpeningHourRepository;
 use App\Repository\RestaurantRepository;
 use App\Service\ReservationService;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,14 +24,13 @@ class ReservationsController extends AbstractController
        //création d'une réservation
        $reservations = new Reservations();   
 
-
        //création du formulaire
        $reservationForm = $this->createForm(ReservationsFormType::class, $reservations);
 
        //traite de la requete du formulaire
        $reservationForm->handleRequest($request);  
        
-       //Si Formulaire soumis et valide, alors on ajoute l'objet $reservations dans la BDD
+       //Si le formulaire est soumis et valide, alors on ajoute l'objet $reservations dans la BDD
        if ($reservationForm ->isSubmitted() && $reservationForm->isValid()){
            $reservations = $reservationForm->getData();
 
@@ -40,7 +38,7 @@ class ReservationsController extends AbstractController
             $date = $reservations->getDate();
             $hour = $reservations->getHours();
 
-            // Vérifier si le nombre total de convives pour cette date est supérieur ou égal à 40
+            // Vérifie si le nombre total de convives pour cette date est supérieur ou égal à 40
             $totalGuests = $reservationService->countGuestsByDate($date);
             if ($totalGuests + $reservations->getNumberGuests() > 40) {
                 $this->addFlash('error', 'Le nombre total de convives pour cette journée a atteint sa limite de 40. Veuillez choisir une autre journée.');
@@ -48,14 +46,14 @@ class ReservationsController extends AbstractController
             }else {
                 $availablePlaces = 40 - $totalGuests;
                 if ($availablePlaces > 0 && $availablePlaces < 5) {
-                    $this->addFlash('warning', 'Il ne reste plus que ' . $availablePlaces . ' places disponibles pour cette journée. Pensez à réserver rapidement !');
+                    $this->addFlash('warning', 'Il ne reste plus que ' . $availablePlaces . ' places disponibles pour cette journée.');
                 } elseif ($availablePlaces == 0) {
                     $this->addFlash('error', 'Il n\'y a plus de places disponibles pour cette journée. Veuillez choisir une autre journée.');
                     return $this->redirectToRoute('app_reservations');
                 }
             }
 
-            // Vérifier si une autre réservation existe pour la même date et heure différente
+            // Vérifie si une autre réservation existe pour la même date et heure différente
             $conflictingReservations = $reservationService->findReservationsByDateAndDifferentHour($date, $hour);
 
             if (!empty($conflictingReservations)) {
@@ -63,7 +61,7 @@ class ReservationsController extends AbstractController
                 return $this->redirectToRoute('app_reservations');
             }
 
-            // Vérifier si une autre réservation existe pour la même heure
+            // Vérifie si une autre réservation existe pour la même heure
             $conflictReservations = $reservationService->findReservationsByHour($hour, $date);
 
             if (!empty($conflictReservations)) {
@@ -75,7 +73,7 @@ class ReservationsController extends AbstractController
                 return $this->redirectToRoute('app_reservations');
             }
 
-            // Vérifier si toutes les heures pour cette journée ont été réservées
+            // Vérifie si toutes les heures pour cette journée ont été réservées
             $allOpeningHours = $openingHourRepository->findAll();
             $reservedHours = $reservationService->findReservationsByDate($date);
             $availableHours = array_diff($allOpeningHours, $reservedHours);
@@ -86,6 +84,7 @@ class ReservationsController extends AbstractController
             }
 
             $reservationService->persistReservation($reservations);
+
             $this->addFlash('success', 'Votre réservation a été enregistrée avec succès ! Vous pouvez faire une autre réservation ou voir vos réservations dans l\'onglet "Vos réservations"');
             return $this->redirectToRoute('app_reservations');
           

@@ -7,7 +7,7 @@ use App\Repository\ReservationsRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Security;
 
-class ReservationService
+class ReservationService 
 {
     private $security;
     private $manager;
