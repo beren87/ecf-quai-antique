@@ -25,10 +25,14 @@
                     {{ message }}
                     </div>    
                 {% endfor %}
+
+                
+
                
                 {% for restaurant in restaurants %}
-                <div class="text-danger container--form-fonts fst-italic mb-2">Le restaurant accueil jusqu'à un total de {{ restaurant.maxGuests }} converts par jour</div>
+                <div class="text-primary container--form-fonts fst-italic text-center">Le restaurant accueil jusqu'à un total de {{ restaurant.maxGuests }} converts par jour</div>
                 {% endfor %}
+                <div class="text-primary container--form-fonts fst-italic mb-3 text-center">Il reste <span class="text-secondary"> {{ availablePlaces }} </span> places de disponibles pour la journée de demain.</div>
                 <div class="container--form-fonts text-primary">Nom de la réservation</div>
                 {{ form_row(reservationForm.name) }}
 

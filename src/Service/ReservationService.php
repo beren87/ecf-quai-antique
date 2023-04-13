@@ -79,14 +79,19 @@ class ReservationService
 
         return $reservations ?: 0;
     }
-    
+
+    public function getAvailablePlacesByDate(\DateTimeInterface $date): int
+    {
+        $totalGuests = $this->countGuestsByDate($date);
+        return 40 - $totalGuests;
+    }
+
     public function persistReservation(Reservations $reservations): void
     {
        
         $user = $this->security->getUser();
         $reservations->setUsers($user);
         $this->manager->persist($reservations);
-        
         $this->manager->flush();
         
     }

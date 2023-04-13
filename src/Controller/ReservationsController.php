@@ -89,10 +89,18 @@ class ReservationsController extends AbstractController
             return $this->redirectToRoute('app_reservations');
           
            }
+
+           $date = new \DateTime('now');
+           $date->modify('+1 day'); // modification de la date pour obtenir celle du lendemain
+           $availablePlaces = $reservationService->getAvailablePlacesByDate($date);
+
+
+
            return $this->render('reservations/index.html.twig', [
                'reservationForm' => $reservationForm->createView(),
                'restaurants' => $restaurantRepository->findBy([]),
-               'openinghours' => $openingHourRepository->findBy([])
+               'openinghours' => $openingHourRepository->findBy([]),
+               'availablePlaces' => $availablePlaces,
            ]);             
    }
 }
