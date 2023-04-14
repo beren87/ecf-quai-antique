@@ -13,6 +13,7 @@ class ReservationService
     private $manager;
     private $reservationRepository;
 
+
     public function __construct(EntityManagerInterface $manager,   
     Security $security, ReservationsRepository $reservationRepository)
     {
@@ -80,11 +81,30 @@ class ReservationService
         return $reservations ?: 0;
     }
 
-    public function getAvailablePlacesByDate(\DateTimeInterface $date): int
+    // public function getAvailablePlacesByDate(\DateTimeInterface $date): int
+    // {
+    //     $totalGuests = $this->countGuestsByDate($date);
+    //     return 40 - $totalGuests;
+    // }
+
+    public function getAvailablePlacesByDate(\DateTime $date): int
     {
-        $totalGuests = $this->countGuestsByDate($date);
-        return 40 - $totalGuests;
+        // Obtient toutes les réservations pour la date spécifiée
+        $reservations = $this->manager->getRepository(Reservations::class)->findBy(['date' => $date]);
+    
+        // Calcule le nombre total de places réservées pour cette date
+        $reservedPlaces = 0;
+        foreach ($reservations as $reservation) {
+            $reservedPlaces += $reservation->getNumberGuests();
+        }
+    
+        // Calcule les places disponibles à cette date
+        $totalPlaces = 40; 
+        $availablePlaces = $totalPlaces - $reservedPlaces;
+    
+        return $availablePlaces;
     }
+    
 
     public function persistReservation(Reservations $reservations): void
     {

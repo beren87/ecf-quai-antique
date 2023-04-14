@@ -8,6 +8,7 @@ use App\Form\ReservationsFormType;
 use App\Repository\OpeningHourRepository;
 use App\Repository\RestaurantRepository;
 use App\Service\ReservationService;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -37,6 +38,13 @@ class ReservationsController extends AbstractController
             // Récupérer la date et l'heure depuis l'objet $reservations
             $date = $reservations->getDate();
             $hour = $reservations->getHours();
+
+             // Vérifie que la date est différente de dimanche (0 pour dimanche, 1 pour lundi, etc.)
+             $dayOfWeek = (int)$reservations->getDate()->format('w');
+             if ($dayOfWeek === 0) {
+                 $this->addFlash('error', 'Les réservations sont fermées le dimanche.');
+                 return $this->redirectToRoute('app_reservations');
+             }
 
             // Vérifie si le nombre total de convives pour cette date est supérieur ou égal à 40
             $totalGuests = $reservationService->countGuestsByDate($date);
@@ -87,20 +95,18 @@ class ReservationsController extends AbstractController
 
             $this->addFlash('success', 'Votre réservation a été enregistrée avec succès ! Vous pouvez faire une autre réservation ou voir vos réservations dans l\'onglet "Vos réservations"');
             return $this->redirectToRoute('app_reservations');
-          
            }
 
            $date = new \DateTime('now');
            $date->modify('+1 day'); // modification de la date pour obtenir celle du lendemain
            $availablePlaces = $reservationService->getAvailablePlacesByDate($date);
 
-
-
            return $this->render('reservations/index.html.twig', [
                'reservationForm' => $reservationForm->createView(),
                'restaurants' => $restaurantRepository->findBy([]),
                'openinghours' => $openingHourRepository->findBy([]),
                'availablePlaces' => $availablePlaces,
-           ]);             
+           ]);
    }
+
 }
