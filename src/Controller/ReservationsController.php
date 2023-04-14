@@ -42,7 +42,7 @@ class ReservationsController extends AbstractController
              // Vérifie que la date est différente de dimanche (0 pour dimanche, 1 pour lundi, etc.)
              $dayOfWeek = (int)$reservations->getDate()->format('w');
              if ($dayOfWeek === 0) {
-                 $this->addFlash('error', 'Les réservations sont fermées le dimanche.');
+                 $this->addFlash('error', 'Le restaurant est fermé le dimanche.');
                  return $this->redirectToRoute('app_reservations');
              }
 
