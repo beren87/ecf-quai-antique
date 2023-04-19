@@ -81,12 +81,6 @@ class ReservationService
         return $reservations ?: 0;
     }
 
-    // public function getAvailablePlacesByDate(\DateTimeInterface $date): int
-    // {
-    //     $totalGuests = $this->countGuestsByDate($date);
-    //     return 40 - $totalGuests;
-    // }
-
     public function getAvailablePlacesByDate(\DateTime $date): int
     {
         // Obtient toutes les réservations pour la date spécifiée

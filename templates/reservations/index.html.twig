@@ -32,7 +32,7 @@
                 {% set now = date() %}
                 {% set tomorrow = now|date_modify('+1 day') %}
                 <div class="container--form-fonts text-primary">Choisissez une date</div>
-                {{ form_row(reservationForm.date, {'attr': {'id': 'reservation_date'}}) }}
+                {{ form_row(reservationForm.date, {'attr': {'id': 'date-picker'}}) }}
                  <div class="text-primary container--form-fonts fst-italic mb-3 text-center">
                     {% if availablePlaces > 0 %}
                         Il reste <span class="text-secondary">{{ availablePlaces }}</span> places de disponibles pour la journée du {{ (now|date_modify('+1 day'))|date('d/m/Y') }}

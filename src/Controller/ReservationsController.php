@@ -8,7 +8,6 @@ use App\Form\ReservationsFormType;
 use App\Repository\OpeningHourRepository;
 use App\Repository\RestaurantRepository;
 use App\Service\ReservationService;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,6 +20,9 @@ class ReservationsController extends AbstractController
     ReservationService $reservationService, 
     OpeningHourRepository $openingHourRepository): Response
     {   
+        $date = new \DateTime('now');
+        $date->modify('+1 day'); // modification de la date pour obtenir celle du lendemain
+        $availablePlaces = $reservationService->getAvailablePlacesByDate($date);
 
        //création d'une réservation
        $reservations = new Reservations();   
@@ -97,10 +99,6 @@ class ReservationsController extends AbstractController
             return $this->redirectToRoute('app_reservations');
            }
 
-           $date = new \DateTime('now');
-           $date->modify('+1 day'); // modification de la date pour obtenir celle du lendemain
-           $availablePlaces = $reservationService->getAvailablePlacesByDate($date);
-
            return $this->render('reservations/index.html.twig', [
                'reservationForm' => $reservationForm->createView(),
                'restaurants' => $restaurantRepository->findBy([]),
@@ -108,5 +106,4 @@ class ReservationsController extends AbstractController
                'availablePlaces' => $availablePlaces,
            ]);
    }
-
 }
