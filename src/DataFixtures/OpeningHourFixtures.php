@@ -21,8 +21,8 @@ class OpeningHourFixtures extends Fixture
          $manager->persist($openhour);
 
          $openhour = new OpeningHour();
-         $openhour->setDays('Dimanche et Mercredi midi');
-         $openhour->setHours('12:00 - 14:00');
+         $openhour->setDays('Dimanche fermé');
+         $openhour->setHours('toute la journée');
          $manager->persist($openhour);
 
         $manager->flush();
