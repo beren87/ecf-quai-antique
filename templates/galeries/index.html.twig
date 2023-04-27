@@ -14,7 +14,7 @@
         {% if image.categorie is same as(categorie) %}
             <div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
                 <div class="card-body">
-                    <img src="{{ vich_uploader_asset(image, 'imageFile') | imagine_filter('galeries') }}" class="card-img w-100 rounded-0" alt="...">
+                    <img src="{{ asset('uploads/galeries/' ~ image.file) }}" class="card-img w-100 rounded-0" alt="...">
                     <h5 class="card-title text-primary container--card-title mt-1">{{ image.title }}</h5>
                     <p class="card-text text-primary container---card-text">{{ image.description }}</p>
                 </div>
