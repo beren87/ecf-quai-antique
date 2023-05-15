@@ -2,7 +2,7 @@
     <div class="container mt-3 g-0 border-top"> 
     <h2 class="container--preview-text container--categorie-firstletter mb-4 mt-4 text-primary">Voici quelques plats les plus appréciés</h2>
         
-<div class="container mb-2">
+{# <div class="container mb-2">
     <div class="row g-1"> 
     {% for image in images %}
             <div class="card col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0">
@@ -14,7 +14,35 @@
             </div>
     {% endfor %} 
     </div>
+</div> #}
+
+<div class="container mb-2">
+    <div class="row g-1"> 
+            <div class="card col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0">
+            <img src="{{ asset('build/images/fondu-plan-01.png') }}" class="card-img w-100 rounded-0 reveal" alt="Fondu Roussette de Savoie">
+                <div class="card-img-overlay container--card-title container--card-description text-center">
+                    <h5 class="card-title text-secondary">Fondu Roussette de Savoie</h5> 
+                    <p class="card-text text-secondary">Fondu Roussette de Savoie, pain charpentier, trio de fromages</p>
+                </div>
+            </div>
+            
+    <div class="card col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0">
+            <img src="{{ asset('build/images/Matouille-de-Savoie.png') }}" class="card-img w-100 rounded-0 reveal" alt="Matouille de Savoie">
+                <div class="card-img-overlay container--card-title container--card-description text-center">
+                    <h5 class="card-title text-secondary">Matouille de Savoie</h5> 
+                    <p class="card-text text-secondary">Matouille de Savoie, fondu de poireau, carottes glacées</p>
+                </div>
+            </div>
+    <div class="card col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0">
+            <img src="{{ asset('build/images/tartiflette-cepes.png') }}" class="card-img w-100 rounded-0 reveal" alt="Tartiflette aux cèpes">
+                <div class="card-img-overlay container--card-title container--card-description text-center">
+                    <h5 class="card-title text-secondary">Tartiflette aux cèpes</h5> 
+                    <p class="card-text text-secondary">Tartiflette aux cèpes, panier de roquette, nid de pignons de pin</p>
+                </div>
+            </div>        
+    </div>
 </div>
+
 <div class="container--cover-text text-center m-2 d-flex flex-column justify-content-center align-items-center text-primary">Savourez nos plats les plus incontournable du Quai Antique concocté par le Chef et sa brigade.
     <a href="{{ path('app_reservations')}}" class="text-decoration-none"><div class="header--btn-booking me-md-2 m-2">Réserver</div></a></div> 
        

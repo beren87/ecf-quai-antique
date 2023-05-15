@@ -5,12 +5,15 @@
 {% block body %}
 <section>
     <div class="container border-top py-3 my-3 g-0"> </div>
-{% for categorie in categories %}
+{# {% for categorie in categories %}  #}
     
 <div class="container mb-2"> 
     <div class="row g-1 reveal">
-<div class="container--category-fonts container--categorie-firstletter text-primary ps-3">{{ categorie.name }}</div>
-    {% for image in images %}
+<div class="container--category-fonts container--categorie-firstletter text-primary ps-3">
+{# {{ categorie.name }} #}
+Entrées
+</div>
+    {# {% for image in images %}
         {% if image.categorie is same as(categorie) %}
             <div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
                 <div class="card-body">
@@ -20,14 +23,243 @@
                 </div>
             </div>
         {% endif %}
-    {% endfor %} 
-    </div>
-   {% endfor %}
+    {% endfor %}
+   {% endfor %} #}
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/soupe-oignon-01.png') }}" class="card-img w-100 rounded-0" alt="soupe oignon">
+                    <h5 class="card-title text-primary container--card-title mt-1">Soupe à l'oignon</h5>
+                    <p class="card-text text-primary container---card-text">Soupe à l’oignon, crouton aillés, gratiné de parmesan</p>
+                </div>
+            </div>
 
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/rouleau-de-grison.png') }}" class="card-img w-100 rounded-0" alt="Rouleau de grison">
+                    <h5 class="card-title text-primary container--card-title mt-1">Rouleau de grison</h5>
+                    <p class="card-text text-primary container---card-text">Rouleau de grison, mousseline de céleri, tomme de Savoie</p>
+                </div>
+            </div>
 
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/foi-gras.png') }}" class="card-img w-100 rounded-0" alt="Lingot de foie">
+                    <h5 class="card-title text-primary container--card-title mt-1">Lingot de foie</h5>
+                    <p class="card-text text-primary container---card-text">Lingot de foie gras de canard et pain d’épices, fine gelée de cerise noire</p>
+                </div>
+            </div>
+<div class="container mb-2"> 
+    <div class="row g-1 reveal">
+<div class="container--category-fonts container--categorie-firstletter text-primary ps-3">
+{# {{ categorie.name }} #}
+Plats spécialités savoyardes
+</div>
+    {# {% for image in images %}
+        {% if image.categorie is same as(categorie) %}
+            <div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('uploads/galeries/' ~ image.file) }}" class="card-img w-100 rounded-0" alt="...">
+                    <h5 class="card-title text-primary container--card-title mt-1">{{ image.title }}</h5>
+                    <p class="card-text text-primary container---card-text">{{ image.description }}</p>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+   {% endfor %} #}
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/fondu-plan-01.png') }}" class="card-img w-100 rounded-0" alt="Fondu Roussette de Savoie">
+                    <h5 class="card-title text-primary container--card-title mt-1">Fondu Roussette de Savoie</h5>
+                    <p class="card-text text-primary container---card-text">Fondu Roussette de Savoie, pain charpentier, trio de fromages</p>
+                </div>
+            </div>
 
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/Matouille-de-Savoie.png') }}" class="card-img w-100 rounded-0" alt="Matouille de Savoie">
+                    <h5 class="card-title text-primary container--card-title mt-1">Matouille de Savoie</h5>
+                    <p class="card-text text-primary container---card-text">Matouille de Savoie, fondu de poireau, carottes glacées</p>
+                </div>
+            </div>
 
-<div class="container mt-5 mb-5 "></div>
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/raclette.png') }}" class="card-img w-100 rounded-0" alt="Raclette aux herbes">
+                    <h5 class="card-title text-primary container--card-title mt-1">Raclette aux herbes</h5>
+                    <p class="card-text text-primary container---card-text">Raclette aux herbes, grenaille en robe des champs, caillasse de Savoie</p>
+                </div>
+            </div>
+
+<div class="container mb-2"> 
+    <div class="row g-1 reveal">
+<div class="container--category-fonts container--categorie-firstletter text-primary ps-3">
+{# {{ categorie.name }} #}
+Plats de viande
+</div>
+    {# {% for image in images %}
+        {% if image.categorie is same as(categorie) %}
+            <div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('uploads/galeries/' ~ image.file) }}" class="card-img w-100 rounded-0" alt="...">
+                    <h5 class="card-title text-primary container--card-title mt-1">{{ image.title }}</h5>
+                    <p class="card-text text-primary container---card-text">{{ image.description }}</p>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+   {% endfor %} #}
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/diots-fumees.png') }}" class="card-img w-100 rounded-0" alt="Diots fumées">
+                    <h5 class="card-title text-primary container--card-title mt-1">Diots fumées</h5>
+                    <p class="card-text text-primary container---card-text">Diots fumées au vin blanc Roussette de Savoie, crème ciboulette</p>
+                </div>
+            </div>
+
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/poularde.png') }}" class="card-img w-100 rounded-0" alt="Poularde parfum pied-de-lion">
+                    <h5 class="card-title text-primary container--card-title mt-1">Poularde parfum pied-de-lion</h5>
+                    <p class="card-text text-primary container---card-text">Poularde parfum pied-de-lion, sauce aux truffes noires, chanterelles sautées</p>
+                </div>
+            </div>
+
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/tournedos.png') }}" class="card-img w-100 rounded-0" alt="Tournedos">
+                    <h5 class="card-title text-primary container--card-title mt-1">Tournedos</h5>
+                    <p class="card-text text-primary container---card-text">Tournedos de filet de bœuf, jus au porto rouge</p>
+                </div>
+            </div>
+
+<div class="container mb-2"> 
+    <div class="row g-1 reveal">
+<div class="container--category-fonts container--categorie-firstletter text-primary ps-3">
+{# {{ categorie.name }} #}
+Plats de poisson
+</div>
+    {# {% for image in images %}
+        {% if image.categorie is same as(categorie) %}
+            <div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('uploads/galeries/' ~ image.file) }}" class="card-img w-100 rounded-0" alt="...">
+                    <h5 class="card-title text-primary container--card-title mt-1">{{ image.title }}</h5>
+                    <p class="card-text text-primary container---card-text">{{ image.description }}</p>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+   {% endfor %} #}
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/omble-chevalier-pinot-noir.png') }}" class="card-img w-100 rounded-0" alt="Omble chevalier">
+                    <h5 class="card-title text-primary container--card-title mt-1">Omble chevalier</h5>
+                    <p class="card-text text-primary container---card-text">Omble chevalier, genevoise pinot noir, écrasé de fenouil</p>
+                </div>
+            </div>
+
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/lotte.png') }}" class="card-img w-100 rounded-0" alt="Lotte sur lit de poireau">
+                    <h5 class="card-title text-primary container--card-title mt-1">Lotte sur lit de poireau</h5>
+                    <p class="card-text text-primary container---card-text">Lotte sur lit de poireau au curry, émulsion de langoustine</p>
+                </div>
+            </div>
+
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/turbot-poisson.png') }}" class="card-img w-100 rounded-0" alt="Suprême de turbot">
+                    <h5 class="card-title text-primary container--card-title mt-1">Suprême de turbot</h5>
+                    <p class="card-text text-primary container---card-text">Suprême de turbot au jus de légumes et citron vert</p>
+                </div>
+            </div>
+
+<div class="container mb-2"> 
+    <div class="row g-1 reveal">
+<div class="container--category-fonts container--categorie-firstletter text-primary ps-3">
+{# {{ categorie.name }} #}
+Plateau de fromages et pains
+</div>
+    {# {% for image in images %}
+        {% if image.categorie is same as(categorie) %}
+            <div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('uploads/galeries/' ~ image.file) }}" class="card-img w-100 rounded-0" alt="...">
+                    <h5 class="card-title text-primary container--card-title mt-1">{{ image.title }}</h5>
+                    <p class="card-text text-primary container---card-text">{{ image.description }}</p>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+   {% endfor %} #}
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/charette-paturages.png') }}" class="card-img w-100 rounded-0" alt="Charette de nos pâturages">
+                    <h5 class="card-title text-primary container--card-title mt-1">Charette de nos pâturages</h5>
+                    <p class="card-text text-primary container---card-text">Abondance, Beaufort et Tommette de chèvre - Pain aux figues-noix</p>
+                </div>
+            </div>
+
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/Parfum-campagnes-verdures.png') }}" class="card-img w-100 rounded-0" alt="Parfum de nos campagnes dans son enclos de verdures">
+                    <h5 class="card-title text-primary container--card-title mt-1">Parfum de nos campagnes dans son enclos de verdures</h5>
+                    <p class="card-text text-primary container---card-text">Emmental de Savoie, Tome des Bauges, Reblochon - Pain aux sésames</p>
+                </div>
+            </div>
+
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/offrandes-berger.png') }}" class="card-img w-100 rounded-0" alt="Les offrandes du berger">
+                    <h5 class="card-title text-primary container--card-title mt-1">Les offrandes du berger</h5>
+                    <p class="card-text text-primary container---card-text">Chevrotin, Roulé de chèvre frais, Séchon de chèvre - Pain bûcheron</p>
+                </div>
+            </div>
+<div class="container mb-2"> 
+    <div class="row g-1 reveal">
+<div class="container--category-fonts container--categorie-firstletter text-primary ps-3">
+{# {{ categorie.name }} #}
+Desserts
+</div>
+    {# {% for image in images %}
+        {% if image.categorie is same as(categorie) %}
+            <div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('uploads/galeries/' ~ image.file) }}" class="card-img w-100 rounded-0" alt="...">
+                    <h5 class="card-title text-primary container--card-title mt-1">{{ image.title }}</h5>
+                    <p class="card-text text-primary container---card-text">{{ image.description }}</p>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+   {% endfor %} #}
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/mousse-chocolat.png') }}" class="card-img w-100 rounded-0" alt="Mousse au chocolat">
+                    <h5 class="card-title text-primary container--card-title mt-1">Mousse au chocolat</h5>
+                    <p class="card-text text-primary container---card-text">Mousse au chocolat et caramel mou à la fleur de sel</p>
+                </div>
+            </div>
+
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/sucrissime.png') }}" class="card-img w-100 rounded-0" alt="Sucrissime crème pâtissière">
+                    <h5 class="card-title text-primary container--card-title mt-1">Sucrissime crème pâtissière</h5>
+                    <p class="card-text text-primary container---card-text">Sucrissime crème pâtissière, zeste d’orange</p>
+                </div>
+            </div>
+
+<div class="card container--card-hover h-100 col-md-12 col-sm-12 col-lg-4 col-xl-4 rounded-0 border-0 mb-5">
+                <div class="card-body">
+                    <img src="{{ asset('build/images/desert-vanilla-crumble-01.png') }}" class="card-img w-100 rounded-0" alt="Crumble vanille-tonka">
+                    <h5 class="card-title text-primary container--card-title mt-1">Crumble vanille-tonka</h5>
+                    <p class="card-text text-primary container---card-text">Crumble vanille-tonka, gel de citron yuzu</p>
+                </div>
+            </div>
+
+  
+
+<div class="container mt-1 mb-5 "></div>
 
     <div class="container text-center mt-5">
         <div class="row">
