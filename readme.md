@@ -87,7 +87,7 @@ symfony serve:stop
 
 ## Partie admin
 Email : admin@mail.fr  
-Mot de passe : password
+Mot de passe : ********
 
 Vous aurez ensuite un accès à la partie administration depuis la barre de navigation à côté du bouton se déconnecter.
 
